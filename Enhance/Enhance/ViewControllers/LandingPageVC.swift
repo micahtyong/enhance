@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 
 class LandingPageVC: UIViewController {
     
@@ -50,6 +51,8 @@ class LandingPageVC: UIViewController {
     @objc func beginButtonTapped(_ sender:UIButton) {
         sender.pulse()
         let diagnoseVC = DiagnoseVC()
+        diagnoseVC.hero.isEnabled = true
+        diagnoseVC.hero.modalAnimationType = .selectBy(presenting: .fade, dismissing: .fade)
         self.present(diagnoseVC, animated: true, completion: nil)
     }
     

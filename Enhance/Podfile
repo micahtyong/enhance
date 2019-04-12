@@ -1,0 +1,13 @@
+platform :ios, '11.0'
+
+target 'Enhance' do
+
+  use_frameworks!
+
+  # Pods for Enhance
+pod 'Hero'
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+pod 'Firebase/Database'
+
+end
