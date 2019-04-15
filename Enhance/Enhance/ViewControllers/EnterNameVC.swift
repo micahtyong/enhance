@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import Hero
 
 class EnterNameVC: UIViewController {
     
+    var newUserStatus : Bool = true
+    
     var enhanceLogo = UIImageView()
     let backButton = BackButton()
+    let enterName = CustomTextField()
+    let goButton = CustomMedButton(withText: "Go!", withInverted: false)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +27,43 @@ class EnterNameVC: UIViewController {
         self.view.backgroundColor = .white
         setupLogo()
         setupBackButton()
+        setupNameTextField()
+        setupGoButton()
+    }
+    
+    func isNewUser(_ isNew : Bool) {
+        self.newUserStatus = isNew
+    }
+    
+    func setupGoButton() {
+        goButton.addTarget(self, action: #selector(welcomeToEnhance), for: .touchUpInside)
+        
+        self.view.addSubview(goButton)
+        
+        goButton.translatesAutoresizingMaskIntoConstraints = false
+        goButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        goButton.topAnchor.constraint(equalTo: enterName.bottomAnchor, constant: 20).isActive = true
+    }
+    
+    @objc func welcomeToEnhance(_ sender : CustomMedButton) {
+        sender.pulse()
+        let thanksVC = WelcomeToEnhanceVC()
+        thanksVC.hero.isEnabled = true
+        thanksVC.hero.modalAnimationType = .selectBy(presenting: .zoom, dismissing: .zoomOut)
+        if let name = enterName.textField.text, !name.isEmpty {
+            thanksVC.setName(to: name)
+            thanksVC.isNewUser(newUserStatus)
+            self.present(thanksVC, animated: true, completion: nil)
+        }
+    }
+    
+    func setupNameTextField() {
+        enterName.setPlaceHolder(holder: "Enter Name")
+        self.view.addSubview(enterName)
+        
+        enterName.translatesAutoresizingMaskIntoConstraints = false
+        enterName.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        enterName.topAnchor.constraint(equalTo: enhanceLogo.bottomAnchor, constant: 50).isActive = true
     }
     
     func setupLogo() {

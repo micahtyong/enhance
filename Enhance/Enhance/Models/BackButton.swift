@@ -24,6 +24,10 @@ class BackButton: UIButton {
         self.backgroundColor = .white
         self.setImage(UIImage(named: "backButtonDark"), for: .normal)
         self.layer.frame = CGRect(x: 0, y: 0, width: 35, height: 20)
+        
+        self.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        self.widthAnchor.constraint(equalToConstant: 35).isActive = true
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
     
 }

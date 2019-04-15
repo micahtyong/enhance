@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Hero
 
 class DiagnoseVC: UIViewController {
     
     let tellUsLabel = UILabel()
-    let getStarted = UIButton()
-    let alreadyMember = UIButton()
+    let getStarted = CustomLongButton()
+    let alreadyMember = CustomLongButton()
     let backButton = BackButton()
     
     let customOrange = UIColor(red: 0.98, green: 0.65, blue: 0.01, alpha: 1)
@@ -49,19 +50,13 @@ class DiagnoseVC: UIViewController {
     }
     
     func setupGetStarted() {
-        getStarted.layer.backgroundColor = customOrange.cgColor
-        getStarted.setTitle("Get started", for: .normal)
-        getStarted.setTitleColor(customWhite, for: .normal)
-        getStarted.titleLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 16)
-        getStarted.titleLabel?.textAlignment = .center
         getStarted.addTarget(self, action: #selector(getStartedButtonTapped), for: .touchUpInside)
+        getStarted.setText(to: "Get started")
         
         view.addSubview(getStarted)
         
         getStarted.topAnchor.constraint(equalTo: tellUsLabel.bottomAnchor, constant: 20).isActive = true
         getStarted.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        getStarted.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        getStarted.widthAnchor.constraint(equalToConstant: 280).isActive = true
         getStarted.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -69,26 +64,29 @@ class DiagnoseVC: UIViewController {
         sender.pulse()
         let enterNameVC = EnterNameVC()
         enterNameVC.hero.isEnabled = true
+        enterNameVC.isNewUser(true)
+        enterNameVC.hero.modalAnimationType = .selectBy(presenting: .zoom, dismissing: .zoomOut)
+        self.present(enterNameVC, animated: true, completion: nil)
+    }
+    
+    @objc func signInButtonTapped(_ sender:UIButton) {
+        sender.pulse()
+        let enterNameVC = EnterNameVC()
+        enterNameVC.hero.isEnabled = true
+        enterNameVC.isNewUser(false)
         enterNameVC.hero.modalAnimationType = .selectBy(presenting: .zoom, dismissing: .zoomOut)
         self.present(enterNameVC, animated: true, completion: nil)
     }
     
     func setupAlreadyAMember() {
-        alreadyMember.layer.backgroundColor = UIColor.white.cgColor
-        alreadyMember.setTitle("Already a member? Sign in", for: .normal)
-        alreadyMember.setTitleColor(customOrange, for: .normal)
-        alreadyMember.titleLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 16)
-        alreadyMember.titleLabel?.textAlignment = .center
-        alreadyMember.layer.borderWidth = 1
-        alreadyMember.layer.borderColor = customOrange.cgColor
-        alreadyMember.addTarget(self, action: #selector(getStartedButtonTapped), for: .touchUpInside)
+        alreadyMember.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
+        alreadyMember.setText(to: "Already a member? Sign in")
+        alreadyMember.setInverted()
         
         view.addSubview(alreadyMember)
         
         alreadyMember.topAnchor.constraint(equalTo: getStarted.bottomAnchor, constant: 20).isActive = true
         alreadyMember.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        alreadyMember.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        alreadyMember.widthAnchor.constraint(equalToConstant: 280).isActive = true
         alreadyMember.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -99,8 +97,6 @@ class DiagnoseVC: UIViewController {
         
         backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
         backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        backButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        backButton.widthAnchor.constraint(equalToConstant: 35).isActive = true
         backButton.translatesAutoresizingMaskIntoConstraints = false
     }
     

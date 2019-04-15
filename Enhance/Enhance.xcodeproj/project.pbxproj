@@ -14,6 +14,13 @@
 		E85F1D9A225F23A700AA2283 /* DiagnoseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F1D99225F23A700AA2283 /* DiagnoseVC.swift */; };
 		E85F1D9C226038CC00AA2283 /* EnterNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F1D9B226038CC00AA2283 /* EnterNameVC.swift */; };
 		E85F1D9F2260484300AA2283 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F1D9E2260484300AA2283 /* BackButton.swift */; };
+		E89D224E2262F47A00B0D3F5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D224D2262F47A00B0D3F5 /* CustomTextField.swift */; };
+		E89D22502262FC2700B0D3F5 /* CustomMedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D224F2262FC2700B0D3F5 /* CustomMedButton.swift */; };
+		E89D22522262FC6600B0D3F5 /* CustomLongButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D22512262FC6600B0D3F5 /* CustomLongButton.swift */; };
+		E89D22542263060C00B0D3F5 /* WelcomeToEnhanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D22532263060C00B0D3F5 /* WelcomeToEnhanceVC.swift */; };
+		E89D2256226310DC00B0D3F5 /* TrainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D2255226310DC00B0D3F5 /* TrainVC.swift */; };
+		E89D225C2263134800B0D3F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E89D225B2263134800B0D3F5 /* GoogleService-Info.plist */; };
+		E89D225E2264604700B0D3F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D225D2264604700B0D3F5 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +35,13 @@
 		E85F1D99225F23A700AA2283 /* DiagnoseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnoseVC.swift; sourceTree = "<group>"; };
 		E85F1D9B226038CC00AA2283 /* EnterNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNameVC.swift; sourceTree = "<group>"; };
 		E85F1D9E2260484300AA2283 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		E89D224D2262F47A00B0D3F5 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		E89D224F2262FC2700B0D3F5 /* CustomMedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMedButton.swift; sourceTree = "<group>"; };
+		E89D22512262FC6600B0D3F5 /* CustomLongButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLongButton.swift; sourceTree = "<group>"; };
+		E89D22532263060C00B0D3F5 /* WelcomeToEnhanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeToEnhanceVC.swift; sourceTree = "<group>"; };
+		E89D2255226310DC00B0D3F5 /* TrainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainVC.swift; sourceTree = "<group>"; };
+		E89D225B2263134800B0D3F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		E89D225D2264604700B0D3F5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +90,7 @@
 				E85F1D84225EFEAB00AA2283 /* AppDelegate.swift */,
 				E85F1D8B225EFEAD00AA2283 /* Assets.xcassets */,
 				E85F1D90225EFEAD00AA2283 /* Info.plist */,
+				E89D225B2263134800B0D3F5 /* GoogleService-Info.plist */,
 			);
 			path = Enhance;
 			sourceTree = "<group>";
@@ -86,6 +101,8 @@
 				E85F1D97225EFFCC00AA2283 /* LandingPageVC.swift */,
 				E85F1D99225F23A700AA2283 /* DiagnoseVC.swift */,
 				E85F1D9B226038CC00AA2283 /* EnterNameVC.swift */,
+				E89D22532263060C00B0D3F5 /* WelcomeToEnhanceVC.swift */,
+				E89D2255226310DC00B0D3F5 /* TrainVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -94,6 +111,10 @@
 			isa = PBXGroup;
 			children = (
 				E85F1D9E2260484300AA2283 /* BackButton.swift */,
+				E89D224D2262F47A00B0D3F5 /* CustomTextField.swift */,
+				E89D224F2262FC2700B0D3F5 /* CustomMedButton.swift */,
+				E89D22512262FC6600B0D3F5 /* CustomLongButton.swift */,
+				E89D225D2264604700B0D3F5 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E85F1D8C225EFEAD00AA2283 /* Assets.xcassets in Resources */,
+				E89D225C2263134800B0D3F5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,11 +255,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E89D22522262FC6600B0D3F5 /* CustomLongButton.swift in Sources */,
 				E85F1D9C226038CC00AA2283 /* EnterNameVC.swift in Sources */,
 				E85F1D98225EFFCC00AA2283 /* LandingPageVC.swift in Sources */,
+				E89D224E2262F47A00B0D3F5 /* CustomTextField.swift in Sources */,
+				E89D22502262FC2700B0D3F5 /* CustomMedButton.swift in Sources */,
+				E89D22542263060C00B0D3F5 /* WelcomeToEnhanceVC.swift in Sources */,
 				E85F1D85225EFEAB00AA2283 /* AppDelegate.swift in Sources */,
+				E89D2256226310DC00B0D3F5 /* TrainVC.swift in Sources */,
 				E85F1D9A225F23A700AA2283 /* DiagnoseVC.swift in Sources */,
 				E85F1D9F2260484300AA2283 /* BackButton.swift in Sources */,
+				E89D225E2264604700B0D3F5 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
