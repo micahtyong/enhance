@@ -65,7 +65,7 @@ class DiagnoseVC: UIViewController {
         let enterNameVC = EnterNameVC()
         enterNameVC.hero.isEnabled = true
         enterNameVC.isNewUser(true)
-        enterNameVC.hero.modalAnimationType = .selectBy(presenting: .zoom, dismissing: .zoomOut)
+        enterNameVC.hero.modalAnimationType = .selectBy(presenting: .fade, dismissing: .zoomOut)
         self.present(enterNameVC, animated: true, completion: nil)
     }
     

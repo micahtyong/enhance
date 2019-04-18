@@ -49,7 +49,7 @@ class EnterNameVC: UIViewController {
         sender.pulse()
         let thanksVC = WelcomeToEnhanceVC()
         thanksVC.hero.isEnabled = true
-        thanksVC.hero.modalAnimationType = .selectBy(presenting: .zoom, dismissing: .zoomOut)
+        thanksVC.hero.modalAnimationType = .selectBy(presenting: .fade, dismissing: .zoomOut)
         if let name = enterName.textField.text, !name.isEmpty {
             thanksVC.setName(to: name)
             thanksVC.isNewUser(newUserStatus)

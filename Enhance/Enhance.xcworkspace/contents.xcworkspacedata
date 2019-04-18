@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/micahtyong/Desktop/iOS/Projects/EH1/Enhance/Enhance/ViewControllers/TrainingVC.swift">
+   </FileRef>
+   <FileRef
       location = "group:Enhance.xcodeproj">
    </FileRef>
    <FileRef

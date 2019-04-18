@@ -14,8 +14,10 @@ class WelcomeToEnhanceVC: UIViewController {
     
     var firstTime: Bool = false
     var name : String = "X"
-    
     let deviceID : String = UIDevice.current.identifierForVendor?.uuidString ?? "No device available"
+    var timer = Timer()
+    
+    let ref : DatabaseReference! = Database.database().reference()
     
     let beginTraining = CustomLongButton()
     let thanksLabel = UILabel()
@@ -28,9 +30,14 @@ class WelcomeToEnhanceVC: UIViewController {
     }
     
     @objc func toMain(_ sender : CustomLongButton) {
+        timer.invalidate()
         sender.pulse()
         let user = User(name: name, deviceID: deviceID)
-        
+        self.ref.child("Users").child(deviceID).setValue(["Name" : name])
+        let trainVC = TrainingVC()
+        trainVC.hero.isEnabled = true
+        trainVC.hero.modalAnimationType = .selectBy(presenting: .zoom, dismissing: .zoomOut)
+        self.present(trainVC, animated: true, completion: nil)
     }
     
     func setupUI() {

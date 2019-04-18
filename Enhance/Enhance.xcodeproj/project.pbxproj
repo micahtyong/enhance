@@ -21,6 +21,14 @@
 		E89D2256226310DC00B0D3F5 /* TrainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D2255226310DC00B0D3F5 /* TrainVC.swift */; };
 		E89D225C2263134800B0D3F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E89D225B2263134800B0D3F5 /* GoogleService-Info.plist */; };
 		E89D225E2264604700B0D3F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D225D2264604700B0D3F5 /* User.swift */; };
+		E89D22642264699F00B0D3F5 /* TrainingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D22632264699F00B0D3F5 /* TrainingCell.swift */; };
+		E89D22662266995F00B0D3F5 /* CoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D22652266995F00B0D3F5 /* CoreButton.swift */; };
+		E89D22882268138900B0D3F5 /* ScratchWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D22872268138900B0D3F5 /* ScratchWork.swift */; };
+		E89D228A2268227300B0D3F5 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D22892268227300B0D3F5 /* CustomView.swift */; };
+		E89D228C226822C900B0D3F5 /* scrollViewDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D228B226822C900B0D3F5 /* scrollViewDataStruct.swift */; };
+		E89D228E2268231A00B0D3F5 /* Engage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D228D2268231A00B0D3F5 /* Engage.swift */; };
+		E89D229322682AE500B0D3F5 /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D229222682AE500B0D3F5 /* TrainingVC.swift */; };
+		E89D229522682D5C00B0D3F5 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D229422682D5C00B0D3F5 /* Activity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +50,14 @@
 		E89D2255226310DC00B0D3F5 /* TrainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainVC.swift; sourceTree = "<group>"; };
 		E89D225B2263134800B0D3F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E89D225D2264604700B0D3F5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E89D22632264699F00B0D3F5 /* TrainingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCell.swift; sourceTree = "<group>"; };
+		E89D22652266995F00B0D3F5 /* CoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreButton.swift; sourceTree = "<group>"; };
+		E89D22872268138900B0D3F5 /* ScratchWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchWork.swift; sourceTree = "<group>"; };
+		E89D22892268227300B0D3F5 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		E89D228B226822C900B0D3F5 /* scrollViewDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scrollViewDataStruct.swift; sourceTree = "<group>"; };
+		E89D228D2268231A00B0D3F5 /* Engage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engage.swift; sourceTree = "<group>"; };
+		E89D229222682AE500B0D3F5 /* TrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TrainingVC.swift; path = /Users/micahtyong/Desktop/iOS/Projects/EH1/Enhance/Enhance/ViewControllers/TrainingVC.swift; sourceTree = "<absolute>"; };
+		E89D229422682D5C00B0D3F5 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +101,10 @@
 		E85F1D83225EFEAB00AA2283 /* Enhance */ = {
 			isa = PBXGroup;
 			children = (
+				E89D22622264697B00B0D3F5 /* Cells */,
 				E85F1D9D2260483300AA2283 /* Models */,
 				E85F1D96225EFF7A00AA2283 /* ViewControllers */,
+				E89D229122682ABD00B0D3F5 /* Scratch */,
 				E85F1D84225EFEAB00AA2283 /* AppDelegate.swift */,
 				E85F1D8B225EFEAD00AA2283 /* Assets.xcassets */,
 				E85F1D90225EFEAD00AA2283 /* Info.plist */,
@@ -102,7 +120,7 @@
 				E85F1D99225F23A700AA2283 /* DiagnoseVC.swift */,
 				E85F1D9B226038CC00AA2283 /* EnterNameVC.swift */,
 				E89D22532263060C00B0D3F5 /* WelcomeToEnhanceVC.swift */,
-				E89D2255226310DC00B0D3F5 /* TrainVC.swift */,
+				E89D229222682AE500B0D3F5 /* TrainingVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -110,13 +128,51 @@
 		E85F1D9D2260483300AA2283 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E85F1D9E2260484300AA2283 /* BackButton.swift */,
-				E89D224D2262F47A00B0D3F5 /* CustomTextField.swift */,
-				E89D224F2262FC2700B0D3F5 /* CustomMedButton.swift */,
-				E89D22512262FC6600B0D3F5 /* CustomLongButton.swift */,
+				E89D228F2268247900B0D3F5 /* Buttons */,
+				E89D22902268249E00B0D3F5 /* Views */,
+				E89D228D2268231A00B0D3F5 /* Engage.swift */,
 				E89D225D2264604700B0D3F5 /* User.swift */,
+				E89D228B226822C900B0D3F5 /* scrollViewDataStruct.swift */,
+				E89D229422682D5C00B0D3F5 /* Activity.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E89D22622264697B00B0D3F5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E89D22632264699F00B0D3F5 /* TrainingCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E89D228F2268247900B0D3F5 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				E85F1D9E2260484300AA2283 /* BackButton.swift */,
+				E89D224F2262FC2700B0D3F5 /* CustomMedButton.swift */,
+				E89D22512262FC6600B0D3F5 /* CustomLongButton.swift */,
+				E89D22652266995F00B0D3F5 /* CoreButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		E89D22902268249E00B0D3F5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E89D224D2262F47A00B0D3F5 /* CustomTextField.swift */,
+				E89D22892268227300B0D3F5 /* CustomView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E89D229122682ABD00B0D3F5 /* Scratch */ = {
+			isa = PBXGroup;
+			children = (
+				E89D2255226310DC00B0D3F5 /* TrainVC.swift */,
+				E89D22872268138900B0D3F5 /* ScratchWork.swift */,
+			);
+			path = Scratch;
 			sourceTree = "<group>";
 		};
 		EC811920E2BCF89C4B3DDAE1 /* Pods */ = {
@@ -255,17 +311,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E89D228E2268231A00B0D3F5 /* Engage.swift in Sources */,
+				E89D228A2268227300B0D3F5 /* CustomView.swift in Sources */,
 				E89D22522262FC6600B0D3F5 /* CustomLongButton.swift in Sources */,
 				E85F1D9C226038CC00AA2283 /* EnterNameVC.swift in Sources */,
 				E85F1D98225EFFCC00AA2283 /* LandingPageVC.swift in Sources */,
 				E89D224E2262F47A00B0D3F5 /* CustomTextField.swift in Sources */,
+				E89D22662266995F00B0D3F5 /* CoreButton.swift in Sources */,
 				E89D22502262FC2700B0D3F5 /* CustomMedButton.swift in Sources */,
+				E89D229322682AE500B0D3F5 /* TrainingVC.swift in Sources */,
+				E89D229522682D5C00B0D3F5 /* Activity.swift in Sources */,
 				E89D22542263060C00B0D3F5 /* WelcomeToEnhanceVC.swift in Sources */,
 				E85F1D85225EFEAB00AA2283 /* AppDelegate.swift in Sources */,
 				E89D2256226310DC00B0D3F5 /* TrainVC.swift in Sources */,
 				E85F1D9A225F23A700AA2283 /* DiagnoseVC.swift in Sources */,
+				E89D22642264699F00B0D3F5 /* TrainingCell.swift in Sources */,
 				E85F1D9F2260484300AA2283 /* BackButton.swift in Sources */,
 				E89D225E2264604700B0D3F5 /* User.swift in Sources */,
+				E89D228C226822C900B0D3F5 /* scrollViewDataStruct.swift in Sources */,
+				E89D22882268138900B0D3F5 /* ScratchWork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
