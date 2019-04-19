@@ -29,6 +29,11 @@
 		E89D228E2268231A00B0D3F5 /* Engage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D228D2268231A00B0D3F5 /* Engage.swift */; };
 		E89D229322682AE500B0D3F5 /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D229222682AE500B0D3F5 /* TrainingVC.swift */; };
 		E89D229522682D5C00B0D3F5 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D229422682D5C00B0D3F5 /* Activity.swift */; };
+		E8D3AF6D22693FB10045C87A /* PushupMLVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3AF6C22693FB10045C87A /* PushupMLVC.swift */; };
+		E8D3AF7322694A580045C87A /* TabsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3AF7222694A580045C87A /* TabsVC.swift */; };
+		E8D3AF7A22694B3D0045C87A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3AF7922694B3D0045C87A /* ProfileVC.swift */; };
+		E8D3AF7D226969D90045C87A /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E8D3AF7C226969D90045C87A /* SqueezeNet.mlmodel */; };
+		E8D3AF7F22696BB10045C87A /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E8D3AF7E22696BB10045C87A /* Resnet50.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +63,11 @@
 		E89D228D2268231A00B0D3F5 /* Engage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engage.swift; sourceTree = "<group>"; };
 		E89D229222682AE500B0D3F5 /* TrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TrainingVC.swift; path = /Users/micahtyong/Desktop/iOS/Projects/EH1/Enhance/Enhance/ViewControllers/TrainingVC.swift; sourceTree = "<absolute>"; };
 		E89D229422682D5C00B0D3F5 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		E8D3AF6C22693FB10045C87A /* PushupMLVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushupMLVC.swift; sourceTree = "<group>"; };
+		E8D3AF7222694A580045C87A /* TabsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsVC.swift; sourceTree = "<group>"; };
+		E8D3AF7922694B3D0045C87A /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		E8D3AF7C226969D90045C87A /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
+		E8D3AF7E22696BB10045C87A /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,7 @@
 		E85F1D83225EFEAB00AA2283 /* Enhance */ = {
 			isa = PBXGroup;
 			children = (
+				E867E56B22697B7C0073E8A0 /* ML */,
 				E89D22622264697B00B0D3F5 /* Cells */,
 				E85F1D9D2260483300AA2283 /* Models */,
 				E85F1D96225EFF7A00AA2283 /* ViewControllers */,
@@ -116,11 +127,8 @@
 		E85F1D96225EFF7A00AA2283 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E85F1D97225EFFCC00AA2283 /* LandingPageVC.swift */,
-				E85F1D99225F23A700AA2283 /* DiagnoseVC.swift */,
-				E85F1D9B226038CC00AA2283 /* EnterNameVC.swift */,
-				E89D22532263060C00B0D3F5 /* WelcomeToEnhanceVC.swift */,
-				E89D229222682AE500B0D3F5 /* TrainingVC.swift */,
+				E867E56C22697BA00073E8A0 /* Welcome */,
+				E867E56D22697BB90073E8A0 /* Main */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -132,10 +140,40 @@
 				E89D22902268249E00B0D3F5 /* Views */,
 				E89D228D2268231A00B0D3F5 /* Engage.swift */,
 				E89D225D2264604700B0D3F5 /* User.swift */,
-				E89D228B226822C900B0D3F5 /* scrollViewDataStruct.swift */,
 				E89D229422682D5C00B0D3F5 /* Activity.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E867E56B22697B7C0073E8A0 /* ML */ = {
+			isa = PBXGroup;
+			children = (
+				E8D3AF7C226969D90045C87A /* SqueezeNet.mlmodel */,
+				E8D3AF7E22696BB10045C87A /* Resnet50.mlmodel */,
+			);
+			path = ML;
+			sourceTree = "<group>";
+		};
+		E867E56C22697BA00073E8A0 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				E85F1D97225EFFCC00AA2283 /* LandingPageVC.swift */,
+				E85F1D99225F23A700AA2283 /* DiagnoseVC.swift */,
+				E85F1D9B226038CC00AA2283 /* EnterNameVC.swift */,
+				E89D22532263060C00B0D3F5 /* WelcomeToEnhanceVC.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		E867E56D22697BB90073E8A0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E89D229222682AE500B0D3F5 /* TrainingVC.swift */,
+				E8D3AF6C22693FB10045C87A /* PushupMLVC.swift */,
+				E8D3AF7222694A580045C87A /* TabsVC.swift */,
+				E8D3AF7922694B3D0045C87A /* ProfileVC.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		E89D22622264697B00B0D3F5 /* Cells */ = {
@@ -169,6 +207,7 @@
 		E89D229122682ABD00B0D3F5 /* Scratch */ = {
 			isa = PBXGroup;
 			children = (
+				E89D228B226822C900B0D3F5 /* scrollViewDataStruct.swift */,
 				E89D2255226310DC00B0D3F5 /* TrainVC.swift */,
 				E89D22872268138900B0D3F5 /* ScratchWork.swift */,
 			);
@@ -313,7 +352,9 @@
 			files = (
 				E89D228E2268231A00B0D3F5 /* Engage.swift in Sources */,
 				E89D228A2268227300B0D3F5 /* CustomView.swift in Sources */,
+				E8D3AF6D22693FB10045C87A /* PushupMLVC.swift in Sources */,
 				E89D22522262FC6600B0D3F5 /* CustomLongButton.swift in Sources */,
+				E8D3AF7322694A580045C87A /* TabsVC.swift in Sources */,
 				E85F1D9C226038CC00AA2283 /* EnterNameVC.swift in Sources */,
 				E85F1D98225EFFCC00AA2283 /* LandingPageVC.swift in Sources */,
 				E89D224E2262F47A00B0D3F5 /* CustomTextField.swift in Sources */,
@@ -329,7 +370,10 @@
 				E85F1D9F2260484300AA2283 /* BackButton.swift in Sources */,
 				E89D225E2264604700B0D3F5 /* User.swift in Sources */,
 				E89D228C226822C900B0D3F5 /* scrollViewDataStruct.swift in Sources */,
+				E8D3AF7A22694B3D0045C87A /* ProfileVC.swift in Sources */,
 				E89D22882268138900B0D3F5 /* ScratchWork.swift in Sources */,
+				E8D3AF7F22696BB10045C87A /* Resnet50.mlmodel in Sources */,
+				E8D3AF7D226969D90045C87A /* SqueezeNet.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

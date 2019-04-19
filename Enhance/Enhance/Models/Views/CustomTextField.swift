@@ -31,6 +31,7 @@ class CustomTextField: UIView {
     
     func setupUI() {
         self.frame = CGRect(x: 0, y: 0, width: 300, height: 60)
+        self.autoresizingMask = [.flexibleHeight, .flexibleWidth, .flexibleTopMargin, .flexibleRightMargin, .flexibleLeftMargin, .flexibleBottomMargin]
         setupTextField()
         setupBlackBar()
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -46,11 +47,11 @@ class CustomTextField: UIView {
         textField.textAlignment = .center
         
         textField.placeholder = placeHolder
-//        textField.autocorrectionType = UITextAutocorrectionType.no
+        textField.contentScaleFactor = 0.5
+        textField.adjustsFontSizeToFitWidth = true
         textField.keyboardType = UIKeyboardType.default
         textField.keyboardAppearance = UIKeyboardAppearance.dark
         textField.returnKeyType = UIReturnKeyType.done
-//        textField.clearButtonMode = UITextField.ViewMode.always
         textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         
         self.addSubview(textField)

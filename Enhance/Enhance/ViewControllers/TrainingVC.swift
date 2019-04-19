@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Hero
 
 class TrainingVC: UIViewController {
     
@@ -35,7 +36,7 @@ class TrainingVC: UIViewController {
     func setupActivities() {
         activityData = [Activity.init(title: "Strength", image: UIImage.init(named: "dumbell"), description: "Let's do some pushups!"),
                         Activity.init(title: "Stamina", image: UIImage.init(named: "thunder"), description: "How many steps in 10 minutes?"),
-                        Activity.init(title: "Core", image: UIImage.init(named: "pushupgirl"), description: "Let's work on form and abs")]
+                        Activity.init(title: "Core", image: UIImage.init(named: "pushupgirl"), description: "Let's work on form and abs!")]
     }
     
     func setupLine() {
@@ -44,10 +45,12 @@ class TrainingVC: UIViewController {
         
         self.view.addSubview(lineup)
         
+        let trailingConstant = self.screenSize().size.width * 0.265 * -1
+        
         lineup.translatesAutoresizingMaskIntoConstraints = false
         lineup.heightAnchor.constraint(equalTo: self.view.heightAnchor).isActive = true
         lineup.widthAnchor.constraint(equalToConstant: 1).isActive = true
-        lineup.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -100).isActive = true
+        lineup.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: trailingConstant).isActive = true
         lineup.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
     }
 
@@ -70,8 +73,8 @@ extension TrainingVC: UITableViewDelegate, UITableViewDataSource {
         self.view.addSubview(tableView)
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        tableView.heightAnchor.constraint(equalTo: view.heightAnchor, constant: -150).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: self.screenSize().size.height * 0.05 * -1).isActive = true
+        tableView.heightAnchor.constraint(equalTo: view.heightAnchor, constant: -10).isActive = true
         tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         tableView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: 0).isActive = true
     }
@@ -85,7 +88,15 @@ extension TrainingVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return cellSpacingHeight
+        let heightConstant : CGFloat = 0.1477
+        let cellSpacingHeight2: CGFloat = self.screenSize().size.height * heightConstant
+        return cellSpacingHeight2
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let heightConstant : CGFloat = 0.125
+        let height: CGFloat = self.screenSize().size.height * heightConstant
+        return height
     }
     
     // Make the background color show through
@@ -98,6 +109,8 @@ extension TrainingVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : TrainingCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! TrainingCell
         cell.setLabels(to: activityData[indexPath.section].title, and: activityData[indexPath.section].description)
+        cell.trainButton.tag = indexPath.section
+        cell.trainButton.addTarget(self, action: #selector(launchCoreML), for: .touchUpInside)
         return cell
     }
     
@@ -114,6 +127,13 @@ extension TrainingVC: UITableViewDelegate, UITableViewDataSource {
             }
         }
         print("You tapped cell number \(indexPath.section).")
+    }
+    
+    @objc func launchCoreML(_ sender : CoreButton) {
+        let vc = PushupMLVC() // will later change / generalize based on vc in the struct
+        vc.hero.isEnabled = true
+        vc.hero.modalAnimationType = .selectBy(presenting: .zoomSlide(direction: .up), dismissing: .zoomOut)
+        self.present(vc, animated: true, completion: nil)
     }
     
 }

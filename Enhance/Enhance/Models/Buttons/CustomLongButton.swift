@@ -41,15 +41,26 @@ class CustomLongButton: UIButton {
     }
     
     func setupButton() {
+        self.autoresizingMask = [.flexibleHeight, .flexibleWidth, .flexibleTopMargin, .flexibleRightMargin, .flexibleLeftMargin, .flexibleBottomMargin]
         self.layer.backgroundColor = customOrange.cgColor
         self.setTitle(text, for: .normal)
         self.setTitleColor(customWhite, for: .normal)
         self.titleLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 16)
+        self.titleLabel?.minimumScaleFactor = 0.5
+        self.titleLabel?.adjustsFontSizeToFitWidth = true
         self.titleLabel?.textAlignment = .center
         self.layer.borderWidth = 1
         self.layer.borderColor = customOrange.cgColor
         
         self.translatesAutoresizingMaskIntoConstraints = false
+        
+//        let logoFactor : CGFloat = 0.8
+//        let heightFactor : CGFloat = 0.0916
+//        let screenWidth = self.screenSize().size.width
+//        let screenHeight = self.screenSize().size.height
+//        let labelConstant = logoFactor * screenWidth
+//        let heightConstant = heightFactor * screenHeight
+        
         self.heightAnchor.constraint(equalToConstant: 50).isActive = true
         self.widthAnchor.constraint(equalToConstant: 280).isActive = true
     }

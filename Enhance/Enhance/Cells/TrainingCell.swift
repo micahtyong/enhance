@@ -51,10 +51,13 @@ class TrainingCell: UITableViewCell {
     }
     
     func setupUI() {
-        self.frame = CGRect(x: 0, y: 0, width: 375, height: 100)
-        self.backgroundColor = UIColor.white
+        self.backgroundColor = UIColor.clear
         self.clipsToBounds = true
-        self.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        let logoFactor : CGFloat = 0.13
+        let screenHeight = self.screenSize().size.height
+        let logoConstant = logoFactor * screenHeight
+        self.frame = CGRect(x: 0, y: 0, width: self.screenSize().size.width, height: logoConstant)
+        self.heightAnchor.constraint(equalToConstant: logoConstant).isActive = true
         setupCellView()
         setupButton()
         setupLabels()
@@ -62,7 +65,7 @@ class TrainingCell: UITableViewCell {
     }
     
     func setupCellView() {
-        cellView.backgroundColor = customWhite
+        cellView.backgroundColor = .clear
         
         self.addSubview(cellView)
         
@@ -91,15 +94,18 @@ class TrainingCell: UITableViewCell {
         
         headerView.translatesAutoresizingMaskIntoConstraints = false
         headerView.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 50).isActive = true
-        headerView.centerYAnchor.constraint(equalTo: cellView.centerYAnchor, constant: 0).isActive = true
+        headerView.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 0).isActive = true
+//        cellView.frame.size.height * 0.1
         headerView.trailingAnchor.constraint(equalTo: trainButton.leadingAnchor, constant: 0).isActive = true
-        headerView.heightAnchor.constraint(equalTo: cellView.heightAnchor, multiplier: 1, constant: 0).isActive = true
+        headerView.heightAnchor.constraint(equalTo: cellView.heightAnchor, multiplier: 0.6, constant: 0).isActive = true
     }
     
     func setupDescription() {
         subHeader.backgroundColor = .clear
         subHeader.textColor = UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1)
         subHeader.font = UIFont(name: "HelveticaNeue-Medium", size: 14)
+        subHeader.minimumScaleFactor = 0.5
+        subHeader.adjustsFontSizeToFitWidth = true
         subHeader.numberOfLines = 0
         subHeader.text = descriptionText
         
@@ -108,8 +114,8 @@ class TrainingCell: UITableViewCell {
         subHeader.translatesAutoresizingMaskIntoConstraints = false
         subHeader.widthAnchor.constraint(equalTo: headerView.widthAnchor).isActive = true
         subHeader.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 0).isActive = true
-        subHeader.topAnchor.constraint(equalTo: header.bottomAnchor, constant: 2).isActive = true
-        subHeader.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        subHeader.topAnchor.constraint(equalTo: header.bottomAnchor, constant: 0).isActive = true
+        subHeader.heightAnchor.constraint(equalTo: headerView.heightAnchor, multiplier: 0.30).isActive = true
     }
     
     func setupHeader() {
@@ -117,6 +123,8 @@ class TrainingCell: UITableViewCell {
         header.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         header.font = UIFont(name: "AvenirNext-Regular", size: 30)
         header.text = headerText
+        header.minimumScaleFactor = 0.5
+        header.adjustsFontSizeToFitWidth = true
         header.textAlignment = .left
         
         headerView.addSubview(header)
@@ -125,12 +133,15 @@ class TrainingCell: UITableViewCell {
         header.widthAnchor.constraint(equalTo: headerView.widthAnchor).isActive = true
         header.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 0).isActive = true
         header.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 20).isActive = true
-        header.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        header.heightAnchor.constraint(equalTo: headerView.heightAnchor, multiplier: 0.70).isActive = true
     }
     
 }
 
-//self.textLabel?.text = text
-//self.textLabel?.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-//self.textLabel?.font = UIFont(name: "AvenirNext-Regular", size: 30)
-//self.textLabel?.textAlignment = .left
+extension UITableViewCell {
+    // use .width and .height to access screen width and height size
+    func screenSize() -> CGRect {
+        let screenSize: CGRect = UIScreen.main.bounds
+        return screenSize
+    }
+}

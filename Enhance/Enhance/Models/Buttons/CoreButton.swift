@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Hero
 
 class CoreButton : UIButton {
     
@@ -21,8 +22,13 @@ class CoreButton : UIButton {
         setupButton()
     }
     
+    @objc func launchCoreMLVC(_ sender : CoreButton) {
+        sender.pulse()
+    }
+    
     func igniteButton() {
         self.setImage(UIImage(named: "CoreOrangeBall"), for: .normal)
+        self.pulse()
     }
     
     func extinguishButton() {
@@ -30,12 +36,18 @@ class CoreButton : UIButton {
     }
     
     func setupButton() {
+        self.autoresizingMask = [.flexibleHeight, .flexibleWidth, .flexibleTopMargin, .flexibleRightMargin, .flexibleLeftMargin, .flexibleBottomMargin]
         self.backgroundColor = .clear
         self.setImage(UIImage(named: "CoreGreyBall"), for: .normal)
         self.layer.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        self.addTarget(self, action: #selector(launchCoreMLVC), for: .touchUpInside)
         
-        self.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        self.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        let logoFactor : CGFloat = 0.13
+        let screenHeight = self.screenSize().size.height
+        let logoConstant = logoFactor * screenHeight
+        
+        self.heightAnchor.constraint(equalToConstant: logoConstant).isActive = true
+        self.widthAnchor.constraint(equalToConstant: logoConstant).isActive = true
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     

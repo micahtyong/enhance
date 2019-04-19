@@ -29,6 +29,7 @@ class CustomView: UIView {
     }
     
     func setupUI() {
+        self.autoresizingMask = [.flexibleHeight, .flexibleWidth, .flexibleTopMargin, .flexibleRightMargin, .flexibleLeftMargin, .flexibleBottomMargin]
         setupImageView()
     }
     
