@@ -10,5 +10,7 @@ pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'SkeletonView'
+pod "Counter"
+pod 'PopupDialog', '~> 1.1'
 
 end

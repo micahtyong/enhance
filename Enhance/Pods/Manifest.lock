@@ -1,4 +1,6 @@
 PODS:
+  - Counter (1.1)
+  - DynamicBlurView (3.0.1)
   - Firebase/Auth (5.20.2):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.4.2)
@@ -68,17 +70,23 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - PopupDialog (1.1.0):
+    - DynamicBlurView (~> 3.0.1)
   - SkeletonView (1.4.2)
 
 DEPENDENCIES:
+  - Counter
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
   - Hero
+  - PopupDialog (~> 1.1)
   - SkeletonView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Counter
+    - DynamicBlurView
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -92,9 +100,12 @@ SPEC REPOS:
     - Hero
     - leveldb-library
     - nanopb
+    - PopupDialog
     - SkeletonView
 
 SPEC CHECKSUMS:
+  Counter: b77514cf9b3cc1d70c467011821ff7dd178263ca
+  DynamicBlurView: b1df5415f9bd31897549e5d7077e5ec120a4d636
   Firebase: 0c8cf33f266410c61ab3e2265cfa412200351d9c
   FirebaseAnalytics: ece1aa57a4f43c64d53a648b5a5e05151aae947b
   FirebaseAuth: dd7bbf03a5aee0eafb3a1aee4d2812bd74bac890
@@ -108,8 +119,9 @@ SPEC CHECKSUMS:
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  PopupDialog: 42fb7a0bc4fafdf89fef8b5b2b127a6023f3e1cc
   SkeletonView: c2523c3c8c6510e273e49a3bf364a434744c3914
 
-PODFILE CHECKSUM: 059a2405627b7ebb18fe247b94eb9cac4829252b
+PODFILE CHECKSUM: 7a0b47e4d1848cc93a47399caac2bdd1627f1c0f
 
 COCOAPODS: 1.6.0.beta.2

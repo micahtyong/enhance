@@ -25,6 +25,14 @@ class PlayButton: UIButton {
         sender.pulse()
     }
     
+    func finish() {
+        self.setImage(UIImage(named: "doneButton"), for: .normal)
+    }
+    
+    func originate() {
+        self.setImage(UIImage(named: "playPurple"), for: .normal)
+    }
+    
     func indicateGood() {
         self.pulse()
         self.setImage(UIImage(named: "goodButton"), for: .normal)

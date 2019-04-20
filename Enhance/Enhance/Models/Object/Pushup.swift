@@ -13,7 +13,7 @@ class Pushup {
     var counter : Int = 0
     var max : Int
     var displayText : String
-    let prepare : [String] = ["Ready", "Set", "Go!", "Done!"]
+    let prepare : [String] = ["Ready?", "Set?", "Go!", "Done!"]
     
     init(upTo max: Int) {
         self.counter = 0
@@ -32,6 +32,18 @@ class Pushup {
     
     func isDone() -> Bool {
         return counter > max
+    }
+    
+    func ready() -> String {
+        return prepare[0]
+    }
+    
+    func set() -> String {
+        return prepare[1]
+    }
+    
+    func go() -> String {
+        return prepare[2]
     }
     
 }

@@ -15,6 +15,9 @@ class ActivitySkeleton: UIView {
     var displayLabel : UILabel = UILabel()
     
     let customPurple = UIColor(red: 0.29, green: 0.18, blue: 0.51, alpha: 1).cgColor
+    let customGreen = UIColor(red: 0.12, green: 0.83, blue: 0.1, alpha: 1).cgColor
+    let customRed = UIColor(red: 0.83, green: 0.1, blue: 0.1, alpha: 1).cgColor
+    let customGold = UIColor(red: 0.72, green: 0.65, blue: 0.48, alpha: 1).cgColor
     
     var screenHeight : CGFloat = 0
     var screenWidth : CGFloat = 0
@@ -22,6 +25,26 @@ class ActivitySkeleton: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
+    }
+    
+    func setDone() {
+        borderFrame.layer.borderColor = customGold
+        playButton.finish()
+    }
+    
+    func setGood() {
+        borderFrame.layer.borderColor = customGreen
+        playButton.indicateGood()
+    }
+    
+    func setBad() {
+        borderFrame.layer.borderColor = customRed
+        playButton.indicateBad()
+    }
+    
+    func setOriginal() {
+        borderFrame.layer.borderColor = customPurple
+        playButton.indicateBad()
     }
     
     func setupUI() {
@@ -38,7 +61,36 @@ class ActivitySkeleton: UIView {
         self.widthAnchor.constraint(equalToConstant: screenWidth).isActive = true
     }
     
+    func setCounterText(to text: String) {
+        displayLabel.text = text
+    }
+    
+    func bounceCounter() {
+        displayLabel.bounce()
+    }
+    
+    func setupCounterLabel() {
+        displayLabel.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        displayLabel.backgroundColor = .clear
+        displayLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        displayLabel.font = UIFont(name: "AvenirNext-Regular", size: 100)
+        displayLabel.minimumScaleFactor = 0.5
+        displayLabel.adjustsFontSizeToFitWidth = true
+        displayLabel.textAlignment = .center
+        displayLabel.text = ""
+        
+        self.addSubview(displayLabel)
+        
+        displayLabel.translatesAutoresizingMaskIntoConstraints = false
+        displayLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        displayLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: screenHeight * 0.25 * 1).isActive = true
+        displayLabel.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.25).isActive = true
+        displayLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5).isActive = true
+        displayLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+    }
+    
     func setupButton() {
+        
         self.addSubview(playButton)
         
         playButton.translatesAutoresizingMaskIntoConstraints = false
@@ -65,4 +117,17 @@ class ActivitySkeleton: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+extension UILabel {
+    @objc func bounce() {
+        let pulse = CASpringAnimation(keyPath: "transform.scale")
+        pulse.duration = 0.8
+        pulse.fromValue = 0.9
+        pulse.toValue = 1.0
+        pulse.initialVelocity = 0.9
+        pulse.damping = 1.0
+        
+        layer.add(pulse, forKey: nil)
+    }
 }
