@@ -54,7 +54,7 @@ class TrainingCell: UITableViewCell {
         self.backgroundColor = UIColor.clear
         self.clipsToBounds = true
         let logoFactor : CGFloat = 0.13
-        let screenHeight = self.screenSize().size.height
+        let screenHeight = self.screen().size.height
         let logoConstant = logoFactor * screenHeight
         self.frame = CGRect(x: 0, y: 0, width: self.screenSize().size.width, height: logoConstant)
         self.heightAnchor.constraint(equalToConstant: logoConstant).isActive = true
@@ -136,12 +136,9 @@ class TrainingCell: UITableViewCell {
         header.heightAnchor.constraint(equalTo: headerView.heightAnchor, multiplier: 0.70).isActive = true
     }
     
-}
-
-extension UITableViewCell {
-    // use .width and .height to access screen width and height size
-    func screenSize() -> CGRect {
+    func screen() -> CGRect {
         let screenSize: CGRect = UIScreen.main.bounds
         return screenSize
     }
+    
 }

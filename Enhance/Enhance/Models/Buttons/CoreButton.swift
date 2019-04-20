@@ -35,6 +35,11 @@ class CoreButton : UIButton {
         self.setImage(UIImage(named: "CoreGreyBall"), for: .normal)
     }
     
+    func screen() -> CGRect {
+        let screenSize: CGRect = UIScreen.main.bounds
+        return screenSize
+    }
+    
     func setupButton() {
         self.autoresizingMask = [.flexibleHeight, .flexibleWidth, .flexibleTopMargin, .flexibleRightMargin, .flexibleLeftMargin, .flexibleBottomMargin]
         self.backgroundColor = .clear
@@ -43,13 +48,12 @@ class CoreButton : UIButton {
         self.addTarget(self, action: #selector(launchCoreMLVC), for: .touchUpInside)
         
         let logoFactor : CGFloat = 0.13
-        let screenHeight = self.screenSize().size.height
+        let screenHeight = self.screen().size.height
         let logoConstant = logoFactor * screenHeight
         
         self.heightAnchor.constraint(equalToConstant: logoConstant).isActive = true
         self.widthAnchor.constraint(equalToConstant: logoConstant).isActive = true
         self.translatesAutoresizingMaskIntoConstraints = false
     }
-    
     
 }

@@ -14,6 +14,9 @@
 		E85F1D9A225F23A700AA2283 /* DiagnoseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F1D99225F23A700AA2283 /* DiagnoseVC.swift */; };
 		E85F1D9C226038CC00AA2283 /* EnterNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F1D9B226038CC00AA2283 /* EnterNameVC.swift */; };
 		E85F1D9F2260484300AA2283 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F1D9E2260484300AA2283 /* BackButton.swift */; };
+		E867E570226A978E0073E8A0 /* Pushup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E867E56F226A978E0073E8A0 /* Pushup.swift */; };
+		E867E572226A9BAE0073E8A0 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E867E571226A9BAE0073E8A0 /* PlayButton.swift */; };
+		E867E574226A9D630073E8A0 /* ActivitySkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E867E573226A9D630073E8A0 /* ActivitySkeleton.swift */; };
 		E89D224E2262F47A00B0D3F5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D224D2262F47A00B0D3F5 /* CustomTextField.swift */; };
 		E89D22502262FC2700B0D3F5 /* CustomMedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D224F2262FC2700B0D3F5 /* CustomMedButton.swift */; };
 		E89D22522262FC6600B0D3F5 /* CustomLongButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D22512262FC6600B0D3F5 /* CustomLongButton.swift */; };
@@ -48,6 +51,9 @@
 		E85F1D99225F23A700AA2283 /* DiagnoseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnoseVC.swift; sourceTree = "<group>"; };
 		E85F1D9B226038CC00AA2283 /* EnterNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNameVC.swift; sourceTree = "<group>"; };
 		E85F1D9E2260484300AA2283 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		E867E56F226A978E0073E8A0 /* Pushup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pushup.swift; sourceTree = "<group>"; };
+		E867E571226A9BAE0073E8A0 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
+		E867E573226A9D630073E8A0 /* ActivitySkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySkeleton.swift; sourceTree = "<group>"; };
 		E89D224D2262F47A00B0D3F5 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E89D224F2262FC2700B0D3F5 /* CustomMedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMedButton.swift; sourceTree = "<group>"; };
 		E89D22512262FC6600B0D3F5 /* CustomLongButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLongButton.swift; sourceTree = "<group>"; };
@@ -136,11 +142,9 @@
 		E85F1D9D2260483300AA2283 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E867E56E226A96990073E8A0 /* Object */,
 				E89D228F2268247900B0D3F5 /* Buttons */,
 				E89D22902268249E00B0D3F5 /* Views */,
-				E89D228D2268231A00B0D3F5 /* Engage.swift */,
-				E89D225D2264604700B0D3F5 /* User.swift */,
-				E89D229422682D5C00B0D3F5 /* Activity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,6 +180,17 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		E867E56E226A96990073E8A0 /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				E89D228D2268231A00B0D3F5 /* Engage.swift */,
+				E89D225D2264604700B0D3F5 /* User.swift */,
+				E89D229422682D5C00B0D3F5 /* Activity.swift */,
+				E867E56F226A978E0073E8A0 /* Pushup.swift */,
+			);
+			path = Object;
+			sourceTree = "<group>";
+		};
 		E89D22622264697B00B0D3F5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +206,7 @@
 				E89D224F2262FC2700B0D3F5 /* CustomMedButton.swift */,
 				E89D22512262FC6600B0D3F5 /* CustomLongButton.swift */,
 				E89D22652266995F00B0D3F5 /* CoreButton.swift */,
+				E867E571226A9BAE0073E8A0 /* PlayButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -198,6 +214,7 @@
 		E89D22902268249E00B0D3F5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E867E573226A9D630073E8A0 /* ActivitySkeleton.swift */,
 				E89D224D2262F47A00B0D3F5 /* CustomTextField.swift */,
 				E89D22892268227300B0D3F5 /* CustomView.swift */,
 			);
@@ -303,6 +320,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -313,6 +331,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -352,6 +371,7 @@
 			files = (
 				E89D228E2268231A00B0D3F5 /* Engage.swift in Sources */,
 				E89D228A2268227300B0D3F5 /* CustomView.swift in Sources */,
+				E867E574226A9D630073E8A0 /* ActivitySkeleton.swift in Sources */,
 				E8D3AF6D22693FB10045C87A /* PushupMLVC.swift in Sources */,
 				E89D22522262FC6600B0D3F5 /* CustomLongButton.swift in Sources */,
 				E8D3AF7322694A580045C87A /* TabsVC.swift in Sources */,
@@ -367,7 +387,9 @@
 				E89D2256226310DC00B0D3F5 /* TrainVC.swift in Sources */,
 				E85F1D9A225F23A700AA2283 /* DiagnoseVC.swift in Sources */,
 				E89D22642264699F00B0D3F5 /* TrainingCell.swift in Sources */,
+				E867E570226A978E0073E8A0 /* Pushup.swift in Sources */,
 				E85F1D9F2260484300AA2283 /* BackButton.swift in Sources */,
+				E867E572226A9BAE0073E8A0 /* PlayButton.swift in Sources */,
 				E89D225E2264604700B0D3F5 /* User.swift in Sources */,
 				E89D228C226822C900B0D3F5 /* scrollViewDataStruct.swift in Sources */,
 				E8D3AF7A22694B3D0045C87A /* ProfileVC.swift in Sources */,

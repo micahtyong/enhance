@@ -12,24 +12,17 @@ import Vision
 
 class PushupMLVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
-    let identifierLabel: UILabel = {
-        let label = UILabel()
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    var activity : Pushup = Pushup(upTo: 10)
+    var skeleton : ActivitySkeleton = ActivitySkeleton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("ML Model Initiate")
         setupUI()
-        setupModel()
+//        setupModel()
     }
     
     func setupModel() {
         let captureSession = AVCaptureSession()
-//        captureSession.sessionPreset = .photo
         
         guard let captureDevice = defaultCamera() else { return }
         guard let input = try? AVCaptureDeviceInput(device: captureDevice) else { return }
@@ -44,12 +37,9 @@ class PushupMLVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate
         let dataOutput = AVCaptureVideoDataOutput()
         dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
         captureSession.addOutput(dataOutput)
-        
-        setupIdentifierConfidenceLabel()
     }
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-//        print("Frame detected: ", Date())
         
         guard let pixelBuffer : CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
@@ -61,34 +51,31 @@ class PushupMLVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate
             print(firstObservation.identifier, firstObservation.confidence)
             
             DispatchQueue.main.async {
-                self.identifierLabel.text = "\(firstObservation.identifier) \(firstObservation.confidence * 100)"
+//                self.identifierLabel.text = "\(firstObservation.identifier) \(firstObservation.confidence * 100)"
             }
         }
         try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
     }
     
-    fileprivate func setupIdentifierConfidenceLabel() {
-        
-        view.addSubview(identifierLabel)
-        identifierLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -32).isActive = true
-        identifierLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        identifierLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        identifierLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-    }
-    
     func setupUI() {
         view.backgroundColor = .clear
+        setupSkeleton()
+    }
+    
+    func setupSkeleton() {
+        self.view.addSubview(skeleton)
+        
+        skeleton.translatesAutoresizingMaskIntoConstraints = false
+        skeleton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        skeleton.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        skeleton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        skeleton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
     
     func defaultCamera() -> AVCaptureDevice? {
-        if let device = AVCaptureDevice.default(.builtInDualCamera,
-                                                for: AVMediaType.video,
-                                                position: .front) {
+        if let device = AVCaptureDevice.default(.builtInDualCamera, for: AVMediaType.video, position: .front) {
             return device
-        } else if let device = AVCaptureDevice.default(.builtInWideAngleCamera,
-                                                       for: AVMediaType.video,
-                                                       position: .front) {
+        } else if let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .front) {
             return device
         } else {
             return nil

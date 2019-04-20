@@ -8,6 +8,7 @@
 
 import UIKit
 import Hero
+import SkeletonView
 
 class LandingPageVC: UIViewController {
     
@@ -39,6 +40,7 @@ class LandingPageVC: UIViewController {
         beginButton.titleLabel!.minimumScaleFactor = 0.5
         beginButton.titleLabel!.adjustsFontSizeToFitWidth = true
         beginButton.addTarget(self, action: #selector(beginButtonTapped), for: .touchUpInside)
+        beginButton.isSkeletonable = true
         
         beginButton.clipsToBounds = true
         
@@ -67,6 +69,7 @@ class LandingPageVC: UIViewController {
         let logo = UIImage(named: "tempLogo")
         enhanceLogo = UIImageView(image: logo)
         enhanceLogo.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        enhanceLogo.isSkeletonable = true
         
         self.view.addSubview(enhanceLogo)
         
@@ -89,6 +92,7 @@ class LandingPageVC: UIViewController {
         enhanceLabel.adjustsFontSizeToFitWidth = true
         enhanceLabel.textAlignment = .center
         enhanceLabel.textColor = .black
+        enhanceLabel.isSkeletonable = true
         
         view.addSubview(enhanceLabel)
         
@@ -111,6 +115,7 @@ class LandingPageVC: UIViewController {
         descriptionLabel.adjustsFontSizeToFitWidth = true
         descriptionLabel.textAlignment = .center
         descriptionLabel.textColor = UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1)
+        descriptionLabel.isSkeletonable = true
         
         self.view.addSubview(descriptionLabel)
         
@@ -142,7 +147,9 @@ extension UIButton {
         
         layer.add(pulse, forKey: nil)
     }
-    
+}
+
+extension UIView {
     func screenSize() -> CGRect {
         let screenSize: CGRect = UIScreen.main.bounds
         return screenSize
