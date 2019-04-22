@@ -13,4 +13,5 @@ struct Activity {
     let title : String!
     let image : UIImage!
     let description : String!
+    let activity : UIViewController!
 }

@@ -61,7 +61,6 @@ class TrainingCell: UITableViewCell {
         setupCellView()
         setupButton()
         setupLabels()
-        
     }
     
     func setupCellView() {

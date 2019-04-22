@@ -26,11 +26,11 @@ class PlayButton: UIButton {
     }
     
     func finish() {
-        self.setImage(UIImage(named: "doneButton"), for: .normal)
+        self.setImage(UIImage(named: "doneEnhanceTheme"), for: .normal)
     }
     
     func originate() {
-        self.setImage(UIImage(named: "playPurple"), for: .normal)
+        self.setImage(UIImage(named: "playEnhanceTheme"), for: .normal)
     }
     
     func indicateGood() {
@@ -51,7 +51,7 @@ class PlayButton: UIButton {
     func setupButton() {
         self.autoresizingMask = [.flexibleHeight, .flexibleWidth, .flexibleTopMargin, .flexibleRightMargin, .flexibleLeftMargin, .flexibleBottomMargin]
         self.backgroundColor = .clear
-        self.setImage(UIImage(named: "playPurple"), for: .normal)
+        self.setImage(UIImage(named: "playEnhanceTheme"), for: .normal)
         self.layer.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         self.addTarget(self, action: #selector(play), for: .touchUpInside)
         

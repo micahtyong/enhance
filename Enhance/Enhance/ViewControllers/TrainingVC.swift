@@ -18,6 +18,7 @@ class TrainingVC: UIViewController {
     
     var tableView: UITableView = UITableView()
     var activityData = [Activity]()
+    var currActivity: UIViewController = StepsVC()
     
     let lineup : UILabel = UILabel()
     
@@ -34,9 +35,9 @@ class TrainingVC: UIViewController {
     }
     
     func setupActivities() {
-        activityData = [Activity.init(title: "Strength", image: UIImage.init(named: "dumbell"), description: "Let's do some pushups!"),
-                        Activity.init(title: "Stamina", image: UIImage.init(named: "thunder"), description: "How many steps in 10 minutes?"),
-                        Activity.init(title: "Core", image: UIImage.init(named: "pushupgirl"), description: "Let's work on form and abs!")]
+        activityData = [Activity.init(title: "Strength", image: UIImage.init(named: "dumbell"), description: "Let's do some pushups!", activity: PushupMLVC()),
+                        Activity.init(title: "Stamina", image: UIImage.init(named: "thunder"), description: "How many steps in 10 minutes?", activity: StepsVC()),
+                        Activity.init(title: "Core", image: UIImage.init(named: "pushupgirl"), description: "Let's work on form and abs!", activity: SitupMLVC())]
     }
     
     func setupLine() {
@@ -122,6 +123,7 @@ extension TrainingVC: UITableViewDelegate, UITableViewDataSource {
         for cell in cells {
             if cell.isEqual(currentCell) {
                 cell.igniteCore()
+                currActivity = activityData[indexPath.section].activity
             } else {
                 cell.extinguishCore()
             }
@@ -130,7 +132,7 @@ extension TrainingVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func launchCoreML(_ sender : CoreButton) {
-        let vc = PushupMLVC() // will later change / generalize based on vc in the struct
+        let vc = currActivity
         vc.hero.isEnabled = true
         vc.hero.modalAnimationType = .selectBy(presenting: .zoomSlide(direction: .up), dismissing: .zoomOut)
         self.present(vc, animated: true, completion: nil)

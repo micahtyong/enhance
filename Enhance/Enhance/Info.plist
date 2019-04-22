@@ -41,5 +41,7 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>Click &quot;OK&quot; to continue</string>
+	<key>NSMotionUsageDescription</key>
+	<string>In order to count steps I need an access to your pedometer</string>
 </dict>
 </plist>

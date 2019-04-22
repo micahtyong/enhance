@@ -18,6 +18,7 @@ class ActivitySkeleton: UIView {
     let customGreen = UIColor(red: 0.12, green: 0.83, blue: 0.1, alpha: 1).cgColor
     let customRed = UIColor(red: 0.83, green: 0.1, blue: 0.1, alpha: 1).cgColor
     let customGold = UIColor(red: 0.72, green: 0.65, blue: 0.48, alpha: 1).cgColor
+    let customOrange = UIColor(red: 0.98, green: 0.65, blue: 0.01, alpha: 1).cgColor
     
     var screenHeight : CGFloat = 0
     var screenWidth : CGFloat = 0
@@ -28,7 +29,8 @@ class ActivitySkeleton: UIView {
     }
     
     func setDone() {
-        borderFrame.layer.borderColor = customGold
+        borderFrame.layer.borderColor = customOrange
+        displayLabel.text = ""
         playButton.finish()
     }
     
@@ -43,7 +45,7 @@ class ActivitySkeleton: UIView {
     }
     
     func setOriginal() {
-        borderFrame.layer.borderColor = customPurple
+        borderFrame.layer.borderColor = customOrange
         playButton.indicateBad()
     }
     
@@ -83,10 +85,10 @@ class ActivitySkeleton: UIView {
         
         displayLabel.translatesAutoresizingMaskIntoConstraints = false
         displayLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        displayLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: screenHeight * 0.25 * 1).isActive = true
+        displayLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: screenHeight * 0.20 * 1).isActive = true
         displayLabel.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.25).isActive = true
-        displayLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5).isActive = true
-        displayLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+        displayLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4).isActive = true
+        displayLabel.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
     }
     
     func setupButton() {
@@ -102,7 +104,7 @@ class ActivitySkeleton: UIView {
         borderFrame.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
         borderFrame.backgroundColor = .clear
         borderFrame.layer.borderWidth = 5
-        borderFrame.layer.borderColor = customPurple
+        borderFrame.layer.borderColor = customOrange
         
         self.addSubview(borderFrame)
         

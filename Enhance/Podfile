@@ -12,5 +12,7 @@ pod 'Firebase/Database'
 pod 'SkeletonView'
 pod "Counter"
 pod 'PopupDialog', '~> 1.1'
+pod 'STopAlert'
+pod 'TransitionButton'
 
 end

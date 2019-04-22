@@ -73,6 +73,8 @@ PODS:
   - PopupDialog (1.1.0):
     - DynamicBlurView (~> 3.0.1)
   - SkeletonView (1.4.2)
+  - STopAlert (0.3.2)
+  - TransitionButton (0.5.2)
 
 DEPENDENCIES:
   - Counter
@@ -82,6 +84,8 @@ DEPENDENCIES:
   - Hero
   - PopupDialog (~> 1.1)
   - SkeletonView
+  - STopAlert
+  - TransitionButton
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -102,6 +106,8 @@ SPEC REPOS:
     - nanopb
     - PopupDialog
     - SkeletonView
+    - STopAlert
+    - TransitionButton
 
 SPEC CHECKSUMS:
   Counter: b77514cf9b3cc1d70c467011821ff7dd178263ca
@@ -121,7 +127,9 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   PopupDialog: 42fb7a0bc4fafdf89fef8b5b2b127a6023f3e1cc
   SkeletonView: c2523c3c8c6510e273e49a3bf364a434744c3914
+  STopAlert: 063607202f39662a8164a68d31f12c4e82521aae
+  TransitionButton: fb271583d9c9e4bb116b97103047e5157653f233
 
-PODFILE CHECKSUM: 7a0b47e4d1848cc93a47399caac2bdd1627f1c0f
+PODFILE CHECKSUM: 5b87094b4d94211b884e65ea8f12402260b66dbe
 
 COCOAPODS: 1.6.0.beta.2

@@ -8,15 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		5ADCE2F45D6D687E02DFFE3B /* Pods_Enhance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FDF6C1A7FC316263A4AC03 /* Pods_Enhance.framework */; };
+		E8170F10226C676A00CC9898 /* SitupMLVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8170F0F226C676A00CC9898 /* SitupMLVC.swift */; };
+		E8170F15226C68AC00CC9898 /* VisionActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8170F14226C68AC00CC9898 /* VisionActivity.swift */; };
+		E8170F17226C6BB400CC9898 /* StepsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8170F16226C6BB400CC9898 /* StepsVC.swift */; };
+		E8170F19226D69DA00CC9898 /* PedometerActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8170F18226D69DA00CC9898 /* PedometerActivity.swift */; };
+		E8170F1B226D74A200CC9898 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8170F1A226D74A200CC9898 /* Stopwatch.swift */; };
+		E8170F21226D779B00CC9898 /* PedometerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8170F20226D779B00CC9898 /* PedometerView.swift */; };
 		E85F1D85225EFEAB00AA2283 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F1D84225EFEAB00AA2283 /* AppDelegate.swift */; };
 		E85F1D8C225EFEAD00AA2283 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E85F1D8B225EFEAD00AA2283 /* Assets.xcassets */; };
 		E85F1D98225EFFCC00AA2283 /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F1D97225EFFCC00AA2283 /* LandingPageVC.swift */; };
 		E85F1D9A225F23A700AA2283 /* DiagnoseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F1D99225F23A700AA2283 /* DiagnoseVC.swift */; };
 		E85F1D9C226038CC00AA2283 /* EnterNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F1D9B226038CC00AA2283 /* EnterNameVC.swift */; };
 		E85F1D9F2260484300AA2283 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F1D9E2260484300AA2283 /* BackButton.swift */; };
-		E867E570226A978E0073E8A0 /* Pushup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E867E56F226A978E0073E8A0 /* Pushup.swift */; };
 		E867E572226A9BAE0073E8A0 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E867E571226A9BAE0073E8A0 /* PlayButton.swift */; };
 		E867E574226A9D630073E8A0 /* ActivitySkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E867E573226A9D630073E8A0 /* ActivitySkeleton.swift */; };
+		E867E576226C55330073E8A0 /* PushupsA.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E867E575226C55320073E8A0 /* PushupsA.mlmodel */; };
 		E89D224E2262F47A00B0D3F5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D224D2262F47A00B0D3F5 /* CustomTextField.swift */; };
 		E89D22502262FC2700B0D3F5 /* CustomMedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D224F2262FC2700B0D3F5 /* CustomMedButton.swift */; };
 		E89D22522262FC6600B0D3F5 /* CustomLongButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D22512262FC6600B0D3F5 /* CustomLongButton.swift */; };
@@ -35,7 +41,6 @@
 		E8D3AF6D22693FB10045C87A /* PushupMLVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3AF6C22693FB10045C87A /* PushupMLVC.swift */; };
 		E8D3AF7322694A580045C87A /* TabsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3AF7222694A580045C87A /* TabsVC.swift */; };
 		E8D3AF7A22694B3D0045C87A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3AF7922694B3D0045C87A /* ProfileVC.swift */; };
-		E8D3AF7D226969D90045C87A /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E8D3AF7C226969D90045C87A /* SqueezeNet.mlmodel */; };
 		E8D3AF7F22696BB10045C87A /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E8D3AF7E22696BB10045C87A /* Resnet50.mlmodel */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +48,12 @@
 		79701183BDA11B3FA333244D /* Pods-Enhance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Enhance.release.xcconfig"; path = "Target Support Files/Pods-Enhance/Pods-Enhance.release.xcconfig"; sourceTree = "<group>"; };
 		80D0ABEA750F7D21ABC69E71 /* Pods-Enhance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Enhance.debug.xcconfig"; path = "Target Support Files/Pods-Enhance/Pods-Enhance.debug.xcconfig"; sourceTree = "<group>"; };
 		84FDF6C1A7FC316263A4AC03 /* Pods_Enhance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Enhance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8170F0F226C676A00CC9898 /* SitupMLVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitupMLVC.swift; sourceTree = "<group>"; };
+		E8170F14226C68AC00CC9898 /* VisionActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionActivity.swift; sourceTree = "<group>"; };
+		E8170F16226C6BB400CC9898 /* StepsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsVC.swift; sourceTree = "<group>"; };
+		E8170F18226D69DA00CC9898 /* PedometerActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerActivity.swift; sourceTree = "<group>"; };
+		E8170F1A226D74A200CC9898 /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
+		E8170F20226D779B00CC9898 /* PedometerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerView.swift; sourceTree = "<group>"; };
 		E85F1D81225EFEAB00AA2283 /* Enhance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Enhance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85F1D84225EFEAB00AA2283 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E85F1D8B225EFEAD00AA2283 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,9 +62,9 @@
 		E85F1D99225F23A700AA2283 /* DiagnoseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnoseVC.swift; sourceTree = "<group>"; };
 		E85F1D9B226038CC00AA2283 /* EnterNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNameVC.swift; sourceTree = "<group>"; };
 		E85F1D9E2260484300AA2283 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
-		E867E56F226A978E0073E8A0 /* Pushup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pushup.swift; sourceTree = "<group>"; };
 		E867E571226A9BAE0073E8A0 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		E867E573226A9D630073E8A0 /* ActivitySkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySkeleton.swift; sourceTree = "<group>"; };
+		E867E575226C55320073E8A0 /* PushupsA.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = PushupsA.mlmodel; path = ../../../Models/PushupsA.mlmodel; sourceTree = "<group>"; };
 		E89D224D2262F47A00B0D3F5 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E89D224F2262FC2700B0D3F5 /* CustomMedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMedButton.swift; sourceTree = "<group>"; };
 		E89D22512262FC6600B0D3F5 /* CustomLongButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLongButton.swift; sourceTree = "<group>"; };
@@ -72,7 +83,6 @@
 		E8D3AF6C22693FB10045C87A /* PushupMLVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushupMLVC.swift; sourceTree = "<group>"; };
 		E8D3AF7222694A580045C87A /* TabsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsVC.swift; sourceTree = "<group>"; };
 		E8D3AF7922694B3D0045C87A /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		E8D3AF7C226969D90045C87A /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
 		E8D3AF7E22696BB10045C87A /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +104,25 @@
 				84FDF6C1A7FC316263A4AC03 /* Pods_Enhance.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E8170F0E226C673100CC9898 /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				E8D3AF6C22693FB10045C87A /* PushupMLVC.swift */,
+				E8170F0F226C676A00CC9898 /* SitupMLVC.swift */,
+				E8170F16226C6BB400CC9898 /* StepsVC.swift */,
+			);
+			path = Activities;
+			sourceTree = "<group>";
+		};
+		E8170F11226C67CC00CC9898 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				E8170F14226C68AC00CC9898 /* VisionActivity.swift */,
+				E8170F18226D69DA00CC9898 /* PedometerActivity.swift */,
+			);
+			path = Games;
 			sourceTree = "<group>";
 		};
 		E85F1D78225EFEAB00AA2283 = {
@@ -152,7 +181,7 @@
 		E867E56B22697B7C0073E8A0 /* ML */ = {
 			isa = PBXGroup;
 			children = (
-				E8D3AF7C226969D90045C87A /* SqueezeNet.mlmodel */,
+				E867E575226C55320073E8A0 /* PushupsA.mlmodel */,
 				E8D3AF7E22696BB10045C87A /* Resnet50.mlmodel */,
 			);
 			path = ML;
@@ -173,9 +202,9 @@
 			isa = PBXGroup;
 			children = (
 				E89D229222682AE500B0D3F5 /* TrainingVC.swift */,
-				E8D3AF6C22693FB10045C87A /* PushupMLVC.swift */,
 				E8D3AF7222694A580045C87A /* TabsVC.swift */,
 				E8D3AF7922694B3D0045C87A /* ProfileVC.swift */,
+				E8170F0E226C673100CC9898 /* Activities */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -183,10 +212,11 @@
 		E867E56E226A96990073E8A0 /* Object */ = {
 			isa = PBXGroup;
 			children = (
+				E8170F11226C67CC00CC9898 /* Games */,
 				E89D228D2268231A00B0D3F5 /* Engage.swift */,
 				E89D225D2264604700B0D3F5 /* User.swift */,
 				E89D229422682D5C00B0D3F5 /* Activity.swift */,
-				E867E56F226A978E0073E8A0 /* Pushup.swift */,
+				E8170F1A226D74A200CC9898 /* Stopwatch.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -217,6 +247,7 @@
 				E867E573226A9D630073E8A0 /* ActivitySkeleton.swift */,
 				E89D224D2262F47A00B0D3F5 /* CustomTextField.swift */,
 				E89D22892268227300B0D3F5 /* CustomView.swift */,
+				E8170F20226D779B00CC9898 /* PedometerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,7 +354,9 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
+				"${BUILT_PRODUCTS_DIR}/STopAlert/STopAlert.framework",
 				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
+				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -337,7 +370,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/STopAlert.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -376,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E89D228E2268231A00B0D3F5 /* Engage.swift in Sources */,
+				E8170F10226C676A00CC9898 /* SitupMLVC.swift in Sources */,
 				E89D228A2268227300B0D3F5 /* CustomView.swift in Sources */,
 				E867E574226A9D630073E8A0 /* ActivitySkeleton.swift in Sources */,
 				E8D3AF6D22693FB10045C87A /* PushupMLVC.swift in Sources */,
@@ -388,20 +424,24 @@
 				E89D22502262FC2700B0D3F5 /* CustomMedButton.swift in Sources */,
 				E89D229322682AE500B0D3F5 /* TrainingVC.swift in Sources */,
 				E89D229522682D5C00B0D3F5 /* Activity.swift in Sources */,
+				E8170F21226D779B00CC9898 /* PedometerView.swift in Sources */,
 				E89D22542263060C00B0D3F5 /* WelcomeToEnhanceVC.swift in Sources */,
 				E85F1D85225EFEAB00AA2283 /* AppDelegate.swift in Sources */,
+				E8170F19226D69DA00CC9898 /* PedometerActivity.swift in Sources */,
 				E89D2256226310DC00B0D3F5 /* TrainVC.swift in Sources */,
 				E85F1D9A225F23A700AA2283 /* DiagnoseVC.swift in Sources */,
+				E867E576226C55330073E8A0 /* PushupsA.mlmodel in Sources */,
 				E89D22642264699F00B0D3F5 /* TrainingCell.swift in Sources */,
-				E867E570226A978E0073E8A0 /* Pushup.swift in Sources */,
 				E85F1D9F2260484300AA2283 /* BackButton.swift in Sources */,
 				E867E572226A9BAE0073E8A0 /* PlayButton.swift in Sources */,
+				E8170F17226C6BB400CC9898 /* StepsVC.swift in Sources */,
 				E89D225E2264604700B0D3F5 /* User.swift in Sources */,
+				E8170F1B226D74A200CC9898 /* Stopwatch.swift in Sources */,
 				E89D228C226822C900B0D3F5 /* scrollViewDataStruct.swift in Sources */,
 				E8D3AF7A22694B3D0045C87A /* ProfileVC.swift in Sources */,
 				E89D22882268138900B0D3F5 /* ScratchWork.swift in Sources */,
+				E8170F15226C68AC00CC9898 /* VisionActivity.swift in Sources */,
 				E8D3AF7F22696BB10045C87A /* Resnet50.mlmodel in Sources */,
-				E8D3AF7D226969D90045C87A /* SqueezeNet.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
