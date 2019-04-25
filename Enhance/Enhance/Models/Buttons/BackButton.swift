@@ -21,7 +21,7 @@ class BackButton: UIButton {
     }
     
     func setupButton() {
-        self.backgroundColor = .white
+        self.backgroundColor = .clear
         self.setImage(UIImage(named: "backButtonDark"), for: .normal)
         self.layer.frame = CGRect(x: 0, y: 0, width: 35, height: 20)
         

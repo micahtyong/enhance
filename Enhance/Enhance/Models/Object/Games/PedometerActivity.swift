@@ -16,24 +16,32 @@ class PedometerActivity {
     
     var maxTime : Int
     var currTime : Int = 0
+    var timeRunning : Double = 0.0
     
     var activityType : String = ""
     var currSteps : Double = 0.0
+    var proportionOfTimeExercising : Double = 0.0
     
     // So far, our app only supports miles and kilometers
     let milesConversionConstant : Double = 0.0005
     let kiloConversionConstant : Double = 0.000805
     
     init(upTo time: Int) {
-        maxTime = time // in seconds
+        maxTime = time * 60
+    }
+    
+    func calibrateProportion() {
+        let unprocessedProportion = timeRunning / Double(currTime)
+        proportionOfTimeExercising = roundToXDecimal(x: unprocessedProportion, places: 2)
     }
     
     func showDistance(in units: String) -> Double {
         var distance : Double = 0.0
+        calibrateProportion()
         if units == "miles" {
-            distance = currSteps * milesConversionConstant
+            distance = currSteps * milesConversionConstant * proportionOfTimeExercising
         } else if units == "kilometers" {
-            distance = currSteps * kiloConversionConstant
+            distance = currSteps * kiloConversionConstant * proportionOfTimeExercising
         } else {
             distance = 0.0
         }
@@ -73,6 +81,7 @@ class PedometerActivity {
         }
     }
     
+    // VERIFY THAT A USER IS WALKING OR RUNNING.
     func startTrackingActivityType() {
         activityManager.startActivityUpdates(to: OperationQueue.main) {
             [weak self] (activity: CMMotionActivity?) in
@@ -81,13 +90,16 @@ class PedometerActivity {
             DispatchQueue.main.async {
                 if activity.walking {
                     self?.activityType = "Walking"
+                    self?.timeRunning += 1.0
                 } else if activity.stationary {
                     self?.activityType = "Stationary"
                 } else if activity.running {
                     self?.activityType = "Running"
+                    self?.timeRunning += 1.0
                 } else if activity.automotive {
                     self?.activityType = "Automotive"
                 }
+                self?.timeRunning += 1.0 // REMOVE ON ACTUAL APP RELEASE
             }
         }
     }

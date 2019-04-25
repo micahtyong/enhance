@@ -9,8 +9,11 @@
 import UIKit
 import Hero
 import Firebase
+import FirebaseDatabase
 
 class WelcomeToEnhanceVC: UIViewController {
+    
+    var user : User = User(name: "Micah", deviceID: "123")
     
     var firstTime: Bool = false
     var name : String = "X"
@@ -29,16 +32,66 @@ class WelcomeToEnhanceVC: UIViewController {
         setupUI()
     }
     
+    // UX
+    
+    func fetchUser(completion: @escaping (Bool) -> ()) {
+        self.ref.child("Users").child(deviceID).observeSingleEvent(of: .value, with: { (snapshot) in
+            var fetchedUser = User(name: "M", deviceID: "123")
+            // Load
+            if !snapshot.exists() { return }
+            let userValues = snapshot.value as? NSDictionary
+            let energyPoints = userValues?["Total"] as? Double ?? -1.0
+            let str = userValues?["Strength"] as? Double ?? -1.0
+            let sta = userValues?["Stamina"] as? Double ?? -1.0
+            let cor = userValues?["Core"] as? Double ?? -1.0
+            fetchedUser = User(name: self.name, deviceID: self.deviceID, energy: energyPoints, strength: str, stamina: sta, core: cor)
+            
+            if (fetchedUser.deviceID == "123") {
+                completion(false)
+            } else {
+                self.user = fetchedUser
+                completion(true)
+            }
+            
+        }, withCancel: {error in
+            print(error.localizedDescription)
+        })
+    }
+    
     @objc func toMain(_ sender : CustomLongButton) {
         timer.invalidate()
         sender.pulse()
-        let user = User(name: name, deviceID: deviceID)
-        self.ref.child("Users").child(deviceID).setValue(["Name" : name])
+        self.user = User(name: name, deviceID: deviceID)
+        if firstTime {
+            self.ref.child("Users").child(deviceID).setValue(["Name" : user.name, "Total" : user.energyPoints, "Strength" : user.strengthTotal, "Stamina" : user.staminaTotal, "Core" : user.staminaTotal])
+            Enhance.user = self.user
+            print("New user!")
+        } else {
+            fetchUser { success in
+                if success {
+                    Enhance.user = self.user
+                    print("Successfully fetched user!")
+                } else {
+                    print("Error fetching user!")
+                }
+            }
+        }
         let trainVC = TabsVC()
         trainVC.hero.isEnabled = true
         trainVC.hero.modalAnimationType = .selectBy(presenting: .zoom, dismissing: .zoomOut)
         self.present(trainVC, animated: true, completion: nil)
     }
+    
+    func isNewUser(_ x : Bool) {
+        self.firstTime = x
+    }
+    
+    func setName(to name: String) {
+        self.name = name
+        thanksLabel.text = "Thanks, \(name)"
+    }
+    
+    // UI
     
     func setupUI() {
         self.view.backgroundColor = .white
@@ -47,10 +100,6 @@ class WelcomeToEnhanceVC: UIViewController {
         setupThanksLabel()
         setupWelcomeLabel()
         setupBackButton()
-    }
-    
-    func isNewUser(_ x : Bool) {
-        self.firstTime = x
     }
     
     func setupWelcomeLabel() {
@@ -75,11 +124,6 @@ class WelcomeToEnhanceVC: UIViewController {
         welcomeLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         welcomeLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.44).isActive = true
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    func setName(to name: String) {
-        self.name = name
-        thanksLabel.text = "Thanks, \(name)"
     }
     
     func setupThanksLabel() {

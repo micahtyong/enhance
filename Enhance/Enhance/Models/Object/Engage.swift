@@ -8,17 +8,12 @@
 
 import UIKit
 
-class Engage {
-    
-    let customOrange = UIColor(red: 0.98, green: 0.65, blue: 0.01, alpha: 1)
-    let customWhite = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-    
-    func orange() -> UIColor {
-        return customOrange
-    }
-    
-    func white() -> UIColor {
-        return customWhite
-    }
-    
+
+struct Enhance {
+    static let customOrange = UIColor(red: 0.98, green: 0.65, blue: 0.01, alpha: 1)
+    static let customWhite = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+    static let deviceID : String = UIDevice.current.identifierForVendor?.uuidString ?? "No device available"
+    static var user = User(name: "Micah", deviceID: Enhance.deviceID)
 }
+
+

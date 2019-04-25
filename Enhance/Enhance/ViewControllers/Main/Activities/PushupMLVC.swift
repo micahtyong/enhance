@@ -10,8 +10,12 @@ import UIKit
 import AVKit
 import Vision
 import PopupDialog
+import Firebase
 
 class PushupMLVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
+    
+    var user : User = Enhance.user
+    let ref : DatabaseReference! = Database.database().reference()
     
     var activity : VisionActivity = VisionActivity(upTo: 10)
     var skeleton : ActivitySkeleton = ActivitySkeleton()
@@ -25,6 +29,16 @@ class PushupMLVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate
         super.viewDidLoad()
         setupCamera()
         setupUI()
+    }
+    
+    func updateUser(energyPoints : Double, activityAmount : Int) {
+        Enhance.user.addToTotal(amount : energyPoints)
+        Enhance.user.addToStrength(amount: Double(activityAmount))
+        updateDatabase()
+    }
+    
+    func updateDatabase() {
+        self.ref.child("Users").child(user.deviceID).setValue(["Name" : Enhance.user.name, "Total" : round(Enhance.user.energyPoints), "Strength" : Enhance.user.strengthTotal, "Stamina" : Enhance.user.staminaTotal, "Core" : Enhance.user.staminaTotal])
     }
     
     func setupCamera() {
@@ -152,9 +166,12 @@ class PushupMLVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate
     }
     
     func finishingPopup() {
+        let strengthPoints : Int = activity.max
+        let totalPoints : Double = activity.showConfidence() / 10.0
+        updateUser(energyPoints : totalPoints, activityAmount : strengthPoints)
         // Prepare the popup assets
         let title = "SUCCESS"
-        let message = "You successfully completed \(activity.max) pushups with a confidence level of \(activity.showConfidence())%.\nYour final score is: \(activity.showConfidence() / 10.0)."
+        let message = "You successfully completed \(strengthPoints) pushups with a confidence level of \(activity.showConfidence())%.\nYour final score is: \(totalPoints)."
         let image = UIImage(named: "openPose1")
         // Create the dialog
         let popup = PopupDialog(title: title, message: message, image: image)

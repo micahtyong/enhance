@@ -8,6 +8,9 @@
 
 import UIKit
 import Hero
+import Firebase
+import FirebaseDatabase
+import PopupDialog
 
 class DiagnoseVC: UIViewController {
     
@@ -18,10 +21,72 @@ class DiagnoseVC: UIViewController {
     
     let customOrange = UIColor(red: 0.98, green: 0.65, blue: 0.01, alpha: 1)
     let customWhite = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+    
+    let ref : DatabaseReference! = Database.database().reference()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    // UX
+    func checkIfUserExists(completion: @escaping (Bool) -> ()) -> Bool {
+        var exists = false
+        self.ref.child("Users").child(Enhance.deviceID).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Load
+            if snapshot.exists() {
+                exists = true
+            }
+            if exists {
+                completion(true)
+            } else {
+                completion(false)
+            }
+        }, withCancel: {error in
+            print(error.localizedDescription)
+        })
+        return exists
+    }
+    
+    @objc func getStartedButtonTapped(_ sender:UIButton) {
+        sender.pulse()
+        let enterNameVC = EnterNameVC()
+        enterNameVC.hero.isEnabled = true
+        enterNameVC.isNewUser(true)
+        enterNameVC.hero.modalAnimationType = .selectBy(presenting: .zoom, dismissing: .zoomOut)
+        self.present(enterNameVC, animated: true, completion: nil)
+    }
+    
+    @objc func signInButtonTapped(_ sender:UIButton) {
+        sender.pulse()
+        checkIfUserExists { success in
+            if success {
+                let enterNameVC = EnterNameVC()
+                enterNameVC.hero.isEnabled = true
+                enterNameVC.isNewUser(false)
+                enterNameVC.hero.modalAnimationType = .selectBy(presenting: .fade, dismissing: .zoomOut)
+                self.present(enterNameVC, animated: true, completion: nil)
+            } else {
+                print("Error fetching user!")
+                self.noUserAlert()
+            }
+        }
+    }
+    
+    // UI
+    
+    func noUserAlert() {
+        // Prepare the popup assets
+        let title = "UH OH!"
+        let message = "We were unable to find you in our database. Create an account now by clicking 'Get started'!"
+        // Create the dialog
+        let popup = PopupDialog(title: title, message: message)
+        // Create buttons
+        let cancelButton = CancelButton(title: "OK") {
+            print("You canceled the dialog.")
+        }
+        popup.addButtons([cancelButton])
+        self.present(popup, animated: true, completion: nil)
     }
     
     func setupUI() {
@@ -61,24 +126,6 @@ class DiagnoseVC: UIViewController {
         getStarted.topAnchor.constraint(equalTo: tellUsLabel.bottomAnchor, constant: 20).isActive = true
         getStarted.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         getStarted.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    @objc func getStartedButtonTapped(_ sender:UIButton) {
-        sender.pulse()
-        let enterNameVC = EnterNameVC()
-        enterNameVC.hero.isEnabled = true
-        enterNameVC.isNewUser(true)
-        enterNameVC.hero.modalAnimationType = .selectBy(presenting: .fade, dismissing: .zoomOut)
-        self.present(enterNameVC, animated: true, completion: nil)
-    }
-    
-    @objc func signInButtonTapped(_ sender:UIButton) {
-        sender.pulse()
-        let enterNameVC = EnterNameVC()
-        enterNameVC.hero.isEnabled = true
-        enterNameVC.isNewUser(false)
-        enterNameVC.hero.modalAnimationType = .selectBy(presenting: .zoom, dismissing: .zoomOut)
-        self.present(enterNameVC, animated: true, completion: nil)
     }
     
     func setupAlreadyAMember() {

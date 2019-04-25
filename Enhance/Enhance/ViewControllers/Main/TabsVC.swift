@@ -9,17 +9,17 @@
 import UIKit
 
 class TabsVC: UITabBarController {
+    
+    var user : User = Enhance.user
+    let trainingVC = TrainingVC()
+    let profileVC = ProfileVC()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let trainingVC = TrainingVC()
+        user = Enhance.user
         trainingVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
-        let profileVC = ProfileVC()
         profileVC.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
-        
         let tabBarList = [trainingVC, profileVC]
-        
         viewControllers = tabBarList
     }
 

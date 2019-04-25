@@ -10,6 +10,8 @@ import Hero
 
 class TrainingVC: UIViewController {
     
+    var user : User = Enhance.user
+    
     let customOrange = UIColor(red: 0.98, green: 0.65, blue: 0.01, alpha: 1)
     let customWhite = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
     
@@ -24,8 +26,18 @@ class TrainingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        user = Enhance.user
         setupUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+    
+    // UX
+    
+    
+    // UI
     
     func setupUI() {
         self.view.backgroundColor = customWhite

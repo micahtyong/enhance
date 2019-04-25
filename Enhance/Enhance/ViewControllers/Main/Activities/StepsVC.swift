@@ -11,7 +11,7 @@ import PopupDialog
 
 class StepsVC: UIViewController {
     
-    var activity : PedometerActivity = PedometerActivity(upTo: 10)
+    var activity : PedometerActivity = PedometerActivity(upTo: 1)
     var skeleton : ActivitySkeleton = ActivitySkeleton()
     var pedometer : PedometerView = PedometerView()
     let backButton : BackButton = BackButton()

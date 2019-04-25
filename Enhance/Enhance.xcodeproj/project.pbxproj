@@ -14,6 +14,8 @@
 		E8170F19226D69DA00CC9898 /* PedometerActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8170F18226D69DA00CC9898 /* PedometerActivity.swift */; };
 		E8170F1B226D74A200CC9898 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8170F1A226D74A200CC9898 /* Stopwatch.swift */; };
 		E8170F21226D779B00CC9898 /* PedometerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8170F20226D779B00CC9898 /* PedometerView.swift */; };
+		E8170F23226FD02700CC9898 /* BadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8170F22226FD02700CC9898 /* BadgesView.swift */; };
+		E8170F25226FD5DC00CC9898 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8170F24226FD5DC00CC9898 /* Badge.swift */; };
 		E85F1D85225EFEAB00AA2283 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F1D84225EFEAB00AA2283 /* AppDelegate.swift */; };
 		E85F1D8C225EFEAD00AA2283 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E85F1D8B225EFEAD00AA2283 /* Assets.xcassets */; };
 		E85F1D98225EFFCC00AA2283 /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F1D97225EFFCC00AA2283 /* LandingPageVC.swift */; };
@@ -54,6 +56,8 @@
 		E8170F18226D69DA00CC9898 /* PedometerActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerActivity.swift; sourceTree = "<group>"; };
 		E8170F1A226D74A200CC9898 /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		E8170F20226D779B00CC9898 /* PedometerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerView.swift; sourceTree = "<group>"; };
+		E8170F22226FD02700CC9898 /* BadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesView.swift; sourceTree = "<group>"; };
+		E8170F24226FD5DC00CC9898 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		E85F1D81225EFEAB00AA2283 /* Enhance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Enhance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85F1D84225EFEAB00AA2283 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E85F1D8B225EFEAD00AA2283 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -201,8 +205,8 @@
 		E867E56D22697BB90073E8A0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				E89D229222682AE500B0D3F5 /* TrainingVC.swift */,
 				E8D3AF7222694A580045C87A /* TabsVC.swift */,
+				E89D229222682AE500B0D3F5 /* TrainingVC.swift */,
 				E8D3AF7922694B3D0045C87A /* ProfileVC.swift */,
 				E8170F0E226C673100CC9898 /* Activities */,
 			);
@@ -248,6 +252,8 @@
 				E89D224D2262F47A00B0D3F5 /* CustomTextField.swift */,
 				E89D22892268227300B0D3F5 /* CustomView.swift */,
 				E8170F20226D779B00CC9898 /* PedometerView.swift */,
+				E8170F22226FD02700CC9898 /* BadgesView.swift */,
+				E8170F24226FD5DC00CC9898 /* Badge.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -411,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E89D228E2268231A00B0D3F5 /* Engage.swift in Sources */,
+				E8170F25226FD5DC00CC9898 /* Badge.swift in Sources */,
 				E8170F10226C676A00CC9898 /* SitupMLVC.swift in Sources */,
 				E89D228A2268227300B0D3F5 /* CustomView.swift in Sources */,
 				E867E574226A9D630073E8A0 /* ActivitySkeleton.swift in Sources */,
@@ -429,6 +436,7 @@
 				E85F1D85225EFEAB00AA2283 /* AppDelegate.swift in Sources */,
 				E8170F19226D69DA00CC9898 /* PedometerActivity.swift in Sources */,
 				E89D2256226310DC00B0D3F5 /* TrainVC.swift in Sources */,
+				E8170F23226FD02700CC9898 /* BadgesView.swift in Sources */,
 				E85F1D9A225F23A700AA2283 /* DiagnoseVC.swift in Sources */,
 				E867E576226C55330073E8A0 /* PushupsA.mlmodel in Sources */,
 				E89D22642264699F00B0D3F5 /* TrainingCell.swift in Sources */,
