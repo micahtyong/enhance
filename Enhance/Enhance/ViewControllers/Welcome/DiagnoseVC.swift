@@ -19,6 +19,8 @@ class DiagnoseVC: UIViewController {
     let alreadyMember = CustomLongButton()
     let backButton = BackButton()
     
+    var name : String?
+    
     let customOrange = UIColor(red: 0.98, green: 0.65, blue: 0.01, alpha: 1)
     let customWhite = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
     
@@ -36,6 +38,8 @@ class DiagnoseVC: UIViewController {
             // Load
             if snapshot.exists() {
                 exists = true
+                let userValues = snapshot.value as? NSDictionary
+                self.name = userValues?["Name"] as? String ?? "X"
             }
             if exists {
                 completion(true)
@@ -61,18 +65,21 @@ class DiagnoseVC: UIViewController {
         sender.pulse()
         checkIfUserExists { success in
             if success {
-                let enterNameVC = EnterNameVC()
-                enterNameVC.hero.isEnabled = true
-                enterNameVC.isNewUser(false)
-                enterNameVC.hero.modalAnimationType = .selectBy(presenting: .fade, dismissing: .zoomOut)
-                self.present(enterNameVC, animated: true, completion: nil)
+                // get name
+                let thanksVC = WelcomeToEnhanceVC()
+                thanksVC.hero.isEnabled = true
+                thanksVC.hero.modalAnimationType = .selectBy(presenting: .fade, dismissing: .zoomOut)
+                if self.name != nil {
+                    thanksVC.setName(to: self.name!)
+                    thanksVC.isNewUser(false)
+                    self.present(thanksVC, animated: true, completion: nil)
+                }
             } else {
                 print("Error fetching user!")
                 self.noUserAlert()
             }
         }
     }
-    
     // UI
     
     func noUserAlert() {
