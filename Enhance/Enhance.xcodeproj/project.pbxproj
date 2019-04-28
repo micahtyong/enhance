@@ -24,7 +24,8 @@
 		E85F1D9F2260484300AA2283 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F1D9E2260484300AA2283 /* BackButton.swift */; };
 		E867E572226A9BAE0073E8A0 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E867E571226A9BAE0073E8A0 /* PlayButton.swift */; };
 		E867E574226A9D630073E8A0 /* ActivitySkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E867E573226A9D630073E8A0 /* ActivitySkeleton.swift */; };
-		E867E576226C55330073E8A0 /* PushupsA.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E867E575226C55320073E8A0 /* PushupsA.mlmodel */; };
+		E8846DB722765ECA00E0AE68 /* PushupsA.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E8846DB622765ECA00E0AE68 /* PushupsA.mlmodel */; };
+		E8846DB922765F1C00E0AE68 /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8846DB822765F1C00E0AE68 /* TrainingVC.swift */; };
 		E89D224E2262F47A00B0D3F5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D224D2262F47A00B0D3F5 /* CustomTextField.swift */; };
 		E89D22502262FC2700B0D3F5 /* CustomMedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D224F2262FC2700B0D3F5 /* CustomMedButton.swift */; };
 		E89D22522262FC6600B0D3F5 /* CustomLongButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D22512262FC6600B0D3F5 /* CustomLongButton.swift */; };
@@ -38,7 +39,6 @@
 		E89D228A2268227300B0D3F5 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D22892268227300B0D3F5 /* CustomView.swift */; };
 		E89D228C226822C900B0D3F5 /* scrollViewDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D228B226822C900B0D3F5 /* scrollViewDataStruct.swift */; };
 		E89D228E2268231A00B0D3F5 /* Engage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D228D2268231A00B0D3F5 /* Engage.swift */; };
-		E89D229322682AE500B0D3F5 /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D229222682AE500B0D3F5 /* TrainingVC.swift */; };
 		E89D229522682D5C00B0D3F5 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D229422682D5C00B0D3F5 /* Activity.swift */; };
 		E8D3AF6D22693FB10045C87A /* PushupMLVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3AF6C22693FB10045C87A /* PushupMLVC.swift */; };
 		E8D3AF7322694A580045C87A /* TabsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3AF7222694A580045C87A /* TabsVC.swift */; };
@@ -68,7 +68,8 @@
 		E85F1D9E2260484300AA2283 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		E867E571226A9BAE0073E8A0 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		E867E573226A9D630073E8A0 /* ActivitySkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySkeleton.swift; sourceTree = "<group>"; };
-		E867E575226C55320073E8A0 /* PushupsA.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = PushupsA.mlmodel; path = ../../../Models/PushupsA.mlmodel; sourceTree = "<group>"; };
+		E8846DB622765ECA00E0AE68 /* PushupsA.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PushupsA.mlmodel; sourceTree = "<group>"; };
+		E8846DB822765F1C00E0AE68 /* TrainingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrainingVC.swift; path = Enhance/ViewControllers/TrainingVC.swift; sourceTree = SOURCE_ROOT; };
 		E89D224D2262F47A00B0D3F5 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E89D224F2262FC2700B0D3F5 /* CustomMedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMedButton.swift; sourceTree = "<group>"; };
 		E89D22512262FC6600B0D3F5 /* CustomLongButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLongButton.swift; sourceTree = "<group>"; };
@@ -82,7 +83,6 @@
 		E89D22892268227300B0D3F5 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		E89D228B226822C900B0D3F5 /* scrollViewDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scrollViewDataStruct.swift; sourceTree = "<group>"; };
 		E89D228D2268231A00B0D3F5 /* Engage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engage.swift; sourceTree = "<group>"; };
-		E89D229222682AE500B0D3F5 /* TrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TrainingVC.swift; path = /Users/micahtyong/Desktop/iOS/Projects/EH1/Enhance/Enhance/ViewControllers/TrainingVC.swift; sourceTree = "<absolute>"; };
 		E89D229422682D5C00B0D3F5 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		E8D3AF6C22693FB10045C87A /* PushupMLVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushupMLVC.swift; sourceTree = "<group>"; };
 		E8D3AF7222694A580045C87A /* TabsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsVC.swift; sourceTree = "<group>"; };
@@ -185,8 +185,8 @@
 		E867E56B22697B7C0073E8A0 /* ML */ = {
 			isa = PBXGroup;
 			children = (
-				E867E575226C55320073E8A0 /* PushupsA.mlmodel */,
 				E8D3AF7E22696BB10045C87A /* Resnet50.mlmodel */,
+				E8846DB622765ECA00E0AE68 /* PushupsA.mlmodel */,
 			);
 			path = ML;
 			sourceTree = "<group>";
@@ -206,7 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				E8D3AF7222694A580045C87A /* TabsVC.swift */,
-				E89D229222682AE500B0D3F5 /* TrainingVC.swift */,
+				E8846DB822765F1C00E0AE68 /* TrainingVC.swift */,
 				E8D3AF7922694B3D0045C87A /* ProfileVC.swift */,
 				E8170F0E226C673100CC9898 /* Activities */,
 			);
@@ -419,8 +419,10 @@
 				E89D228E2268231A00B0D3F5 /* Engage.swift in Sources */,
 				E8170F25226FD5DC00CC9898 /* Badge.swift in Sources */,
 				E8170F10226C676A00CC9898 /* SitupMLVC.swift in Sources */,
+				E8846DB722765ECA00E0AE68 /* PushupsA.mlmodel in Sources */,
 				E89D228A2268227300B0D3F5 /* CustomView.swift in Sources */,
 				E867E574226A9D630073E8A0 /* ActivitySkeleton.swift in Sources */,
+				E8846DB922765F1C00E0AE68 /* TrainingVC.swift in Sources */,
 				E8D3AF6D22693FB10045C87A /* PushupMLVC.swift in Sources */,
 				E89D22522262FC6600B0D3F5 /* CustomLongButton.swift in Sources */,
 				E8D3AF7322694A580045C87A /* TabsVC.swift in Sources */,
@@ -429,7 +431,6 @@
 				E89D224E2262F47A00B0D3F5 /* CustomTextField.swift in Sources */,
 				E89D22662266995F00B0D3F5 /* CoreButton.swift in Sources */,
 				E89D22502262FC2700B0D3F5 /* CustomMedButton.swift in Sources */,
-				E89D229322682AE500B0D3F5 /* TrainingVC.swift in Sources */,
 				E89D229522682D5C00B0D3F5 /* Activity.swift in Sources */,
 				E8170F21226D779B00CC9898 /* PedometerView.swift in Sources */,
 				E89D22542263060C00B0D3F5 /* WelcomeToEnhanceVC.swift in Sources */,
@@ -438,7 +439,6 @@
 				E89D2256226310DC00B0D3F5 /* TrainVC.swift in Sources */,
 				E8170F23226FD02700CC9898 /* BadgesView.swift in Sources */,
 				E85F1D9A225F23A700AA2283 /* DiagnoseVC.swift in Sources */,
-				E867E576226C55330073E8A0 /* PushupsA.mlmodel in Sources */,
 				E89D22642264699F00B0D3F5 /* TrainingCell.swift in Sources */,
 				E85F1D9F2260484300AA2283 /* BackButton.swift in Sources */,
 				E867E572226A9BAE0073E8A0 /* PlayButton.swift in Sources */,
