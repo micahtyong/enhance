@@ -1,0 +1,160 @@
+Release v1.10.2 ???
+------------------
+[features]
+  - Support serializing/deserializing PoseEstimators to/from memory or disk on non-apple platforms.
+  - Experimental IK solver (PoseIK) is now available. 
+[enhancements]
+  - Optimized 2D estimation performance on desktop GPUs. Reduction of processing time by 2-4ms depending on hardware.
+  - wrDemo baseline net size increased to 456 x 256.
+  - A new filter have been added to the IK Solver, outputing more stable quaternions.
+  - Added way to get the output format for 3D post-IK with GetHuman3DOutputFormat and pre-IK with GetHuman3DRawOutputFormat
+  - Added sample wrPose3d_sample.cpp, visualizing rotations of joints
+[bugfix]
+  - Fix visualization of emojis when window-size argument passed to wrDemo.
+  - Better telemetry when passing an invalid GPU index.
+  - Expose wrNetPrecision in Python bindings
+  - Better handling of pelvis rotation out of the IK solver.
+  - Enforced quaternion normalization in the IK solver.
+[breaking changes to API]
+  - Remove notion of JointAnalyzerKind and all associated functions. In the old lingo, all joint analyzers are "default" -- no more "rotating".
+  - Renamed SetIsCrowd to SetEnableTracking and GetIsCrowd to GetEnableTracking.
+  - SetInitialTPose functions have been removed and replaced by the Reset calls to PoseIK.
+  - Renamed GetHumanOutputFormat to GetHuman2DOutputFormat.
+
+Release v1.10.1 2018-11-02
+---------------------------------------------------------
+[features]
+  - Release a new 2D Pose Estimation model that is more than 20% faster than its previous version.
+[enhancements]
+  - Update wrDemo default options and hotkeys.
+
+Release v1.10.0 2018-10-26
+---------------------------------------------------------
+[features]
+  - On Linux and Windows desktops, support pose-based activity recognition models. Include a model, wrnch_acvitity_v1.0 which predicts 7 activities.
+  - Improve merging algorithm for nearby skeletons.
+[enhancements]
+  - Provide portrait-oriented model for iOS and update wrnchAIUnity to automatically switch models on orientation change.
+  - Support iOS 12.x and XCode 10 projects.
+  - Support CUDA 10 and TensorRT 5
+  - Update 2D face keypoints model.
+[breaking changes]
+  - In the C, C++, and Python APIs, the variants of Initialize3d, InitializeHands, InitializeHead
+    all now require a modelsDirectory argument (previously no argument was required).
+
+Release v1.9.0 2018-09-08
+---------------------------------------------------------
+[enhancement]
+- Update 2D pose model for iOS to support multi-person detection.
+- Optimize runtime performance. On a high end GPU (e.g. Titan XP) a performance of up to 100 frames per second can now be achieved for 2D body pose estimation only.
+[bugfix]
+- Fixed a bug where the joint positions returned by 2D pose estimator have a systematic offset from where they ought to be.
+
+Release v1.8.0 2018-08-08
+---------------------------------------------------------
+[feature]
+  - Support iOS 11.x (Pose 2D and Pose 3D models).
+  - Provide wrnchAIUnity with iOS 11.x.
+[enhancement]
+  - Add Pose Estimator construction from configuration struct.
+  - Allow license data to be supplied as a parameter to the pose estimator rather than read from disk.
+  - Allow changing of network resolution in wrDemo with -n flag.
+  - Allow cloning of pose estimators which will avoid re-running the TRT optimization, greatly speeding up initialization of multiple identical networks (~5 seconds instead of ~30 seconds each).
+  - Allow reinitialization of IK Solver with a different TPose for body dimension adjustments.
+[breaking changes in all hands interfaces]
+  - Removed deprecated hands functions.
+  - Reworked hands interfaces (C, C++, Python) to give hands by side (left hands, right hands).
+[breaking changes in IK portion of PoseEstimator]
+  - In C++ API, PoseEstimator::GetTPose3D will now take an extra IK solver id parameter.
+  - In C API, same for wrPoseEstimator_GetTPose3D.
+[breaking changes in dependencies]
+  - Use Cuda 9.2 and TensorRT 4.0 on Linux for a small performance improvement (5-10%).
+
+
+Release v1.7.0 2018-06-01
+---------------------------------------------------------
+[feature]
+  - Add `wrFace20` joint definition and documentation.
+  - Deprecate wrPoseEstimator_GetMask, PoseEstimator::GetMask in favor of wrPoseEstimator_GetMaskView, PoseEstimator::GetMaskView,
+    which don't require that greenscreen masks be copied out.
+  - Add random access to C/C++ iterator types.
+  - Add range-based iterators to C++ PoseTypes (eg, wrnch::PoseEstimator::Humans2dRange wrnch::PoseEstimator::Humans2d() const)
+[enhancement]
+  - Update samples to use latest wrAPI functions.
+  - Improve the face sample.
+  - New 2d face keypoints detector.
+  - New head segmenter using 2d pose joints.
+  - Template classifier Process functions on a generic BasicBox2d type.
+  - Completely new 3d pose estimator, more accurate and much faster than the old one. Fast enough for real-time multi-person 3d.
+[breaking changes in IK portion of PoseEstimator]
+  - In C++ API, PoseEstimator::GetIKProperty and PoseEstimator::SetIKProperty now take an extra IK solver id parameter.
+  - In C API, same for wrPoseEstimator_GetIKProperty and wrPoseEstimator_SetIKProperty.
+
+Release v1.6.0 2018-05-11
+---------------------------------------------------------
+[feature]
+- In Python API:
+  - Add additional properties to `PoseParams`: `min_valid_joints`, `joint_analyzer_kind`.
+  - Add `estimate_single` property to `PoseEstimatorOptions`.
+  - Add `JointAnalyzerKind` enum.
+  - Add `get_joint_index` function to `JointDefintion`
+- In wrDemo, by default don't run hand-wave detector.
+- In C API for classifier, add function wrClassifier_ProcessFrame. Add corresponding ProcessFrame
+  function to the C++ API.
+[bugfix]
+- In Python API, return appropriate size for Pose3D rotations.
+- Fix broken Python samples.
+[breaking changes to experimental Classifier]
+- In C++ API for classifier, a function previously named ProcessBatch was renamed to ProcessFrame, which is a more accurate name.
+- In C API for classifier, functions wrClassifier_ProcessBatch now require the number of channels for input images to be explicitly supplied.
+
+Release v1.5 2018-04-09
+---------------------------------------------------------
+[feature]
+- Support FP16 precision (performance boost for certain devices, e.g. Volta).
+- Provide a new code sample for gesture detection based on 2D pose data.
+[enhancement]
+- Optimize runtime performance. On a high end GPU, improvements can be significant (up to 40% higher Frame-Per-Second).
+
+Release v1.4 2018-03-20
+---------------------------------------------------------
+[feature]
+- Provide Python 2.7 API for Linux and Windows desktops.
+- Provide enhanced feedback for errors/exception in C++ API with no-throw overloads.
+[enhancement]
+- Update 2D pose model.
+- Update facial feature detection model.
+- Expand code samples.
+- Expand wrReturnCodes and exception feedback.
+- Updated Linux TensorRT dependency to V3.0.4
+
+Release v1.3 2018-02-22
+---------------------------------------------------------
+[feature]
+- Support NVIDIA Jetson TX2.
+- Support a new facial feature detection module.
+[enhancement]
+- Provide a lightweight 2D pose model on TX2(wrabbit_pose2d).
+
+Release v1.2 2018-02-12
+---------------------------------------------------------
+[feature]
+- Provide C++ iterators for each pose type.
+- Provide iterator pattern to C API with Get...Begin, Get...Next, Get...End functions.
+[enhancement]
+- Remove the display of head joints when faces are tracked.
+[defect]
+- Remove facial feature support.
+
+
+Release v1.1 2018-01-30
+---------------------------------------------------------
+[feature]
+- Add wrGetNumberOfAvailableGPUs and wrPose2d_SetId to API.
+- Add Facial Features API.
+
+Release v1.0 2018-01-19
+---------------------------------------------------------
+[feature]
+- Support C and C++ API.
+- Support Windows and Linux Desktops.

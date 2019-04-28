@@ -26,6 +26,23 @@
 		E867E574226A9D630073E8A0 /* ActivitySkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E867E573226A9D630073E8A0 /* ActivitySkeleton.swift */; };
 		E8846DB722765ECA00E0AE68 /* PushupsA.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E8846DB622765ECA00E0AE68 /* PushupsA.mlmodel */; };
 		E8846DB922765F1C00E0AE68 /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8846DB822765F1C00E0AE68 /* TrainingVC.swift */; };
+		E8846DBB227664C700E0AE68 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DBA227664C700E0AE68 /* opencv2.framework */; };
+		E8846DBD227664D100E0AE68 /* wrnch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DBC227664D100E0AE68 /* wrnch.framework */; };
+		E8846DCA2276661900E0AE68 /* wrHelpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8846DC22276661800E0AE68 /* wrHelpers.cpp */; };
+		E8846DCB2276661900E0AE68 /* INWWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = E8846DC32276661800E0AE68 /* INWWrapper.mm */; };
+		E8846DCC2276661900E0AE68 /* wrOpenCvHelpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8846DC42276661800E0AE68 /* wrOpenCvHelpers.cpp */; };
+		E8846DCD2276661900E0AE68 /* wrios_pose2d_v2.0_portrait.enc in Resources */ = {isa = PBXBuildFile; fileRef = E8846DC72276661800E0AE68 /* wrios_pose2d_v2.0_portrait.enc */; };
+		E8846DCE2276661900E0AE68 /* wrios_pose3d_v1.enc in Resources */ = {isa = PBXBuildFile; fileRef = E8846DC82276661800E0AE68 /* wrios_pose3d_v1.enc */; };
+		E8846DCF2276661900E0AE68 /* wrios_pose2d_v2.0.enc in Resources */ = {isa = PBXBuildFile; fileRef = E8846DC92276661800E0AE68 /* wrios_pose2d_v2.0.enc */; };
+		E8846DD12276673000E0AE68 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DD02276673000E0AE68 /* CoreGraphics.framework */; };
+		E8846DD32276673700E0AE68 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DD22276673700E0AE68 /* CoreMedia.framework */; };
+		E8846DD52276673D00E0AE68 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DD42276673D00E0AE68 /* CoreFoundation.framework */; };
+		E8846DD72276674500E0AE68 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DD62276674500E0AE68 /* AssetsLibrary.framework */; };
+		E8846DD92276674A00E0AE68 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DD82276674A00E0AE68 /* Accelerate.framework */; };
+		E8846DE52276730B00E0AE68 /* wrnch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DE42276730B00E0AE68 /* wrnch.framework */; };
+		E8846DE62276730B00E0AE68 /* wrnch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DE42276730B00E0AE68 /* wrnch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E8846DE92276733300E0AE68 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DE82276733300E0AE68 /* opencv2.framework */; };
+		E8846DEA2276733300E0AE68 /* opencv2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DE82276733300E0AE68 /* opencv2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E89D224E2262F47A00B0D3F5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D224D2262F47A00B0D3F5 /* CustomTextField.swift */; };
 		E89D22502262FC2700B0D3F5 /* CustomMedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D224F2262FC2700B0D3F5 /* CustomMedButton.swift */; };
 		E89D22522262FC6600B0D3F5 /* CustomLongButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D22512262FC6600B0D3F5 /* CustomLongButton.swift */; };
@@ -45,6 +62,21 @@
 		E8D3AF7A22694B3D0045C87A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3AF7922694B3D0045C87A /* ProfileVC.swift */; };
 		E8D3AF7F22696BB10045C87A /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E8D3AF7E22696BB10045C87A /* Resnet50.mlmodel */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E8846DE72276730B00E0AE68 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E8846DEA2276733300E0AE68 /* opencv2.framework in Embed Frameworks */,
+				E8846DE62276730B00E0AE68 /* wrnch.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		79701183BDA11B3FA333244D /* Pods-Enhance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Enhance.release.xcconfig"; path = "Target Support Files/Pods-Enhance/Pods-Enhance.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +102,25 @@
 		E867E573226A9D630073E8A0 /* ActivitySkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySkeleton.swift; sourceTree = "<group>"; };
 		E8846DB622765ECA00E0AE68 /* PushupsA.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PushupsA.mlmodel; sourceTree = "<group>"; };
 		E8846DB822765F1C00E0AE68 /* TrainingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrainingVC.swift; path = Enhance/ViewControllers/TrainingVC.swift; sourceTree = SOURCE_ROOT; };
+		E8846DBA227664C700E0AE68 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		E8846DBC227664D100E0AE68 /* wrnch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = wrnch.framework; sourceTree = "<group>"; };
+		E8846DBF2276661800E0AE68 /* wrOpenCvHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wrOpenCvHelpers.h; sourceTree = "<group>"; };
+		E8846DC02276661800E0AE68 /* wrHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wrHelpers.h; sourceTree = "<group>"; };
+		E8846DC12276661800E0AE68 /* INWWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INWWrapper.h; sourceTree = "<group>"; };
+		E8846DC22276661800E0AE68 /* wrHelpers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wrHelpers.cpp; sourceTree = "<group>"; };
+		E8846DC32276661800E0AE68 /* INWWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = INWWrapper.mm; sourceTree = "<group>"; };
+		E8846DC42276661800E0AE68 /* wrOpenCvHelpers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wrOpenCvHelpers.cpp; sourceTree = "<group>"; };
+		E8846DC52276661800E0AE68 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		E8846DC72276661800E0AE68 /* wrios_pose2d_v2.0_portrait.enc */ = {isa = PBXFileReference; lastKnownFileType = file; path = wrios_pose2d_v2.0_portrait.enc; sourceTree = "<group>"; };
+		E8846DC82276661800E0AE68 /* wrios_pose3d_v1.enc */ = {isa = PBXFileReference; lastKnownFileType = file; path = wrios_pose3d_v1.enc; sourceTree = "<group>"; };
+		E8846DC92276661800E0AE68 /* wrios_pose2d_v2.0.enc */ = {isa = PBXFileReference; lastKnownFileType = file; path = wrios_pose2d_v2.0.enc; sourceTree = "<group>"; };
+		E8846DD02276673000E0AE68 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E8846DD22276673700E0AE68 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		E8846DD42276673D00E0AE68 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		E8846DD62276674500E0AE68 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		E8846DD82276674A00E0AE68 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		E8846DE42276730B00E0AE68 /* wrnch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = wrnch.framework; sourceTree = "<group>"; };
+		E8846DE82276733300E0AE68 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		E89D224D2262F47A00B0D3F5 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E89D224F2262FC2700B0D3F5 /* CustomMedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMedButton.swift; sourceTree = "<group>"; };
 		E89D22512262FC6600B0D3F5 /* CustomLongButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLongButton.swift; sourceTree = "<group>"; };
@@ -95,6 +146,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8846DE52276730B00E0AE68 /* wrnch.framework in Frameworks */,
+				E8846DD92276674A00E0AE68 /* Accelerate.framework in Frameworks */,
+				E8846DD72276674500E0AE68 /* AssetsLibrary.framework in Frameworks */,
+				E8846DD52276673D00E0AE68 /* CoreFoundation.framework in Frameworks */,
+				E8846DD32276673700E0AE68 /* CoreMedia.framework in Frameworks */,
+				E8846DD12276673000E0AE68 /* CoreGraphics.framework in Frameworks */,
+				E8846DBD227664D100E0AE68 /* wrnch.framework in Frameworks */,
+				E8846DBB227664C700E0AE68 /* opencv2.framework in Frameworks */,
+				E8846DE92276733300E0AE68 /* opencv2.framework in Frameworks */,
 				5ADCE2F45D6D687E02DFFE3B /* Pods_Enhance.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +165,13 @@
 		149C3A0728FB66C139A20517 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E8846DD82276674A00E0AE68 /* Accelerate.framework */,
+				E8846DD62276674500E0AE68 /* AssetsLibrary.framework */,
+				E8846DD42276673D00E0AE68 /* CoreFoundation.framework */,
+				E8846DD22276673700E0AE68 /* CoreMedia.framework */,
+				E8846DD02276673000E0AE68 /* CoreGraphics.framework */,
+				E8846DBC227664D100E0AE68 /* wrnch.framework */,
+				E8846DBA227664C700E0AE68 /* opencv2.framework */,
 				84FDF6C1A7FC316263A4AC03 /* Pods_Enhance.framework */,
 			);
 			name = Frameworks;
@@ -132,6 +199,8 @@
 		E85F1D78225EFEAB00AA2283 = {
 			isa = PBXGroup;
 			children = (
+				E8846DE82276733300E0AE68 /* opencv2.framework */,
+				E8846DE42276730B00E0AE68 /* wrnch.framework */,
 				E85F1D83225EFEAB00AA2283 /* Enhance */,
 				E85F1D82225EFEAB00AA2283 /* Products */,
 				EC811920E2BCF89C4B3DDAE1 /* Pods */,
@@ -150,6 +219,7 @@
 		E85F1D83225EFEAB00AA2283 /* Enhance */ = {
 			isa = PBXGroup;
 			children = (
+				E8846DBE2276661800E0AE68 /* INWWrapper */,
 				E867E56B22697B7C0073E8A0 /* ML */,
 				E89D22622264697B00B0D3F5 /* Cells */,
 				E85F1D9D2260483300AA2283 /* Models */,
@@ -225,6 +295,31 @@
 			path = Object;
 			sourceTree = "<group>";
 		};
+		E8846DBE2276661800E0AE68 /* INWWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				E8846DBF2276661800E0AE68 /* wrOpenCvHelpers.h */,
+				E8846DC02276661800E0AE68 /* wrHelpers.h */,
+				E8846DC12276661800E0AE68 /* INWWrapper.h */,
+				E8846DC22276661800E0AE68 /* wrHelpers.cpp */,
+				E8846DC32276661800E0AE68 /* INWWrapper.mm */,
+				E8846DC42276661800E0AE68 /* wrOpenCvHelpers.cpp */,
+				E8846DC52276661800E0AE68 /* Bridging-Header.h */,
+				E8846DC62276661800E0AE68 /* wrModels */,
+			);
+			path = INWWrapper;
+			sourceTree = "<group>";
+		};
+		E8846DC62276661800E0AE68 /* wrModels */ = {
+			isa = PBXGroup;
+			children = (
+				E8846DC72276661800E0AE68 /* wrios_pose2d_v2.0_portrait.enc */,
+				E8846DC82276661800E0AE68 /* wrios_pose3d_v1.enc */,
+				E8846DC92276661800E0AE68 /* wrios_pose2d_v2.0.enc */,
+			);
+			path = wrModels;
+			sourceTree = "<group>";
+		};
 		E89D22622264697B00B0D3F5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +384,7 @@
 				E85F1D7E225EFEAB00AA2283 /* Frameworks */,
 				E85F1D7F225EFEAB00AA2283 /* Resources */,
 				2A4954AE6E538D9851B2F972 /* [CP] Embed Pods Frameworks */,
+				E8846DE72276730B00E0AE68 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -339,6 +435,9 @@
 			files = (
 				E85F1D8C225EFEAD00AA2283 /* Assets.xcassets in Resources */,
 				E89D225C2263134800B0D3F5 /* GoogleService-Info.plist in Resources */,
+				E8846DCE2276661900E0AE68 /* wrios_pose3d_v1.enc in Resources */,
+				E8846DCD2276661900E0AE68 /* wrios_pose2d_v2.0_portrait.enc in Resources */,
+				E8846DCF2276661900E0AE68 /* wrios_pose2d_v2.0.enc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,16 +519,19 @@
 				E8170F25226FD5DC00CC9898 /* Badge.swift in Sources */,
 				E8170F10226C676A00CC9898 /* SitupMLVC.swift in Sources */,
 				E8846DB722765ECA00E0AE68 /* PushupsA.mlmodel in Sources */,
+				E8846DCB2276661900E0AE68 /* INWWrapper.mm in Sources */,
 				E89D228A2268227300B0D3F5 /* CustomView.swift in Sources */,
 				E867E574226A9D630073E8A0 /* ActivitySkeleton.swift in Sources */,
 				E8846DB922765F1C00E0AE68 /* TrainingVC.swift in Sources */,
 				E8D3AF6D22693FB10045C87A /* PushupMLVC.swift in Sources */,
 				E89D22522262FC6600B0D3F5 /* CustomLongButton.swift in Sources */,
 				E8D3AF7322694A580045C87A /* TabsVC.swift in Sources */,
+				E8846DCC2276661900E0AE68 /* wrOpenCvHelpers.cpp in Sources */,
 				E85F1D9C226038CC00AA2283 /* EnterNameVC.swift in Sources */,
 				E85F1D98225EFFCC00AA2283 /* LandingPageVC.swift in Sources */,
 				E89D224E2262F47A00B0D3F5 /* CustomTextField.swift in Sources */,
 				E89D22662266995F00B0D3F5 /* CoreButton.swift in Sources */,
+				E8846DCA2276661900E0AE68 /* wrHelpers.cpp in Sources */,
 				E89D22502262FC2700B0D3F5 /* CustomMedButton.swift in Sources */,
 				E89D229522682D5C00B0D3F5 /* Activity.swift in Sources */,
 				E8170F21226D779B00CC9898 /* PedometerView.swift in Sources */,
@@ -579,6 +681,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = enhanceLogo;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y88B368L4C;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Enhance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -598,6 +705,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = enhanceLogo;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y88B368L4C;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Enhance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

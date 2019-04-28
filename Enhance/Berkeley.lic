@@ -1,0 +1,11 @@
+{
+  "vendor": "wrnch Inc.",
+  "license": {
+    "product": "wrnchAI engine",
+    "version": "1.99",
+    "expiry": "2019-05-23",
+    "hostid": "any",
+    "customer": "Berkeley",
+    "signature": "3040021e610ce8c5ad6df7a2eec16aa78c4ea083e4520b33834f7fff591f2124eb40021e0563637fcbcc74efac48384570890937bdf7e5d2f6ccef35448b88e8f105"
+  }
+}
