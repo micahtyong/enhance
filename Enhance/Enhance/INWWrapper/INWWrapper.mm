@@ -24,7 +24,7 @@ using namespace wrnch;
 #pragma mark Public
 
 + (void)wrAPI_version {
- //   cout << "Version: " << WRNCH_ENGINE_API_VERSION ;
+//    cout << "Version: " << WRNCH_ENGINE_API_VERSION ;
 }
 
 +(int)wrAPI_sample_Joints {
