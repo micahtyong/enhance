@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import Hero
+import PopupDialog
 
 class ProfileVC: UIViewController {
     
@@ -15,6 +17,9 @@ class ProfileVC: UIViewController {
     
     let ref : DatabaseReference! = Database.database().reference()
     var databaseHandler : DatabaseHandle?
+    
+    // INFO Button
+    let infoButton : InfoButton = InfoButton()
     
     // HEADER
     let headerBackground : UIView = UIView()
@@ -48,7 +53,7 @@ class ProfileVC: UIViewController {
     
     func updateFields() {
         nameLabel.text = self.user.name
-        energyLabel.text = "\(self.user.energyPoints)"
+        energyLabel.text = "\(round(self.user.energyPoints))"
         badges = BadgesView(frame: self.view.frame, user: Enhance.user)
     }
     
@@ -63,6 +68,47 @@ class ProfileVC: UIViewController {
         setupEnergySection()
         setupBadgeSection()
         setupBadges()
+        setupInfoButton()
+    }
+    
+    func demoOnboardingPopup() {
+        // Prepare the popup assets
+        let title = "HOW IT WORKS"
+        let message = "One of the underlying technologies behind Enhance is it's use of CMU's OpenPose Library.\nTry it yourself by taking a selfie!"
+        let image = UIImage(named: "openPoseCred")
+        // Create the dialog
+        let popup = PopupDialog(title: title, message: message, image: image)
+        // Create buttons
+        let cancelButton = CancelButton(title: "CANCEL") {
+            print("You canceled the dialog.")
+        }
+        let startButton = DefaultButton(title: "TRY", height: 60) {
+            let demoVC = OpenPoseDemoVC()
+            demoVC.hero.isEnabled = true
+            demoVC.hero.modalAnimationType = .selectBy(presenting: .zoom, dismissing: .zoomOut)
+            self.present(demoVC, animated: true, completion: nil)
+        }
+        popup.addButtons([cancelButton, startButton])
+        self.present(popup, animated: true, completion: nil)
+    }
+    
+    @objc func infoButtonTapped(_ sender : InfoButton) {
+        sender.pulse()
+        demoOnboardingPopup()
+        let demoVC = OpenPoseDemoVC()
+        demoVC.hero.isEnabled = true
+        demoVC.hero.modalAnimationType = .selectBy(presenting: .zoom, dismissing: .zoomOut)
+        self.present(demoVC, animated: true, completion: nil)
+    }
+    
+    func setupInfoButton() {
+        infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
+        
+        self.view.addSubview(infoButton)
+        
+        infoButton.translatesAutoresizingMaskIntoConstraints = false
+        infoButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -15).isActive = true
+        infoButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 25).isActive = true
     }
     
     func setupBadges() {
@@ -143,7 +189,7 @@ class ProfileVC: UIViewController {
         energyLabel.minimumScaleFactor = 0.5
         energyLabel.adjustsFontSizeToFitWidth = true
         energyLabel.textAlignment = .center
-        energyLabel.text = "\(user.energyPoints)"
+        energyLabel.text = "\(round(user.energyPoints))"
         
         view.addSubview(energyLabel)
         

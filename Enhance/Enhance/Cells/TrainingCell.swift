@@ -53,7 +53,7 @@ class TrainingCell: UITableViewCell {
     func setupUI() {
         self.backgroundColor = UIColor.clear
         self.clipsToBounds = true
-        let logoFactor : CGFloat = 0.13
+        let logoFactor : CGFloat = 0.165
         let screenHeight = self.screen().size.height
         let logoConstant = logoFactor * screenHeight
         self.frame = CGRect(x: 0, y: 0, width: self.screenSize().size.width, height: logoConstant)
@@ -81,7 +81,7 @@ class TrainingCell: UITableViewCell {
         trainButton.translatesAutoresizingMaskIntoConstraints = false
         trainButton.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -50).isActive = true
         trainButton.centerYAnchor.constraint(equalTo: cellView.centerYAnchor).isActive = true
-        trainButton.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 0).isActive = true
+        trainButton.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 5).isActive = true
     }
     
     func setupLabels() {
@@ -94,7 +94,6 @@ class TrainingCell: UITableViewCell {
         headerView.translatesAutoresizingMaskIntoConstraints = false
         headerView.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 50).isActive = true
         headerView.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 0).isActive = true
-//        cellView.frame.size.height * 0.1
         headerView.trailingAnchor.constraint(equalTo: trainButton.leadingAnchor, constant: 0).isActive = true
         headerView.heightAnchor.constraint(equalTo: cellView.heightAnchor, multiplier: 0.6, constant: 0).isActive = true
     }
@@ -132,7 +131,7 @@ class TrainingCell: UITableViewCell {
         header.widthAnchor.constraint(equalTo: headerView.widthAnchor).isActive = true
         header.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 0).isActive = true
         header.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 20).isActive = true
-        header.heightAnchor.constraint(equalTo: headerView.heightAnchor, multiplier: 0.70).isActive = true
+        header.heightAnchor.constraint(equalTo: headerView.heightAnchor, multiplier: 0.75).isActive = true
     }
     
     func screen() -> CGRect {

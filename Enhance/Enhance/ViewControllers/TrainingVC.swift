@@ -47,7 +47,7 @@ class TrainingVC: UIViewController {
     }
     
     func setupActivities() {
-        activityData = [Activity.init(title: "Strength", image: UIImage.init(named: "dumbell"), description: "Let's do some pushups!", activity: PushupMLVC()),
+        activityData = [Activity.init(title: "Strength", image: UIImage.init(named: "dumbell"), description: "Let's do some pushups!", activity: PushupMLVC2()),
                         Activity.init(title: "Stamina", image: UIImage.init(named: "thunder"), description: "How many steps in 10 minutes?", activity: StepsVC()),
                         Activity.init(title: "Core", image: UIImage.init(named: "pushupgirl"), description: "Let's work on form and abs!", activity: SitupMLVC())]
     }
@@ -107,7 +107,7 @@ extension TrainingVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let heightConstant : CGFloat = 0.125
+        let heightConstant : CGFloat = 0.145
         let height: CGFloat = self.screenSize().size.height * heightConstant
         return height
     }

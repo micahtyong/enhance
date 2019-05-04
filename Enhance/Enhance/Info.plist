@@ -43,5 +43,9 @@
 	<string>Click &quot;OK&quot; to continue</string>
 	<key>NSMotionUsageDescription</key>
 	<string>In order to count steps I need an access to your pedometer</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need to train our model! Click &quot;OK&quot;.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Let us save the photo now. </string>
 </dict>
 </plist>

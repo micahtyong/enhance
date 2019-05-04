@@ -1,4 +1,5 @@
 
+#import "OpenCVWrapper.h"
 #import "INWWrapper.h"
 
 #ifdef __cplusplus

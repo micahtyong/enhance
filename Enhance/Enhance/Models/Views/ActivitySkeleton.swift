@@ -85,14 +85,12 @@ class ActivitySkeleton: UIView {
         
         displayLabel.translatesAutoresizingMaskIntoConstraints = false
         displayLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        displayLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: screenHeight * 0.20 * 1).isActive = true
+        displayLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        displayLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1).isActive = true
         displayLabel.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.25).isActive = true
-        displayLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4).isActive = true
-        displayLabel.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
     }
     
     func setupButton() {
-        
         self.addSubview(playButton)
         
         playButton.translatesAutoresizingMaskIntoConstraints = false

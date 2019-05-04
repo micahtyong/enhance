@@ -105,9 +105,10 @@ class Badge: UIView {
         badgeButton.addTarget(self, action: #selector(pulse), for: .touchUpInside)
         
         self.addSubview(badgeButton)
+        
         badgeButton.translatesAutoresizingMaskIntoConstraints = false
         badgeButton.widthAnchor.constraint(equalToConstant: screenWidth * 0.12).isActive = true
-        badgeButton.heightAnchor.constraint(equalToConstant: screenHeight * 0.062).isActive = true
+        badgeButton.heightAnchor.constraint(equalToConstant: screenWidth * 0.12).isActive = true
         badgeButton.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
         badgeButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
     }
