@@ -43,29 +43,30 @@ class OpenPoseDemoVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     // UX
     @objc func testPhotoCapture(_ sender:UIButton) {
-        self.timer = Timer.scheduledTimer(timeInterval: 0.6, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
         skeleton.setupCounterLabel()
     }
     
     // Mark: - Tells camera to take picture
     func takePicture() {
-        skeleton.bounceCounter()
+        self.timer?.invalidate()
+        skeleton.bounceCounter()git
         self.frameReady = true
     }
     
     // Mark: - Function that fires every second
     
     @objc func fireTimer() {
-        if currTime < 2 { // READY
-            skeleton.setCounterText(to: "Ready")
-        } else if currTime < 4 { // SET
-            skeleton.setCounterText(to: "Set")
-        } else if currTime < 6 { // GO
-            skeleton.setCounterText(to: "Go")
-        } else if currTime < 50 {
-            takePicture()
+        if currTime < 1 { // READY
+            skeleton.setCounterText(to: "3")
+        } else if currTime < 2 { // SET
+            skeleton.setCounterText(to: "2")
+        } else if currTime < 3 { // GO
+            skeleton.setCounterText(to: "1")
         } else {
-            skeleton.setCounterText(to: "Done")
+            skeleton.setCounterText(to: "")
+            currTime = -1
+            takePicture()
         }
         currTime += 1
     }
@@ -125,15 +126,15 @@ class OpenPoseDemoVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                     // EXTRACT JOINTS IMAGE (STEP 2)
                     if let jointsImage = self.runCoreML(image) {
                         // DEMO DISPLAY
-//                        let photoVC = PhotoDisplayVC()
-//                        photoVC.setImageTo(jointsImage)
-//
-//                        self.present(photoVC, animated: true, completion: {
-//                            self.stopCaptureSession()
-//                        })
+                        let photoVC = PhotoDisplayVC()
+                        photoVC.setImageTo(jointsImage)
+
+                        self.present(photoVC, animated: true, completion: {
+                            self.stopCaptureSession()
+                        })
                         
                         // SAVE TO CAMERA ROLL (collecting data)
-                        UIImageWriteToSavedPhotosAlbum(jointsImage, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
+//                        UIImageWriteToSavedPhotosAlbum(jointsImage, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
                     }
                     
                 }

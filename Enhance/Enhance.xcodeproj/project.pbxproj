@@ -89,20 +89,11 @@
 		E8846DB722765ECA00E0AE68 /* PushupsA.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E8846DB622765ECA00E0AE68 /* PushupsA.mlmodel */; };
 		E8846DB922765F1C00E0AE68 /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8846DB822765F1C00E0AE68 /* TrainingVC.swift */; };
 		E8846DBB227664C700E0AE68 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DBA227664C700E0AE68 /* opencv2.framework */; };
-		E8846DBD227664D100E0AE68 /* wrnch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DBC227664D100E0AE68 /* wrnch.framework */; };
-		E8846DCA2276661900E0AE68 /* wrHelpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8846DC22276661800E0AE68 /* wrHelpers.cpp */; };
-		E8846DCB2276661900E0AE68 /* INWWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = E8846DC32276661800E0AE68 /* INWWrapper.mm */; };
-		E8846DCC2276661900E0AE68 /* wrOpenCvHelpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8846DC42276661800E0AE68 /* wrOpenCvHelpers.cpp */; };
-		E8846DCD2276661900E0AE68 /* wrios_pose2d_v2.0_portrait.enc in Resources */ = {isa = PBXBuildFile; fileRef = E8846DC72276661800E0AE68 /* wrios_pose2d_v2.0_portrait.enc */; };
-		E8846DCE2276661900E0AE68 /* wrios_pose3d_v1.enc in Resources */ = {isa = PBXBuildFile; fileRef = E8846DC82276661800E0AE68 /* wrios_pose3d_v1.enc */; };
-		E8846DCF2276661900E0AE68 /* wrios_pose2d_v2.0.enc in Resources */ = {isa = PBXBuildFile; fileRef = E8846DC92276661800E0AE68 /* wrios_pose2d_v2.0.enc */; };
 		E8846DD12276673000E0AE68 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DD02276673000E0AE68 /* CoreGraphics.framework */; };
 		E8846DD32276673700E0AE68 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DD22276673700E0AE68 /* CoreMedia.framework */; };
 		E8846DD52276673D00E0AE68 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DD42276673D00E0AE68 /* CoreFoundation.framework */; };
 		E8846DD72276674500E0AE68 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DD62276674500E0AE68 /* AssetsLibrary.framework */; };
 		E8846DD92276674A00E0AE68 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DD82276674A00E0AE68 /* Accelerate.framework */; };
-		E8846DE52276730B00E0AE68 /* wrnch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DE42276730B00E0AE68 /* wrnch.framework */; };
-		E8846DE62276730B00E0AE68 /* wrnch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DE42276730B00E0AE68 /* wrnch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E8846DE92276733300E0AE68 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DE82276733300E0AE68 /* opencv2.framework */; };
 		E8846DEA2276733300E0AE68 /* opencv2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DE82276733300E0AE68 /* opencv2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E886474F227EDC250063F2AD /* ScrollViewExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E886474E227EDC250063F2AD /* ScrollViewExampleVC.swift */; };
@@ -141,7 +132,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				E8846DEA2276733300E0AE68 /* opencv2.framework in Embed Frameworks */,
-				E8846DE62276730B00E0AE68 /* wrnch.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,23 +227,11 @@
 		E8846DB622765ECA00E0AE68 /* PushupsA.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PushupsA.mlmodel; sourceTree = "<group>"; };
 		E8846DB822765F1C00E0AE68 /* TrainingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrainingVC.swift; path = Enhance/ViewControllers/TrainingVC.swift; sourceTree = SOURCE_ROOT; };
 		E8846DBA227664C700E0AE68 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
-		E8846DBC227664D100E0AE68 /* wrnch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = wrnch.framework; sourceTree = "<group>"; };
-		E8846DBF2276661800E0AE68 /* wrOpenCvHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wrOpenCvHelpers.h; sourceTree = "<group>"; };
-		E8846DC02276661800E0AE68 /* wrHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wrHelpers.h; sourceTree = "<group>"; };
-		E8846DC12276661800E0AE68 /* INWWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INWWrapper.h; sourceTree = "<group>"; };
-		E8846DC22276661800E0AE68 /* wrHelpers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wrHelpers.cpp; sourceTree = "<group>"; };
-		E8846DC32276661800E0AE68 /* INWWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = INWWrapper.mm; sourceTree = "<group>"; };
-		E8846DC42276661800E0AE68 /* wrOpenCvHelpers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wrOpenCvHelpers.cpp; sourceTree = "<group>"; };
-		E8846DC52276661800E0AE68 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		E8846DC72276661800E0AE68 /* wrios_pose2d_v2.0_portrait.enc */ = {isa = PBXFileReference; lastKnownFileType = file; path = wrios_pose2d_v2.0_portrait.enc; sourceTree = "<group>"; };
-		E8846DC82276661800E0AE68 /* wrios_pose3d_v1.enc */ = {isa = PBXFileReference; lastKnownFileType = file; path = wrios_pose3d_v1.enc; sourceTree = "<group>"; };
-		E8846DC92276661800E0AE68 /* wrios_pose2d_v2.0.enc */ = {isa = PBXFileReference; lastKnownFileType = file; path = wrios_pose2d_v2.0.enc; sourceTree = "<group>"; };
 		E8846DD02276673000E0AE68 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E8846DD22276673700E0AE68 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		E8846DD42276673D00E0AE68 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		E8846DD62276674500E0AE68 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		E8846DD82276674A00E0AE68 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		E8846DE42276730B00E0AE68 /* wrnch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = wrnch.framework; sourceTree = "<group>"; };
 		E8846DE82276733300E0AE68 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		E886474E227EDC250063F2AD /* ScrollViewExampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExampleVC.swift; sourceTree = "<group>"; };
 		E8864750227F63280063F2AD /* OnboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardVC.swift; sourceTree = "<group>"; };
@@ -288,13 +266,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8846DE52276730B00E0AE68 /* wrnch.framework in Frameworks */,
 				E8846DD92276674A00E0AE68 /* Accelerate.framework in Frameworks */,
 				E8846DD72276674500E0AE68 /* AssetsLibrary.framework in Frameworks */,
 				E8846DD52276673D00E0AE68 /* CoreFoundation.framework in Frameworks */,
 				E8846DD32276673700E0AE68 /* CoreMedia.framework in Frameworks */,
 				E8846DD12276673000E0AE68 /* CoreGraphics.framework in Frameworks */,
-				E8846DBD227664D100E0AE68 /* wrnch.framework in Frameworks */,
 				E8846DBB227664C700E0AE68 /* opencv2.framework in Frameworks */,
 				E8846DE92276733300E0AE68 /* opencv2.framework in Frameworks */,
 				5ADCE2F45D6D687E02DFFE3B /* Pods_Enhance.framework in Frameworks */,
@@ -312,7 +288,6 @@
 				E8846DD42276673D00E0AE68 /* CoreFoundation.framework */,
 				E8846DD22276673700E0AE68 /* CoreMedia.framework */,
 				E8846DD02276673000E0AE68 /* CoreGraphics.framework */,
-				E8846DBC227664D100E0AE68 /* wrnch.framework */,
 				E8846DBA227664C700E0AE68 /* opencv2.framework */,
 				84FDF6C1A7FC316263A4AC03 /* Pods_Enhance.framework */,
 			);
@@ -457,7 +432,6 @@
 			isa = PBXGroup;
 			children = (
 				E8846DE82276733300E0AE68 /* opencv2.framework */,
-				E8846DE42276730B00E0AE68 /* wrnch.framework */,
 				E85F1D83225EFEAB00AA2283 /* Enhance */,
 				E85F1D82225EFEAB00AA2283 /* Products */,
 				EC811920E2BCF89C4B3DDAE1 /* Pods */,
@@ -558,39 +532,13 @@
 			path = Object;
 			sourceTree = "<group>";
 		};
-		E8846DBE2276661800E0AE68 /* INWWrapper */ = {
-			isa = PBXGroup;
-			children = (
-				E8846DBF2276661800E0AE68 /* wrOpenCvHelpers.h */,
-				E8846DC02276661800E0AE68 /* wrHelpers.h */,
-				E8846DC12276661800E0AE68 /* INWWrapper.h */,
-				E8846DC22276661800E0AE68 /* wrHelpers.cpp */,
-				E8846DC32276661800E0AE68 /* INWWrapper.mm */,
-				E8846DC42276661800E0AE68 /* wrOpenCvHelpers.cpp */,
-				E8846DC52276661800E0AE68 /* Bridging-Header.h */,
-				E8846DC62276661800E0AE68 /* wrModels */,
-			);
-			path = INWWrapper;
-			sourceTree = "<group>";
-		};
-		E8846DC62276661800E0AE68 /* wrModels */ = {
-			isa = PBXGroup;
-			children = (
-				E8846DC72276661800E0AE68 /* wrios_pose2d_v2.0_portrait.enc */,
-				E8846DC82276661800E0AE68 /* wrios_pose3d_v1.enc */,
-				E8846DC92276661800E0AE68 /* wrios_pose2d_v2.0.enc */,
-			);
-			path = wrModels;
-			sourceTree = "<group>";
-		};
 		E886474D227EDBBD0063F2AD /* Deprecated */ = {
 			isa = PBXGroup;
 			children = (
-				E8170F0F226C676A00CC9898 /* SitupMLVC.swift */,
 				E8C2B347227E5C3000BE5983 /* Onboarding */,
-				E8846DBE2276661800E0AE68 /* INWWrapper */,
 				E886474E227EDC250063F2AD /* ScrollViewExampleVC.swift */,
 				E8D3AF6C22693FB10045C87A /* PushupMLVC.swift */,
+				E8170F0F226C676A00CC9898 /* SitupMLVC.swift */,
 				E8C2B345227E5ABE00BE5983 /* OnboardingVC.swift */,
 			);
 			path = Deprecated;
@@ -729,9 +677,6 @@
 			files = (
 				E85F1D8C225EFEAD00AA2283 /* Assets.xcassets in Resources */,
 				E89D225C2263134800B0D3F5 /* GoogleService-Info.plist in Resources */,
-				E8846DCE2276661900E0AE68 /* wrios_pose3d_v1.enc in Resources */,
-				E8846DCD2276661900E0AE68 /* wrios_pose2d_v2.0_portrait.enc in Resources */,
-				E8846DCF2276661900E0AE68 /* wrios_pose2d_v2.0.enc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -825,7 +770,6 @@
 				E8E1F848227D604800215C11 /* InfoButton.swift in Sources */,
 				E8218DF22277FFBE00E02AE0 /* CVPixelBuffer+Helpers.swift in Sources */,
 				E8846DB722765ECA00E0AE68 /* PushupsA.mlmodel in Sources */,
-				E8846DCB2276661900E0AE68 /* INWWrapper.mm in Sources */,
 				E886474F227EDC250063F2AD /* ScrollViewExampleVC.swift in Sources */,
 				E89D228A2268227300B0D3F5 /* CustomView.swift in Sources */,
 				E867E574226A9D630073E8A0 /* ActivitySkeleton.swift in Sources */,
@@ -851,7 +795,6 @@
 				E8218DEC2277FFBE00E02AE0 /* QuadraticType.swift in Sources */,
 				E8218DEA2277FFBE00E02AE0 /* 2DTensorSlice.swift in Sources */,
 				E8218E022277FFBE00E02AE0 /* Repeater.swift in Sources */,
-				E8846DCC2276661900E0AE68 /* wrOpenCvHelpers.cpp in Sources */,
 				E85F1D9C226038CC00AA2283 /* EnterNameVC.swift in Sources */,
 				E8218DE72277FFBE00E02AE0 /* Trigonometric.swift in Sources */,
 				E8218DFC2277FFBE00E02AE0 /* Combinations.swift in Sources */,
@@ -860,7 +803,6 @@
 				E89D224E2262F47A00B0D3F5 /* CustomTextField.swift in Sources */,
 				E8E1F845227D128500215C11 /* OpenPoseDemoVC.swift in Sources */,
 				E89D22662266995F00B0D3F5 /* CoreButton.swift in Sources */,
-				E8846DCA2276661900E0AE68 /* wrHelpers.cpp in Sources */,
 				E8218DE92277FFBE00E02AE0 /* Hyperbolic.swift in Sources */,
 				E8218DD62277FFBE00E02AE0 /* ComplexArrayRealSlice.swift in Sources */,
 				E8218DEE2277FFBE00E02AE0 /* UIImage+CVPixelBuffer.swift in Sources */,
