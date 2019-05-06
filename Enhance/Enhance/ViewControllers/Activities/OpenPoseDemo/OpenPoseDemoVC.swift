@@ -50,7 +50,7 @@ class OpenPoseDemoVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     // Mark: - Tells camera to take picture
     func takePicture() {
         self.timer?.invalidate()
-        skeleton.bounceCounter()git
+        skeleton.bounceCounter()
         self.frameReady = true
     }
     

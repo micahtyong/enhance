@@ -161,7 +161,9 @@ class WelcomeToEnhanceVC: UIViewController {
         welcomeLabel.minimumScaleFactor = 0.5
         welcomeLabel.adjustsFontSizeToFitWidth = true
         welcomeLabel.numberOfLines = 0
-        welcomeLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 16)
+        welcomeLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 18)
+        welcomeLabel.minimumScaleFactor = 0.5
+        welcomeLabel.adjustsFontSizeToFitWidth = true
         welcomeLabel.textAlignment = .center
         welcomeLabel.textColor = .black
         
@@ -187,7 +189,7 @@ class WelcomeToEnhanceVC: UIViewController {
         self.view.addSubview(thanksLabel)
         
         thanksLabel.translatesAutoresizingMaskIntoConstraints = false
-        thanksLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.45).isActive = true
+        thanksLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
         thanksLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
         thanksLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         thanksLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -50).isActive = true

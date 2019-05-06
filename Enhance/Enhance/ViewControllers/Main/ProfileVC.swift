@@ -254,7 +254,7 @@ class ProfileVC: UIViewController {
         view.addSubview(nameLabel)
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.36).isActive = true
+        nameLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.76).isActive = true
         nameLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.06).isActive = true
         nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
         nameLabel.bottomAnchor.constraint(equalTo: headerBackground.bottomAnchor, constant: -20).isActive = true
