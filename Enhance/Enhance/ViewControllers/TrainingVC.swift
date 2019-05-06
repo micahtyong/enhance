@@ -7,8 +7,11 @@
 
 import UIKit
 import Hero
+import STopAlert
+import AudioToolbox
+import TransitionButton
 
-class TrainingVC: UIViewController {
+class TrainingVC: CustomTransitionViewController {
     
     var user : User = Enhance.user
     
@@ -35,7 +38,10 @@ class TrainingVC: UIViewController {
     }
     
     // UX
-    
+    func statusBarUpdate(withMessage message : String) {
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        STopAlert.show(text: message, type: .positive)
+    }
     
     // UI
     
@@ -49,7 +55,7 @@ class TrainingVC: UIViewController {
     func setupActivities() {
         activityData = [Activity.init(title: "Strength", image: UIImage.init(named: "dumbell"), description: "Let's do some pushups!", activity: PushupMLVC2()),
                         Activity.init(title: "Stamina", image: UIImage.init(named: "thunder"), description: "How many steps in 10 minutes?", activity: StepsVC()),
-                        Activity.init(title: "Core", image: UIImage.init(named: "pushupgirl"), description: "Let's work on form and abs!", activity: SitupMLVC())]
+                        Activity.init(title: "Core", image: UIImage.init(named: "pushupgirl"), description: "Let's work on form and abs!", activity: PlanksMLVC2())]
     }
     
     func setupLine() {
@@ -144,10 +150,16 @@ extension TrainingVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func launchCoreML(_ sender : CoreButton) {
-        let vc = currActivity
-        vc.hero.isEnabled = true
-        vc.hero.modalAnimationType = .selectBy(presenting: .zoomSlide(direction: .up), dismissing: .zoomOut)
-        self.present(vc, animated: true, completion: nil)
+        sender.startAnimation()
+        DispatchQueue.main.async(execute: { () -> Void in
+            sender.stopAnimation(animationStyle: .expand, completion: {
+                let vc = self.currActivity
+                self.present(vc, animated: true, completion: nil)
+            })
+        })
+//        vc.hero.isEnabled = true
+//        vc.hero.modalAnimationType = .selectBy(presenting: .zoomSlide(direction: .up), dismissing: .zoomOut)
+        
     }
     
 }

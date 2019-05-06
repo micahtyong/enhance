@@ -10,6 +10,7 @@ import UIKit
 import Hero
 import Firebase
 import FirebaseDatabase
+import TransitionButton
 
 class WelcomeToEnhanceVC: UIViewController {
     
@@ -18,11 +19,11 @@ class WelcomeToEnhanceVC: UIViewController {
     var firstTime: Bool = false
     var name : String = "X"
     let deviceID : String = UIDevice.current.identifierForVendor?.uuidString ?? "No device available"
-    var timer = Timer()
     
     let ref : DatabaseReference! = Database.database().reference()
     
     let beginTraining = CustomLongButton()
+    let beginTraining2 = TransitionButton(frame: CGRect(x: 100, y: 100, width: 150, height: 50))
     let thanksLabel = UILabel()
     let welcomeLabel = UILabel()
     let backButton = BackButton()
@@ -58,28 +59,39 @@ class WelcomeToEnhanceVC: UIViewController {
         })
     }
     
-    @objc func toMain(_ sender : CustomLongButton) {
-        timer.invalidate()
-        sender.pulse()
+    @objc func toMain(_ sender : TransitionButton) {
+        sender.startAnimation()
         self.user = User(name: name, deviceID: deviceID)
-        if firstTime {
-            self.ref.child("Users").child(deviceID).setValue(["Name" : user.name, "Total" : user.energyPoints, "Strength" : user.strengthTotal, "Stamina" : user.staminaTotal, "Core" : user.staminaTotal])
-            Enhance.user = self.user
-            print("New user!")
-        } else {
-            fetchUser { success in
-                if success {
-                    Enhance.user = self.user
-                    print("Successfully fetched user!")
-                } else {
-                    print("Error fetching user!")
+        self.welcomeLabel.text = ""
+        self.thanksLabel.text = ""
+        
+        let qualityOfServiceClass = DispatchQoS.QoSClass.background
+        let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
+        backgroundQueue.async(execute: {
+            
+            if self.firstTime {
+                self.ref.child("Users").child(self.deviceID).setValue(["Name" : self.user.name, "Total" : self.user.energyPoints, "Strength" : self.user.strengthTotal, "Stamina" : self.user.staminaTotal, "Core" : self.user.staminaTotal])
+                Enhance.user = self.user
+                print("New user!")
+            } else {
+                self.fetchUser { success in
+                    if success {
+                        Enhance.user = self.user
+                        print("Successfully fetched user!")
+                    } else {
+                        print("Error fetching user!")
+                    }
                 }
             }
-        }
-        let trainVC = TabsVC()
-        trainVC.hero.isEnabled = true
-        trainVC.hero.modalAnimationType = .selectBy(presenting: .zoom, dismissing: .zoomOut)
-        self.present(trainVC, animated: true, completion: nil)
+            DispatchQueue.main.async(execute: { () -> Void in
+                sender.stopAnimation(animationStyle: .expand, completion: {
+                    let trainVC = TabsVC()
+                    trainVC.trainingVC.statusBarUpdate(withMessage: "Get started with an activity!")
+                    self.present(trainVC, animated: true, completion: nil)
+                })
+            })
+        })
+        
     }
     
     func isNewUser(_ x : Bool) {
@@ -91,20 +103,56 @@ class WelcomeToEnhanceVC: UIViewController {
         thanksLabel.text = "Thanks, \(name)"
     }
     
+    
+    
     // UI
     
     func setupUI() {
         self.view.backgroundColor = .white
         self.view.autoresizingMask = [.flexibleHeight, .flexibleWidth, .flexibleTopMargin, .flexibleRightMargin, .flexibleLeftMargin, .flexibleBottomMargin]
-        setupBeginTrainingButton()
+//        setupBeginTrainingButton()
+        setupBeginTraining2Button()
         setupThanksLabel()
         setupWelcomeLabel()
         setupBackButton()
     }
     
+    func setupBeginTrainingButton() {
+        beginTraining.setText(to: "Begin Training")
+        beginTraining.addTarget(self, action: #selector(toMain), for: .touchUpInside)
+        
+        view.addSubview(beginTraining)
+        
+        beginTraining.translatesAutoresizingMaskIntoConstraints = false
+        beginTraining.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        beginTraining.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -40).isActive = true
+    }
+    
+    func setupBeginTraining2Button() {
+        beginTraining2.backgroundColor = Enhance.customOrange
+        beginTraining2.setTitle("Begin Training", for: .normal)
+        beginTraining2.titleLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 16)
+        beginTraining2.titleLabel?.minimumScaleFactor = 0.5
+        beginTraining2.titleLabel?.adjustsFontSizeToFitWidth = true
+        beginTraining2.titleLabel?.textAlignment = .center
+        beginTraining2.layer.borderWidth = 1
+        beginTraining2.layer.borderColor = Enhance.customOrange.cgColor
+        beginTraining2.cornerRadius = 20
+        beginTraining2.spinnerColor = .white
+        beginTraining2.addTarget(self, action: #selector(toMain), for: .touchUpInside)
+        
+        view.addSubview(beginTraining2)
+        
+        beginTraining2.translatesAutoresizingMaskIntoConstraints = false
+        beginTraining2.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        beginTraining2.widthAnchor.constraint(equalToConstant: 280).isActive = true
+        beginTraining2.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        beginTraining2.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -40).isActive = true
+    }
+    
     func setupWelcomeLabel() {
         welcomeLabel.frame = CGRect(x: 0, y: 0, width: 180, height: 40)
-        welcomeLabel.backgroundColor = .white
+        welcomeLabel.backgroundColor = .clear
         if firstTime {
             welcomeLabel.text = "You're now ready to start\nusing Enhance"
         } else {
@@ -128,7 +176,7 @@ class WelcomeToEnhanceVC: UIViewController {
     
     func setupThanksLabel() {
         thanksLabel.frame = CGRect(x: 0, y: 0, width: 300, height: 50)
-        thanksLabel.backgroundColor = .white
+        thanksLabel.backgroundColor = .clear
         thanksLabel.textColor = UIColor(red: 0.98, green: 0.65, blue: 0.01, alpha: 1)
         thanksLabel.font = UIFont(name: "AvenirNext-Regular", size: 26)
         thanksLabel.textAlignment = .center
@@ -143,17 +191,6 @@ class WelcomeToEnhanceVC: UIViewController {
         thanksLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
         thanksLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         thanksLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -50).isActive = true
-    }
-    
-    func setupBeginTrainingButton() {
-        beginTraining.setText(to: "Begin Training")
-        beginTraining.addTarget(self, action: #selector(toMain), for: .touchUpInside)
-        
-        view.addSubview(beginTraining)
-        
-        beginTraining.translatesAutoresizingMaskIntoConstraints = false
-        beginTraining.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        beginTraining.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -40).isActive = true
     }
     
     func setupBackButton() {
@@ -172,3 +209,40 @@ class WelcomeToEnhanceVC: UIViewController {
     }
 
 }
+
+//        let trainVC = TabsVC()
+//        trainVC.hero.isEnabled = true
+//        trainVC.hero.modalAnimationType = .selectBy(presenting: .zoom, dismissing: .zoomOut)
+//        trainVC.trainingVC.statusBarUpdate(withMessage: "Get started with an activity!")
+//        self.present(trainVC, animated: true, completion: nil)
+
+//    @objc func toMain(_ sender : TransitionButton) {
+//        sender.startAnimation()
+//        self.user = User(name: name, deviceID: deviceID)
+//
+//        if firstTime {
+//            self.ref.child("Users").child(deviceID).setValue(["Name" : user.name, "Total" : user.energyPoints, "Strength" : user.strengthTotal, "Stamina" : user.staminaTotal, "Core" : user.staminaTotal])
+//            Enhance.user = self.user
+//            print("New user!")
+//        } else {
+//            fetchUser { success in
+//                if success {
+//                    Enhance.user = self.user
+//                    print("Successfully fetched user!")
+//                } else {
+//                    print("Error fetching user!")
+//                }
+//            }
+//        }
+//
+//        DispatchQueue.main.async(execute: { () -> Void in
+//            sender.stopAnimation(animationStyle: .expand, completion: {
+//                let trainVC = TabsVC()
+////                trainVC.hero.isEnabled = true
+////                trainVC.hero.modalAnimationType = .selectBy(presenting: .zoom, dismissing: .zoomOut)
+//                trainVC.trainingVC.statusBarUpdate(withMessage: "Get started with an activity!")
+//                self.present(trainVC, animated: true, completion: nil)
+//            })
+//        })
+//    }
+

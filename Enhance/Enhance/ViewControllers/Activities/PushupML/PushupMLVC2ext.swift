@@ -40,8 +40,6 @@ extension PushupMLVC2 {
     }
     
     func setupSkeleton() {
-//        skeleton.playButton.addTarget(self, action: #selector(testPhotoCapture), for: .touchUpInside)
-        // TEMPORARILY DISABLE TIMER STUFF. JUST TESTING PHOTO CAPTURE
         skeleton.playButton.addTarget(self, action: #selector(popUpOptions), for: .touchUpInside)
         
         self.view.addSubview(skeleton)
@@ -83,7 +81,7 @@ extension PushupMLVC2 {
     func finishingPopup() {
         let strengthPoints : Int = activity.max
         let totalPoints : Double = activity.showConfidence() / 10.0
-        updateUser(energyPoints : totalPoints, activityAmount : strengthPoints)
+        updateUser(energyPoints : totalPoints)
         // Prepare the popup assets
         let title = "SUCCESS"
         let message = "You successfully completed \(strengthPoints) pushups with a confidence level of \(activity.showConfidence())%.\nYour final score is: \(totalPoints)."

@@ -27,6 +27,9 @@ class OpenPoseDemoVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     var screenWidth = 0
     var screenHeight = 0
+    
+    var currTime : Int = 0
+    weak var timer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +39,35 @@ class OpenPoseDemoVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         super.viewWillAppear(animated)
         setupCamera()
         setupUI()
+    }
+    
+    // UX
+    @objc func testPhotoCapture(_ sender:UIButton) {
+        self.timer = Timer.scheduledTimer(timeInterval: 0.6, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+        skeleton.setupCounterLabel()
+    }
+    
+    // Mark: - Tells camera to take picture
+    func takePicture() {
+        skeleton.bounceCounter()
+        self.frameReady = true
+    }
+    
+    // Mark: - Function that fires every second
+    
+    @objc func fireTimer() {
+        if currTime < 2 { // READY
+            skeleton.setCounterText(to: "Ready")
+        } else if currTime < 4 { // SET
+            skeleton.setCounterText(to: "Set")
+        } else if currTime < 6 { // GO
+            skeleton.setCounterText(to: "Go")
+        } else if currTime < 50 {
+            takePicture()
+        } else {
+            skeleton.setCounterText(to: "Done")
+        }
+        currTime += 1
     }
     
     // Mark: - Methods to set up camera
@@ -92,19 +124,32 @@ class OpenPoseDemoVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 DispatchQueue.main.async {
                     // EXTRACT JOINTS IMAGE (STEP 2)
                     if let jointsImage = self.runCoreML(image) {
-                        // TEMPORARY DISPLAY
-                        let photoVC = PhotoDisplayVC()
-                        photoVC.setImageTo(jointsImage)
+                        // DEMO DISPLAY
+//                        let photoVC = PhotoDisplayVC()
+//                        photoVC.setImageTo(jointsImage)
+//
+//                        self.present(photoVC, animated: true, completion: {
+//                            self.stopCaptureSession()
+//                        })
                         
-                        self.present(photoVC, animated: true, completion: {
-                            self.stopCaptureSession()
-                        })
-
+                        // SAVE TO CAMERA ROLL (collecting data)
+                        UIImageWriteToSavedPhotosAlbum(jointsImage, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
                     }
                     
                 }
                 
             }
+        }
+    }
+    
+    //MARK: - Add image to Library
+    
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            // we got back an error!
+            print(error.localizedDescription)
+        } else {
+            print("saved sucessfully")
         }
     }
     
@@ -227,11 +272,6 @@ class OpenPoseDemoVC: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         let result = f()
         let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
         return (result, "Elapsed time is \(timeElapsed) seconds.")
-    }
-    
-    // UX
-    @objc func testPhotoCapture(_ sender:UIButton) {
-        self.frameReady = true
     }
     
     // UI

@@ -74,8 +74,8 @@ class Badge: UIView {
         self.addSubview(text)
         
         text.translatesAutoresizingMaskIntoConstraints = false
-        text.widthAnchor.constraint(equalToConstant: screenWidth * 0.17).isActive = true
-        text.heightAnchor.constraint(equalToConstant: screenHeight * 0.03).isActive = true
+        text.widthAnchor.constraint(equalToConstant: screenWidth * 0.4).isActive = true
+        text.heightAnchor.constraint(equalToConstant: screenHeight * 0.04).isActive = true
         text.leadingAnchor.constraint(equalTo: badgeButton.trailingAnchor, constant: 15).isActive = true
         text.topAnchor.constraint(equalTo: header.bottomAnchor, constant: 0).isActive = true
     }
@@ -92,7 +92,7 @@ class Badge: UIView {
         
         self.addSubview(header)
         header.translatesAutoresizingMaskIntoConstraints = false
-        header.widthAnchor.constraint(equalToConstant: screenWidth * 0.17).isActive = true
+        header.widthAnchor.constraint(equalToConstant: screenWidth * 0.16).isActive = true
         header.heightAnchor.constraint(equalToConstant: screenHeight * 0.023).isActive = true
         header.leadingAnchor.constraint(equalTo: badgeButton.trailingAnchor, constant: 15).isActive = true
         header.topAnchor.constraint(equalTo: self.topAnchor, constant: 3).isActive = true

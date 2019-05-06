@@ -71,7 +71,7 @@ class PushupMLVC2: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegat
         
         let dataOutput = AVCaptureVideoDataOutput()
         dataOutput.videoSettings = [(kCVPixelBufferPixelFormatTypeKey as NSString) : NSNumber(value:kCVPixelFormatType_32BGRA)] as [String : Any]
-        //        dataOutput.alwaysDiscardsLateVideoFrames = true
+        dataOutput.alwaysDiscardsLateVideoFrames = true
         
         if captureSession.canAddOutput(dataOutput) {
             captureSession.addOutput(dataOutput)
@@ -86,7 +86,7 @@ class PushupMLVC2: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegat
     // MARK: - CoreML Properties
     
     let model = MobileOpenPose()
-    let pushupModel = PushupsModelB()
+    let pushupModel = PushupsModelC()
     let ImageWidth = 368
     let ImageHeight = 368
     
@@ -162,7 +162,7 @@ class PushupMLVC2: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegat
     
     func runThroughModel(_ jointsImage : UIImage) {
         
-        guard let model = try? VNCoreMLModel(for: PushupsModelB().model) else { return }
+        guard let model = try? VNCoreMLModel(for: PushupsModelC().model) else { return }
         
         let request = VNCoreMLRequest(model: model) { (finishedReq, err) in
             guard let results = finishedReq.results as? [VNClassificationObservation] else { return }
@@ -290,9 +290,9 @@ class PushupMLVC2: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegat
     
     // Mark: - Firebase methods
     
-    func updateUser(energyPoints : Double, activityAmount : Int) {
+    func updateUser(energyPoints : Double) {
         Enhance.user.addToTotal(amount : energyPoints)
-        Enhance.user.addToStrength(amount: Double(activityAmount))
+        Enhance.user.addToStrength(amount: energyPoints)
         updateDatabase()
     }
     
@@ -352,6 +352,7 @@ class PushupMLVC2: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegat
         let vc = TabsVC()
         vc.hero.isEnabled = true
         vc.hero.modalAnimationType = .selectBy(presenting: .zoomSlide(direction: .down), dismissing: .zoomOut)
+        vc.trainingVC.statusBarUpdate(withMessage: "Keep it up \(Enhance.user.name)!")
         self.present(vc, animated: true, completion: nil)
     }
 
@@ -375,67 +376,3 @@ extension UIImage {
         return img
     }
 }
-
-//    func setupCamera() {
-//        captureSession.sessionPreset = AVCaptureSession.Preset.photo
-//
-//        let availableDevices = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .front).devices
-//        captureDevice = availableDevices.first
-//        beginSession()
-//    }
-
-
-//    func beginSession() {
-//        do {
-//            let captureDeviceInput = try AVCaptureDeviceInput(device: captureDevice)
-//            captureSession.addInput(captureDeviceInput)
-//        } catch {
-//            print(error.localizedDescription)
-//        }
-//
-//        let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-//        self.previewLayer = previewLayer
-//        self.view.layer.addSublayer(self.previewLayer)
-//        self.previewLayer.frame = self.view.layer.frame
-//        captureSession.startRunning()
-//
-//        let dataOutput = AVCaptureVideoDataOutput()
-//        dataOutput.videoSettings = [(kCVPixelBufferPixelFormatTypeKey as NSString) : NSNumber(value:kCVPixelFormatType_32BGRA)] as [String : Any]
-////        dataOutput.alwaysDiscardsLateVideoFrames = true
-//
-//        if captureSession.canAddOutput(dataOutput) {
-//            captureSession.addOutput(dataOutput)
-//        }
-//
-//        captureSession.commitConfiguration()
-//
-//        let queue = DispatchQueue(label: "captureActivity")
-//        dataOutput.setSampleBufferDelegate(self, queue: queue)
-//    }
-
-//                    if let jointsImage = self.runCoreML(image) {
-//
-////                        UIImageWriteToSavedPhotosAlbum(jointsImage, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
-//
-//                        // TEMPORARY DISPLAY
-//                        let photoVC = PhotoDisplayVC()
-//                        photoVC.setImageTo(jointsImage)
-//
-////                         Run through next coreML model
-//                        self.runThroughModel(jointsImage, photoVC: photoVC)
-//
-////                         testing model
-////                        if outcome {
-////                            photoVC.setBackgroundTo(UIColor.green)
-////                            print("good pushup")
-////                        } else {
-////                            photoVC.setBackgroundTo(UIColor.red)
-////                            print("bad pushup")
-////                        }
-//
-//                        self.present(photoVC, animated: true, completion: {
-//                            self.stopCaptureSession()
-//                        })
-//                    }
-
-

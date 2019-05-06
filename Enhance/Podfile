@@ -14,5 +14,8 @@ pod "Counter"
 pod 'PopupDialog', '~> 1.1'
 pod 'STopAlert'
 pod 'TransitionButton'
+pod 'paper-onboarding'
+pod 'SwiftyOnboard'
+pod 'SwipeableTabBarController'
 
 end

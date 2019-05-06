@@ -41,19 +41,19 @@ class BadgesView: UIView {
     
     func setupBadges() {
         strengthBadge.setLevel(to: Int(round(user.strengthLevel())))
-        strengthBadge.setDescription(to: "\(user.strengthTotal) pushups total")
+        strengthBadge.setDescription(to: "\(round(user.strengthTotal)) pushups total")
         self.addSubview(strengthBadge)
         strengthBadge.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         strengthBadge.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         
         staminaBadge.setLevel(to: Int(round(user.staminaLevel())))
-        staminaBadge.setDescription(to: "\(user.staminaTotal) miles total")
+        staminaBadge.setDescription(to: "\(round(user.staminaTotal)) miles total")
         self.addSubview(staminaBadge)
         staminaBadge.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         staminaBadge.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         
         coreBadge.setLevel(to: Int(round(user.coreLevel())))
-        coreBadge.setDescription(to: "\(user.coreTotal) situps total")
+        coreBadge.setDescription(to: "\(round(user.coreTotal)) seconds of planks")
         self.addSubview(coreBadge)
         coreBadge.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         coreBadge.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true

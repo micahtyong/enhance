@@ -105,6 +105,8 @@
 		E8846DE62276730B00E0AE68 /* wrnch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DE42276730B00E0AE68 /* wrnch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E8846DE92276733300E0AE68 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DE82276733300E0AE68 /* opencv2.framework */; };
 		E8846DEA2276733300E0AE68 /* opencv2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8846DE82276733300E0AE68 /* opencv2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E886474F227EDC250063F2AD /* ScrollViewExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E886474E227EDC250063F2AD /* ScrollViewExampleVC.swift */; };
+		E8864751227F63280063F2AD /* OnboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8864750227F63280063F2AD /* OnboardVC.swift */; };
 		E89D224E2262F47A00B0D3F5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D224D2262F47A00B0D3F5 /* CustomTextField.swift */; };
 		E89D22502262FC2700B0D3F5 /* CustomMedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D224F2262FC2700B0D3F5 /* CustomMedButton.swift */; };
 		E89D22522262FC6600B0D3F5 /* CustomLongButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D22512262FC6600B0D3F5 /* CustomLongButton.swift */; };
@@ -116,12 +118,19 @@
 		E89D228A2268227300B0D3F5 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D22892268227300B0D3F5 /* CustomView.swift */; };
 		E89D228E2268231A00B0D3F5 /* Engage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D228D2268231A00B0D3F5 /* Engage.swift */; };
 		E89D229522682D5C00B0D3F5 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D229422682D5C00B0D3F5 /* Activity.swift */; };
+		E8C2B346227E5ABE00BE5983 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C2B345227E5ABE00BE5983 /* OnboardingVC.swift */; };
+		E8C2B349227E5C5A00BE5983 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C2B348227E5C5A00BE5983 /* OnboardingView.swift */; };
+		E8C99659227F9985009BA833 /* PlanksModelA.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E8C99657227F9984009BA833 /* PlanksModelA.mlmodel */; };
+		E8C9965A227F9985009BA833 /* PushupsModelC.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E8C99658227F9985009BA833 /* PushupsModelC.mlmodel */; };
+		E8C9965D227F9DD2009BA833 /* PlanksMLVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C9965C227F9DD2009BA833 /* PlanksMLVC2.swift */; };
+		E8C9965F227F9FB1009BA833 /* PlanksMLUIVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C9965E227F9FB1009BA833 /* PlanksMLUIVC.swift */; };
 		E8D3AF6D22693FB10045C87A /* PushupMLVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3AF6C22693FB10045C87A /* PushupMLVC.swift */; };
 		E8D3AF7322694A580045C87A /* TabsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3AF7222694A580045C87A /* TabsVC.swift */; };
 		E8D3AF7A22694B3D0045C87A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3AF7922694B3D0045C87A /* ProfileVC.swift */; };
 		E8D3AF7F22696BB10045C87A /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E8D3AF7E22696BB10045C87A /* Resnet50.mlmodel */; };
 		E8E1F845227D128500215C11 /* OpenPoseDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E1F844227D128500215C11 /* OpenPoseDemoVC.swift */; };
 		E8E1F848227D604800215C11 /* InfoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E1F847227D604800215C11 /* InfoButton.swift */; };
+		E8EE8BA6227F6C57009CF080 /* SkipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE8BA5227F6C56009CF080 /* SkipButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -246,6 +255,8 @@
 		E8846DD82276674A00E0AE68 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		E8846DE42276730B00E0AE68 /* wrnch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = wrnch.framework; sourceTree = "<group>"; };
 		E8846DE82276733300E0AE68 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		E886474E227EDC250063F2AD /* ScrollViewExampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExampleVC.swift; sourceTree = "<group>"; };
+		E8864750227F63280063F2AD /* OnboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardVC.swift; sourceTree = "<group>"; };
 		E89D224D2262F47A00B0D3F5 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E89D224F2262FC2700B0D3F5 /* CustomMedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMedButton.swift; sourceTree = "<group>"; };
 		E89D22512262FC6600B0D3F5 /* CustomLongButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLongButton.swift; sourceTree = "<group>"; };
@@ -257,12 +268,19 @@
 		E89D22892268227300B0D3F5 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		E89D228D2268231A00B0D3F5 /* Engage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engage.swift; sourceTree = "<group>"; };
 		E89D229422682D5C00B0D3F5 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		E8C2B345227E5ABE00BE5983 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		E8C2B348227E5C5A00BE5983 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		E8C99657227F9984009BA833 /* PlanksModelA.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = PlanksModelA.mlmodel; path = ../../../Models/PlanksModelA.mlmodel; sourceTree = "<group>"; };
+		E8C99658227F9985009BA833 /* PushupsModelC.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = PushupsModelC.mlmodel; path = ../../../Models/PushupsModelC.mlmodel; sourceTree = "<group>"; };
+		E8C9965C227F9DD2009BA833 /* PlanksMLVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanksMLVC2.swift; sourceTree = "<group>"; };
+		E8C9965E227F9FB1009BA833 /* PlanksMLUIVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanksMLUIVC.swift; sourceTree = "<group>"; };
 		E8D3AF6C22693FB10045C87A /* PushupMLVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushupMLVC.swift; sourceTree = "<group>"; };
 		E8D3AF7222694A580045C87A /* TabsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsVC.swift; sourceTree = "<group>"; };
 		E8D3AF7922694B3D0045C87A /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		E8D3AF7E22696BB10045C87A /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		E8E1F844227D128500215C11 /* OpenPoseDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPoseDemoVC.swift; sourceTree = "<group>"; };
 		E8E1F847227D604800215C11 /* InfoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoButton.swift; sourceTree = "<group>"; };
+		E8EE8BA5227F6C56009CF080 /* SkipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,9 +322,8 @@
 		E8170F0E226C673100CC9898 /* Activities */ = {
 			isa = PBXGroup;
 			children = (
+				E8C9965B227F9DB4009BA833 /* PlanksML */,
 				E8465E97227BE8E200567A13 /* PushupML */,
-				E8D3AF6C22693FB10045C87A /* PushupMLVC.swift */,
-				E8170F0F226C676A00CC9898 /* SitupMLVC.swift */,
 				E8170F16226C6BB400CC9898 /* StepsVC.swift */,
 				E8E1F846227D14F100215C11 /* OpenPoseDemo */,
 			);
@@ -459,11 +476,10 @@
 		E85F1D83225EFEAB00AA2283 /* Enhance */ = {
 			isa = PBXGroup;
 			children = (
+				E886474D227EDBBD0063F2AD /* Deprecated */,
 				E8218E0722780D0E00E02AE0 /* OpenCV */,
-				E8846DBE2276661800E0AE68 /* INWWrapper */,
 				E8218D8C2277FCDF00E02AE0 /* CoreML */,
 				E867E56B22697B7C0073E8A0 /* ML */,
-				E89D22622264697B00B0D3F5 /* Cells */,
 				E85F1D9D2260483300AA2283 /* Models */,
 				E85F1D96225EFF7A00AA2283 /* ViewControllers */,
 				E8218D972277FFBE00E02AE0 /* Libraries */,
@@ -488,6 +504,8 @@
 		E85F1D9D2260483300AA2283 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E89D22622264697B00B0D3F5 /* Cells */,
+				E8170F11226C67CC00CC9898 /* Games */,
 				E867E56E226A96990073E8A0 /* Object */,
 				E89D228F2268247900B0D3F5 /* Buttons */,
 				E89D22902268249E00B0D3F5 /* Views */,
@@ -500,6 +518,8 @@
 			children = (
 				E8D3AF7E22696BB10045C87A /* Resnet50.mlmodel */,
 				E8465EA1227CE20600567A13 /* PushupsModelB.mlmodel */,
+				E8C99657227F9984009BA833 /* PlanksModelA.mlmodel */,
+				E8C99658227F9985009BA833 /* PushupsModelC.mlmodel */,
 				E8846DB622765ECA00E0AE68 /* PushupsA.mlmodel */,
 			);
 			path = ML;
@@ -509,6 +529,7 @@
 			isa = PBXGroup;
 			children = (
 				E85F1D97225EFFCC00AA2283 /* LandingPageVC.swift */,
+				E8864750227F63280063F2AD /* OnboardVC.swift */,
 				E85F1D99225F23A700AA2283 /* DiagnoseVC.swift */,
 				E85F1D9B226038CC00AA2283 /* EnterNameVC.swift */,
 				E89D22532263060C00B0D3F5 /* WelcomeToEnhanceVC.swift */,
@@ -529,7 +550,6 @@
 		E867E56E226A96990073E8A0 /* Object */ = {
 			isa = PBXGroup;
 			children = (
-				E8170F11226C67CC00CC9898 /* Games */,
 				E89D228D2268231A00B0D3F5 /* Engage.swift */,
 				E89D225D2264604700B0D3F5 /* User.swift */,
 				E89D229422682D5C00B0D3F5 /* Activity.swift */,
@@ -563,6 +583,19 @@
 			path = wrModels;
 			sourceTree = "<group>";
 		};
+		E886474D227EDBBD0063F2AD /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				E8170F0F226C676A00CC9898 /* SitupMLVC.swift */,
+				E8C2B347227E5C3000BE5983 /* Onboarding */,
+				E8846DBE2276661800E0AE68 /* INWWrapper */,
+				E886474E227EDC250063F2AD /* ScrollViewExampleVC.swift */,
+				E8D3AF6C22693FB10045C87A /* PushupMLVC.swift */,
+				E8C2B345227E5ABE00BE5983 /* OnboardingVC.swift */,
+			);
+			path = Deprecated;
+			sourceTree = "<group>";
+		};
 		E89D22622264697B00B0D3F5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,6 +613,7 @@
 				E89D22652266995F00B0D3F5 /* CoreButton.swift */,
 				E867E571226A9BAE0073E8A0 /* PlayButton.swift */,
 				E8E1F847227D604800215C11 /* InfoButton.swift */,
+				E8EE8BA5227F6C56009CF080 /* SkipButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -595,6 +629,23 @@
 				E8170F24226FD5DC00CC9898 /* Badge.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E8C2B347227E5C3000BE5983 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E8C2B348227E5C5A00BE5983 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		E8C9965B227F9DB4009BA833 /* PlanksML */ = {
+			isa = PBXGroup;
+			children = (
+				E8C9965C227F9DD2009BA833 /* PlanksMLVC2.swift */,
+				E8C9965E227F9FB1009BA833 /* PlanksMLUIVC.swift */,
+			);
+			path = PlanksML;
 			sourceTree = "<group>";
 		};
 		E8E1F846227D14F100215C11 /* OpenPoseDemo */ = {
@@ -704,9 +755,12 @@
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/STopAlert/STopAlert.framework",
 				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyOnboard/SwiftyOnboard.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeableTabBarController/SwipeableTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/paper-onboarding/paper_onboarding.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -720,9 +774,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/STopAlert.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyOnboard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeableTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/paper_onboarding.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -769,9 +826,11 @@
 				E8218DF22277FFBE00E02AE0 /* CVPixelBuffer+Helpers.swift in Sources */,
 				E8846DB722765ECA00E0AE68 /* PushupsA.mlmodel in Sources */,
 				E8846DCB2276661900E0AE68 /* INWWrapper.mm in Sources */,
+				E886474F227EDC250063F2AD /* ScrollViewExampleVC.swift in Sources */,
 				E89D228A2268227300B0D3F5 /* CustomView.swift in Sources */,
 				E867E574226A9D630073E8A0 /* ActivitySkeleton.swift in Sources */,
 				E8846DB922765F1C00E0AE68 /* TrainingVC.swift in Sources */,
+				E8C99659227F9985009BA833 /* PlanksModelA.mlmodel in Sources */,
 				E8218DE62277FFBE00E02AE0 /* Complex.swift in Sources */,
 				E8218DDE2277FFBE00E02AE0 /* ComplexArray.swift in Sources */,
 				E8218D962277FCDF00E02AE0 /* CocoPairs.swift in Sources */,
@@ -781,11 +840,14 @@
 				E8D3AF7322694A580045C87A /* TabsVC.swift in Sources */,
 				E8218E002277FFBE00E02AE0 /* Counter.swift in Sources */,
 				E8218DE82277FFBE00E02AE0 /* Matrix.swift in Sources */,
+				E8C9965D227F9DD2009BA833 /* PlanksMLVC2.swift in Sources */,
 				E8218DFA2277FFBE00E02AE0 /* Accumulate.swift in Sources */,
 				E8218D932277FCDF00E02AE0 /* MobileOpenPose.mlmodel in Sources */,
 				E8465EA2227CE20600567A13 /* PushupsModelB.mlmodel in Sources */,
 				E8218DF72277FFBE00E02AE0 /* Reject.swift in Sources */,
+				E8EE8BA6227F6C57009CF080 /* SkipButton.swift in Sources */,
 				E8218DDF2277FFBE00E02AE0 /* MatrixArithmetic.swift in Sources */,
+				E8C2B346227E5ABE00BE5983 /* OnboardingVC.swift in Sources */,
 				E8218DEC2277FFBE00E02AE0 /* QuadraticType.swift in Sources */,
 				E8218DEA2277FFBE00E02AE0 /* 2DTensorSlice.swift in Sources */,
 				E8218E022277FFBE00E02AE0 /* Repeater.swift in Sources */,
@@ -807,6 +869,7 @@
 				E89D22502262FC2700B0D3F5 /* CustomMedButton.swift in Sources */,
 				E8218DD22277FFBE00E02AE0 /* PointerUtilities.swift in Sources */,
 				E89D229522682D5C00B0D3F5 /* Activity.swift in Sources */,
+				E8C9965F227F9FB1009BA833 /* PlanksMLUIVC.swift in Sources */,
 				E8170F21226D779B00CC9898 /* PedometerView.swift in Sources */,
 				E89D22542263060C00B0D3F5 /* WelcomeToEnhanceVC.swift in Sources */,
 				E8218DF82277FFBE00E02AE0 /* Permutations.swift in Sources */,
@@ -816,6 +879,7 @@
 				E8218DF62277FFBE00E02AE0 /* ZipToLongest.swift in Sources */,
 				E8218DFF2277FFBE00E02AE0 /* Product.swift in Sources */,
 				E8218DEB2277FFBE00E02AE0 /* Value.swift in Sources */,
+				E8C9965A227F9985009BA833 /* PushupsModelC.mlmodel in Sources */,
 				E8218DDA2277FFBE00E02AE0 /* MatrixSlice.swift in Sources */,
 				E8218DE12277FFBE00E02AE0 /* ValueArray.swift in Sources */,
 				E8218DF32277FFBE00E02AE0 /* NonMaxSuppression.swift in Sources */,
@@ -832,6 +896,7 @@
 				E8218DD32277FFBE00E02AE0 /* Auxiliary.swift in Sources */,
 				E85F1D9A225F23A700AA2283 /* DiagnoseVC.swift in Sources */,
 				E8218DDD2277FFBE00E02AE0 /* Sequence.swift in Sources */,
+				E8864751227F63280063F2AD /* OnboardVC.swift in Sources */,
 				E8218D942277FCDF00E02AE0 /* PoseEstimatior.swift in Sources */,
 				E89D22642264699F00B0D3F5 /* TrainingCell.swift in Sources */,
 				E8218DF12277FFBE00E02AE0 /* MultiArray.swift in Sources */,
@@ -850,6 +915,7 @@
 				E8465E9B227BE94300567A13 /* PushupMLVC2ext.swift in Sources */,
 				E8D3AF7A22694B3D0045C87A /* ProfileVC.swift in Sources */,
 				E8218DDC2277FFBE00E02AE0 /* Real.swift in Sources */,
+				E8C2B349227E5C5A00BE5983 /* OnboardingView.swift in Sources */,
 				E8218E0F2278245800E02AE0 /* OpenCVWrapper.mm in Sources */,
 				E8170F15226C68AC00CC9898 /* VisionActivity.swift in Sources */,
 				E8218DFD2277FFBE00E02AE0 /* AnyIterator.swift in Sources */,

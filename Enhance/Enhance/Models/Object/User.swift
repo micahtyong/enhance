@@ -44,7 +44,7 @@ class User {
     }
     
     func staminaLevel() -> Double {
-        return (staminaTotal / 5.0).rounded()
+        return (staminaTotal / 2.0).rounded()
     }
     
     func coreLevel() -> Double {

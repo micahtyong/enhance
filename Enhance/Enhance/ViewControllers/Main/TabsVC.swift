@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwipeableTabBarController
 
-class TabsVC: UITabBarController {
+class TabsVC: SwipeableTabBarController {
     
     var user : User = Enhance.user
     let trainingVC = TrainingVC()
@@ -17,10 +18,16 @@ class TabsVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         user = Enhance.user
-        trainingVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
-        profileVC.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
+        
+        // Tab Bar VC's
+        trainingVC.tabBarItem = UITabBarItem(title: "Train", image: UIImage(named: "trophy"), tag: 0)
+        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "happy"), tag: 1)
         let tabBarList = [trainingVC, profileVC]
         viewControllers = tabBarList
+        
+        // Misc.
+        swipeAnimatedTransitioning?.animationType = SwipeAnimationType.sideBySide
+        
     }
 
 }

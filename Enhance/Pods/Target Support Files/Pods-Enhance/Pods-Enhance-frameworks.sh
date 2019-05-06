@@ -161,9 +161,12 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/STopAlert/STopAlert.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyOnboard/SwiftyOnboard.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwipeableTabBarController/SwipeableTabBarController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/paper-onboarding/paper_onboarding.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Counter/Counter.framework"
@@ -174,9 +177,12 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/STopAlert/STopAlert.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyOnboard/SwiftyOnboard.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwipeableTabBarController/SwipeableTabBarController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/paper-onboarding/paper_onboarding.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

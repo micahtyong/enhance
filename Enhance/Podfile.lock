@@ -44,23 +44,23 @@ PODS:
     - GoogleUtilities/Network (~> 5.2)
     - "GoogleUtilities/NSData+zlib (~> 5.2)"
     - nanopb (~> 0.3)
-  - GoogleUtilities/AppDelegateSwizzler (5.7.0):
+  - GoogleUtilities/AppDelegateSwizzler (5.8.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
-  - GoogleUtilities/Environment (5.7.0)
-  - GoogleUtilities/Logger (5.7.0):
+  - GoogleUtilities/Environment (5.8.0)
+  - GoogleUtilities/Logger (5.8.0):
     - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (5.7.0):
+  - GoogleUtilities/MethodSwizzler (5.8.0):
     - GoogleUtilities/Logger
-  - GoogleUtilities/Network (5.7.0):
+  - GoogleUtilities/Network (5.8.0):
     - GoogleUtilities/Logger
     - "GoogleUtilities/NSData+zlib"
     - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (5.7.0)"
-  - GoogleUtilities/Reachability (5.7.0):
+  - "GoogleUtilities/NSData+zlib (5.8.0)"
+  - GoogleUtilities/Reachability (5.8.0):
     - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (5.7.0):
+  - GoogleUtilities/UserDefaults (5.8.0):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.1)
   - Hero (1.4.0)
@@ -70,10 +70,13 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - paper-onboarding (6.1.3)
   - PopupDialog (1.1.0):
     - DynamicBlurView (~> 3.0.1)
-  - SkeletonView (1.4.2)
+  - SkeletonView (1.5)
   - STopAlert (0.3.2)
+  - SwiftyOnboard (1.3.8)
+  - SwipeableTabBarController (2.1.0)
   - TransitionButton (0.5.2)
 
 DEPENDENCIES:
@@ -82,9 +85,12 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Hero
+  - paper-onboarding
   - PopupDialog (~> 1.1)
   - SkeletonView
   - STopAlert
+  - SwiftyOnboard
+  - SwipeableTabBarController
   - TransitionButton
 
 SPEC REPOS:
@@ -104,9 +110,12 @@ SPEC REPOS:
     - Hero
     - leveldb-library
     - nanopb
+    - paper-onboarding
     - PopupDialog
     - SkeletonView
     - STopAlert
+    - SwiftyOnboard
+    - SwipeableTabBarController
     - TransitionButton
 
 SPEC CHECKSUMS:
@@ -120,16 +129,19 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 2c15b0ea6f2c6eb5e57413f9d6340f1e50b81ae3
   FirebaseInstanceID: a122b0c258720cf250551bb2bedf48c699f80d90
   GoogleAppMeasurement: ffe513e90551844a739e7bcbb1d2aca1c28a4338
-  GoogleUtilities: 273e67030e0de313e7304f6dcfa96fc5214f6c23
+  GoogleUtilities: 04fce34bcd5620c1ee76fb79172105c74a4df335
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  paper-onboarding: 47ded9ede6ae9dd7ec135dddd8bd3e170b79d799
   PopupDialog: 42fb7a0bc4fafdf89fef8b5b2b127a6023f3e1cc
-  SkeletonView: c2523c3c8c6510e273e49a3bf364a434744c3914
+  SkeletonView: 6cbb80f82f8bdee3f9093e2fa03b84819b4bd826
   STopAlert: 063607202f39662a8164a68d31f12c4e82521aae
+  SwiftyOnboard: de60e90c2af23dd61b01ec0c6a8d0be3370f857b
+  SwipeableTabBarController: e6445066473bb548cc74f660c0ebc04d609cde67
   TransitionButton: fb271583d9c9e4bb116b97103047e5157653f233
 
-PODFILE CHECKSUM: 5b87094b4d94211b884e65ea8f12402260b66dbe
+PODFILE CHECKSUM: e9306903416aa4e7b9073e5502852b7c5728ab06
 
 COCOAPODS: 1.6.0.beta.2

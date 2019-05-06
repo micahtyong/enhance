@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 import Hero
+import TransitionButton
 
-class CoreButton : UIButton {
+class CoreButton : TransitionButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,7 +24,7 @@ class CoreButton : UIButton {
     }
     
     @objc func launchCoreMLVC(_ sender : CoreButton) {
-        sender.pulse()
+//        sender.pulse()
     }
     
     func igniteButton() {
