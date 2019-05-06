@@ -24,4 +24,31 @@ The product has just finished its first iteration. All fundamental UI elements a
 <img src = "Demo/GoodForm.PNG" width = "150">
 <img src = "Demo/BadForm.PNG" width = "150">
 
-See the full demo [here](https://www.youtube.com/watch?v=mhfjlfFoDBY "YT Demo")
+## Technology and frameworks used ##
+
+**Built with**
+  * Swift 5.0
+  * XCode 10.1
+  * [Firebase](https://console.firebase.google.com/u/0/ "Google's Firebase")
+  * [TensorFlow](https://www.tensorflow.org/, "TF")
+  * [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose "CMU OP")
+  * [OpenCV](https://opencv.org/ "OCV")
+  * [CocoaPods](https://cocoapods.org/ "CocoaPods") 
+    * Hero
+    * PopupDialog
+    * STopAlert
+    * TransitionButton
+    * Paper-Onboarding
+    * SwipeableTabBarController
+
+  
+## Installation ## 
+
+1. Clone the repository.
+2. Open in XCode 10.1 or later.
+3. Build and run project on an iPhone device.
+
+## Contribute ## 
+
+This is a project that I'd like to continue working on in the future. Feel free to raise issues or suggest improvements. My email is micahtyong@berkeley.com!
+
