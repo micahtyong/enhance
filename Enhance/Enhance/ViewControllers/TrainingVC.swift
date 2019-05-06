@@ -107,7 +107,7 @@ extension TrainingVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let heightConstant : CGFloat = 0.1477
+        let heightConstant : CGFloat = 0.1377
         let cellSpacingHeight2: CGFloat = self.screenSize().size.height * heightConstant
         return cellSpacingHeight2
     }
@@ -150,16 +150,10 @@ extension TrainingVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func launchCoreML(_ sender : CoreButton) {
-        sender.startAnimation()
-        DispatchQueue.main.async(execute: { () -> Void in
-            sender.stopAnimation(animationStyle: .expand, completion: {
-                let vc = self.currActivity
-                self.present(vc, animated: true, completion: nil)
-            })
-        })
-//        vc.hero.isEnabled = true
-//        vc.hero.modalAnimationType = .selectBy(presenting: .zoomSlide(direction: .up), dismissing: .zoomOut)
-        
+        let vc = self.currActivity
+        vc.hero.isEnabled = true
+        vc.hero.modalAnimationType = .selectBy(presenting: .zoomSlide(direction: .up), dismissing: .zoomOut)
+        self.present(vc, animated: true, completion: nil)
     }
     
 }

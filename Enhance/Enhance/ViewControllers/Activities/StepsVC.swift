@@ -143,6 +143,7 @@ class StepsVC: UIViewController {
         let vc = TabsVC()
         vc.hero.isEnabled = true
         vc.hero.modalAnimationType = .selectBy(presenting: .zoomSlide(direction: .down), dismissing: .zoomOut)
+        vc.trainingVC.statusBarUpdate(withMessage: "Awesome run, \(Enhance.user.name)!")
         self.present(vc, animated: true, completion: nil)
     }
     

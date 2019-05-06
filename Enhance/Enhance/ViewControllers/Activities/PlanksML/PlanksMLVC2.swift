@@ -13,9 +13,8 @@ import Vision
 import PopupDialog
 import Firebase
 import Hero
-import TransitionButton
 
-class PlanksMLVC2: CustomTransitionViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
+class PlanksMLVC2: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     var user : User = Enhance.user
     let ref : DatabaseReference! = Database.database().reference()

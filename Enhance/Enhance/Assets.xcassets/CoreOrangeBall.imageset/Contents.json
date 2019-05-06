@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "CoreOrangeBall.png",
+      "filename" : "CoreB.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "CoreB@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "CoreB@3x.png",
       "scale" : "3x"
     }
   ],
