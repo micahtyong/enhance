@@ -990,7 +990,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 80D0ABEA750F7D21ABC69E71 /* Pods-Enhance.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = enhanceLogo;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y88B368L4C;
 				ENABLE_BITCODE = NO;
@@ -1018,7 +1018,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 79701183BDA11B3FA333244D /* Pods-Enhance.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = enhanceLogo;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y88B368L4C;
 				ENABLE_BITCODE = NO;

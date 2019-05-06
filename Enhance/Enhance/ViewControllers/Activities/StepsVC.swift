@@ -63,7 +63,7 @@ class StepsVC: UIViewController {
     func onboardingPopup() {
         // Prepare the popup assets
         let title = "HOW TO PLAY"
-        let message = "Step outside or find a nice space where you can do some jogging!\nIn \(activity.maxTime) minutes, take as many steps as you can.\nBonus points for every quarter-mile completed!"
+        let message = "Step outside or find a nice space where you can do some jogging!\nIn \(activity.maxTime / 60) minute(s), take as many steps as you can.\nBonus points for every quarter-mile completed!"
         let image = UIImage(named: "runningDemo2")
         // Create the dialog
         let popup = PopupDialog(title: title, message: message, image: image)

@@ -84,7 +84,11 @@ extension OnboardVC : PaperOnboardingDelegate, PaperOnboardingDataSource {
     // Delegate
     func onboardingWillTransitonToIndex(_ index: Int) { }
     
-    func onboardingDidTransitonToIndex(_: Int) { }
+    func onboardingDidTransitonToIndex(_ index: Int) {
+        if index == 2 {
+            skipButton.setTitle("Go!", for: .normal)
+        }
+    }
     
     func onboardingConfigurationItem(_ item: OnboardingContentViewItem, index: Int) {
         
@@ -101,7 +105,7 @@ extension OnboardVC : PaperOnboardingDelegate, PaperOnboardingDataSource {
             OnboardingItemInfo(informationImage: UIImage(named: "onboarding1")!,
                                title: "Improve your physique",
                                description: "Train with 3 essential exercises that improve\nyour everyday strength, stamina, and core.",
-                               pageIcon: UIImage(named: "enhanceLogo")!,
+                               pageIcon: UIImage(named: "tempLogo")!,
                                color: UIColor.white,
                                titleColor: UIColor.black,
                                descriptionColor: UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1),
@@ -111,7 +115,7 @@ extension OnboardVC : PaperOnboardingDelegate, PaperOnboardingDataSource {
             OnboardingItemInfo(informationImage: UIImage(named: "onboarding2")!,
                                title: "Stay accountable",
                                description: "Enhance is more than a fitness training plan.\nIt uses frameworks like OpenPose\nand CoreMotion to verify your activity\n and correct your form.",
-                               pageIcon: UIImage(named: "enhanceLogo")!,
+                               pageIcon: UIImage(named: "tempLogo")!,
                                color: UIColor.white,
                                titleColor: UIColor.black,
                                descriptionColor: UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1),
@@ -121,7 +125,7 @@ extension OnboardVC : PaperOnboardingDelegate, PaperOnboardingDataSource {
             OnboardingItemInfo(informationImage: UIImage(named: "onboarding3")!,
                                title: "Track your progress",
                                description: "Enhance customizes a training program, analyzes your performance, and tracks your improvement.",
-                               pageIcon: UIImage(named: "enhanceLogo")!,
+                               pageIcon: UIImage(named: "tempLogo")!,
                                color: UIColor.white,
                                titleColor: UIColor.black,
                                descriptionColor: UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1),
