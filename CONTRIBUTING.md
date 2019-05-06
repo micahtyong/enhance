@@ -1,0 +1,1 @@
+If you'd like to contribute to my project, feel free to email me at micahtyong@berkeley.edu! I'm looking to integrate this application for Android users as well as improve our CoreML models significantly. 
