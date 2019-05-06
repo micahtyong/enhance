@@ -18,11 +18,11 @@ The product has just finished its first iteration. All fundamental UI elements a
 
 ## Screenshots ##
 
-<img src = "Demo/LandingPage.PNG" width = "150">
-<img src = "Demo/OnboardingP1.PNG" width = "150">
-<img src = "Demo/Profile.PNG" width = "150">
-<img src = "Demo/GoodForm.PNG" width = "150">
-<img src = "Demo/BadForm.PNG" width = "150">
+<img src = "Demo/LandingPage.PNG" width = "180">
+<img src = "Demo/OnboardingP1.PNG" width = "180">
+<img src = "Demo/Profile.PNG" width = "180">
+<img src = "Demo/GoodForm.PNG" width = "180">
+<img src = "Demo/BadForm.PNG" width = "180">
 
 ## Technology and frameworks used ##
 
