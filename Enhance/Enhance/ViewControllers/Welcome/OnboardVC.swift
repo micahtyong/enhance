@@ -30,6 +30,8 @@ class OnboardVC: UIViewController {
         skipButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
         skipButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         skipButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        skipButton.setTitle("Go!", for: .normal)
     }
     
     @objc func getStarted(_ sender:UIButton) {
@@ -105,7 +107,7 @@ extension OnboardVC : PaperOnboardingDelegate, PaperOnboardingDataSource {
             OnboardingItemInfo(informationImage: UIImage(named: "onboarding1")!,
                                title: "Improve your physique",
                                description: "Train with 3 essential exercises that improve\nyour everyday strength, stamina, and core.",
-                               pageIcon: UIImage(named: "tempLogo")!,
+                               pageIcon: UIImage(named: "Page1")!,
                                color: UIColor.white,
                                titleColor: UIColor.black,
                                descriptionColor: UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1),
@@ -115,7 +117,7 @@ extension OnboardVC : PaperOnboardingDelegate, PaperOnboardingDataSource {
             OnboardingItemInfo(informationImage: UIImage(named: "onboarding2")!,
                                title: "Stay accountable",
                                description: "Enhance is more than a fitness training plan.\nIt uses frameworks like OpenPose\nand CoreMotion to verify your activity\n and correct your form.",
-                               pageIcon: UIImage(named: "tempLogo")!,
+                               pageIcon: UIImage(named: "Page2")!,
                                color: UIColor.white,
                                titleColor: UIColor.black,
                                descriptionColor: UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1),
@@ -125,7 +127,7 @@ extension OnboardVC : PaperOnboardingDelegate, PaperOnboardingDataSource {
             OnboardingItemInfo(informationImage: UIImage(named: "onboarding3")!,
                                title: "Track your progress",
                                description: "Enhance customizes a training program, analyzes your performance, and tracks your improvement.",
-                               pageIcon: UIImage(named: "tempLogo")!,
+                               pageIcon: UIImage(named: "Page3")!,
                                color: UIColor.white,
                                titleColor: UIColor.black,
                                descriptionColor: UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1),
