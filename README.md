@@ -48,7 +48,9 @@ The product has just finished its first iteration. All fundamental UI elements a
 2. Open in XCode 10.1 or later.
 3. Build and run project on an iPhone device.
 
-## Contribute ## 
+## Support ## 
+
+If you find any of my projects helpful/inspiring and would like to support me, please do so [here](https://venmo.com/Micah-Yong "Venmo")
 
 This is a project that I'd like to continue working on in the future. Feel free to raise issues or suggest improvements. My email is micahtyong@berkeley.com!
 
