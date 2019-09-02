@@ -2,6 +2,8 @@
 
 <img src = "Demo/EnhanceLogoC.png" width = "300">
 
+AVAILABLE ON IOS [HERE](https://apps.apple.com/us/app/enhanceai/id1477011488?ls=1 "EnhanceAI"). 
+
 Enhance is a fitness training program designed to improve strength, endurance, and core for people who struggle with musculoskeletal disorders as well as people with busy lives who want to stay active. In its first iteration, each person is provided with a set of three essential exercises—push-ups, planks, and timed jogs. Unlike most fitness apps, **Enhance keeps you accountable**. It uses frameworks like OpenPose and CoreMotion to verify that you are performing the exercises correctly and consistently. Users can track their progress over time as they get into the habit of completing these three daily exercises.
 
 The more you train with Enhance, the more you’ll improve crucial physical skills that are proven to boost your well-being, discipline, and self-confidence. 
