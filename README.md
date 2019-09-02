@@ -8,7 +8,7 @@ Enhance is a fitness training program designed to improve strength, endurance, a
 
 The more you train with Enhance, the more you’ll improve crucial physical skills that are proven to boost your well-being, discipline, and self-confidence. 
 
-See a video demo [here](https://www.youtube.com/watch?v=mhfjlfFoDBY "Enhance Demo")
+See a [video demo](https://www.youtube.com/watch?v=mhfjlfFoDBY "Enhance Demo")
 
 ## Motivation ##
 
