@@ -12,11 +12,7 @@ See a [video demo](https://www.youtube.com/watch?v=mhfjlfFoDBY "Enhance Demo")
 
 ## Motivation ##
 
-One of my original teammates, Umang, has been struggling with chronic back, shoulder, and neck pain since he was seven years old. For a few years now, he’s attended weekly physical therapy sessions and one of the things that they do is “prescribe” physical exercises for him to do throughout the week. Exercises like pushups and planks target specific areas in his body that he needs to strengthen on a daily basis. My mom goes through a very similar struggle. 
-
-The hardest part about physical therapy, however, wasn’t the repetition of those exercises, but rather the fact that there was nobody there for him to check his form outside of physical therapy sessions. Sure, he tried to use a mirror, but even then he wasn’t sure whether or not he was in proper form. 
-
-Even more surprising, Umang isn’t alone. Far from it, actually. An [article](https://www.cdc.gov/mmwr/volumes/67/wr/mm6736a2.htm "Source") by the CDC (Centers for Disease Control and Prevention) in 2018 reported that about 50 million Americans (just over 20% of the adult population) have chronic pain. About 20 million of them have “high-impact chronic pain”, so this is pain that’s severe enough that it frequently limits life or work activities. These are people that definitely attend physical therapy sessions regularly and need to engage in “prescribed” physical exercises. 
+An [article](https://www.cdc.gov/mmwr/volumes/67/wr/mm6736a2.htm "Source") by the CDC (Centers for Disease Control and Prevention) in 2018 reported that about 50 million Americans (just over 20% of the adult population) have chronic pain. About 20 million of them have “high-impact chronic pain”, so this is pain that’s severe enough that it frequently limits life or work activities. These are people that definitely attend physical therapy sessions regularly and need to engage in “prescribed” physical exercises. 
 
 So, Enhance began as a potential solution to those with musculoskeletal injuries / chronic pains and needed someone or something to guide them through their prescribed exercises while checking their form. Enhance quickly evolved to an app available for anyone—from those in PT to fitness junkies to students to working professionals and just about anyone who wanted additional incentive to workout while having someone or something to keep them accountable. 
 
